@@ -1,0 +1,46 @@
+@import '~/styles/utils';
+
+.container {
+  @include small-text-bold-m;
+  color: $color-background;
+  background: $color-foreground-alt;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 32rem;
+  padding: 8rem 22rem 8rem;
+  transition: color $speed $ease-out, background-color $speed $ease-out,
+    border-color $speed $ease-out;
+
+  @include sm {
+    @include body-m;
+    text-transform: none;
+    padding: 8rem 20rem 10rem;
+  }
+
+  transition: transform $quick $ease-out;
+
+  &:hover {
+    color: $color-white;
+    background: $accent-color;
+    border-color: $accent-color;
+  }
+
+  &.isSmall {
+    @include small-text-bold-caps;
+    padding: 0 26rem;
+    height: 32rem;
+  }
+}
+
+.containerSecondary {
+  color: $color-foreground-alt;
+  background: transparent;
+  border-color: currentColor;
+  &:hover {
+    color: $accent-color;
+    background: transparent;
+    border-color: currentColor;
+  }
+}

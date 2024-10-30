@@ -1,0 +1,165 @@
+@import '~/styles/utils';
+
+.section {
+  padding: calc($side-padding * 0.5) $side-padding;
+  color: $color-foreground;
+  @include landscape {
+    padding: 45rem $side-padding;
+  }
+}
+
+.content {
+  box-shadow: 3.5rem 7rem 51rem rgba(0, 0, 0, 0.1);
+  background: $color-dark-dark-blue;
+  padding: 30rem 0;
+  border-radius: 10rem;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  transform: translateZ(0);
+  @include landscape {
+    padding: 70rem 0 58rem;
+    border-radius: 20rem;
+  }
+}
+
+.highlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 11, 27, 0) -9.11%,
+    rgba(62, 39, 128, 0.2) 33.49%,
+    rgba(62, 39, 128, 0.15) 60.22%,
+    rgba(8, 11, 27, 0) 100%
+  );
+  box-shadow: 0px -40px 50.94675px 0px rgba(0, 0, 0, 0.02);
+  width: 100%;
+  height: 33.333%;
+  z-index: 1;
+}
+
+.logo {
+  width: 160rem;
+  height: auto;
+  display: block;
+  margin: auto;
+  margin-bottom: 20rem;
+  position: relative;
+  grid-row: 1;
+  @include landscape {
+    width: 260rem;
+    margin: auto;
+    margin-bottom: 10rem;
+  }
+  @include xl {
+    width: 316rem;
+    margin: auto;
+    margin-bottom: 16rem;
+  }
+}
+
+.heading {
+  @include h1-m;
+  text-align: center;
+  grid-row: 2;
+  z-index: 2;
+  margin: auto;
+
+  @include landscape {
+    @include h1-d;
+    margin-bottom: 31rem;
+  }
+}
+
+.copy {
+  @include small-body-m;
+  margin: auto;
+  grid-row: 4;
+  max-width: 660rem;
+  margin-bottom: 18rem;
+  padding: 0 20rem;
+
+  @include landscape {
+    grid-row: 3;
+    margin-bottom: 0;
+    padding: 0;
+    max-width: 909rem;
+  }
+
+  @include lg {
+    @include body-d;
+    opacity: 0.7;
+  }
+}
+
+.indicator {
+  width: 33.333%;
+  margin: auto;
+}
+
+.cta {
+  @include landscape {
+    position: absolute;
+    bottom: 35rem;
+    left: 40rem;
+  }
+}
+
+.canvasWrapper {
+  grid-row: 3;
+  height: 50vh;
+  height: 50vh;
+  // width: calc(100vw - calc(#{$side-padding} * 2));
+  width: 100%;
+  position: relative;
+  margin: 30rem 0;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.4) 5%,
+    rgba(0, 0, 0, 1) 25%,
+    rgba(0, 0, 0, 1) 75%,
+    rgba(0, 0, 0, 0.4) 95%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  @include md {
+    height: 60vh;
+    height: 60vh;
+    mask-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.4) 10%,
+      rgba(0, 0, 0, 1) 30%,
+      rgba(0, 0, 0, 1) 70%,
+      rgba(0, 0, 0, 0.4) 90%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+  @include landscape {
+    height: 50vh;
+    height: 50vh;
+    grid-row: 4;
+    margin: 45rem 0;
+  }
+}
+
+.canvas {
+  background: transparent;
+}
+
+.canvasMask {
+  width: 100%;
+  height: 150%;
+  position: absolute;
+  top: -25%;
+  left: 0;
+  pointer-events: none;
+}

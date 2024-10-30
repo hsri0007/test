@@ -1,0 +1,18 @@
+@import '~/styles/utils';
+
+.container {
+  height: 720vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: clip;
+
+  @include md {
+    height: 650vh;
+  }
+
+  // @include landscape {
+  //   height: 1600vh;
+  // }
+}

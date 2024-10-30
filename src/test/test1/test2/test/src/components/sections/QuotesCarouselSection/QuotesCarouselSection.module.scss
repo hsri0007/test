@@ -1,0 +1,200 @@
+@import '~/styles/utils';
+
+.quotesCarouselContainer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5% $side-padding;
+  background-color: white;
+  // min-height: 100vh;
+}
+
+.quotesCarouselInnerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(14, 23, 70, 0.2);
+  box-shadow: 3.39645px 6.7929px 50.94675px 0 rgba(0, 0, 0, 0.02);
+  backdrop-filter: blur(7px);
+
+  background-color: $color-background;
+  flex-direction: column;
+  border-radius: 15rem;
+  z-index: 1;
+  width: 100%;
+  max-width: 1760rem;
+  max-height: 880rem;
+  height: calc(100vh - 120rem);
+  // margin-top: 50rem;
+
+  @include xxs {
+    min-height: 580rem;
+  }
+
+  @include xs {
+    // margin-top: 60px;
+  }
+  @include md {
+    height: 45vh;
+  }
+
+  @include landscape {
+    height: 50vw;
+  }
+  [data-theme='dark'] & {
+    border-color: $color-dark-gray;
+  }
+}
+
+.quoteSlide {
+  user-select: none;
+  touch-action: pan-y;
+  width: 100%;
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  word-wrap: break-word;
+  padding: 8% 11% 12% 11%;
+  aspect-ratio: 16 / 9;
+
+  @include md {
+    padding: 8% 12% 12% 8%;
+  }
+
+  &.imageView {
+    width: 100%;
+    height: 100%;
+    padding: 8% 0% 12% 0%;
+
+    @include md {
+      flex-direction: row;
+      padding: 4% 8% 8% 8%;
+    }
+  }
+
+  .imageContainer {
+    display: flex;
+    align-items: center;
+    height: 40vw;
+
+    @include sm {
+      height: 32vw;
+    }
+    @include landscape {
+      height: 31vw;
+      max-height: 600rem;
+    }
+    @include xl {
+      height: 29vw;
+      max-height: 600rem;
+    }
+  }
+}
+
+.quoteContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &.quoteImageSpacer {
+    width: 80%;
+    @include md {
+      width: 50%;
+      padding: 0 0 0 10%;
+    }
+  }
+
+  .quoteIcon {
+    width: 50rem;
+    height: auto;
+    margin: 0 auto;
+    padding-bottom: 50rem;
+    @include landscape {
+      margin: 0 auto 0 0;
+      max-width: 65rem;
+    }
+  }
+
+  q.quote {
+    font-family: $font-sans-display;
+    word-break: break-word;
+    quotes: none;
+    width: 100%;
+    padding-top: 5rem;
+
+    text-align: center;
+    font-size: 28rem;
+    font-style: normal;
+    font-weight: 325;
+    line-height: 110%;
+
+    @include landscape {
+      text-align: left;
+      font-size: 60rem;
+      font-weight: 325;
+      line-height: 120%;
+      letter-spacing: -0.002em;
+    }
+
+    &.imageQuote {
+    }
+  }
+
+  .quoteInfo {
+    margin: 0 auto;
+    padding-top: 35rem;
+
+    color: $color-dark-gray;
+    font-family: $font-sans-text;
+    text-align: center;
+    font-size: 12rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+
+    [data-theme='dark'] & {
+      color: $color-light-gray;
+    }
+
+    @include landscape {
+      margin: 0 auto 0 0;
+      text-align: left;
+      font-size: 14rem;
+      line-height: 140%;
+      letter-spacing: -0.01em;
+    }
+  }
+}
+
+.darkMode {
+  color: $color-light-gray;
+}
+.darkModeSVG path {
+  fill: $color-light-gray;
+}
+
+.indicator {
+  width: 70%;
+  bottom: 3.5%;
+  margin: auto;
+  position: absolute;
+  z-index: 5;
+
+  @include sm {
+    width: 50%;
+    bottom: 4.5%;
+  }
+
+  @include md {
+    width: 32%;
+    bottom: 7.5%;
+  }
+}

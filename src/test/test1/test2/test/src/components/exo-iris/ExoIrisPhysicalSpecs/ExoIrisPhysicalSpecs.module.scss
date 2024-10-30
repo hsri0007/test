@@ -1,0 +1,193 @@
+@import '~/styles/utils';
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  background-color: $rgb-background;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  background: $color-light-light-gray;
+
+  @include md {
+    flex-direction: row;
+    height: 100vh;
+  }
+
+  .contentContainer {
+    position: relative;
+    color: $color-dark-gray;
+    z-index: 11;
+
+    &.left {
+      border-bottom: 1px solid $color-lavender;
+      border-right: none;
+      padding: 2vh $side-padding;
+      @include md {
+        border-right: 1px solid $color-lavender;
+        border-bottom: none;
+        width: 30%;
+        padding: 20vh 8% 0 $side-padding;
+      }
+
+      article.headline {
+        h1 {
+          @include h1-m;
+          padding-right: 35%;
+          @include md {
+            @include h3-d;
+            padding-right: 0;
+          }
+        }
+
+        p {
+          padding: 9% 20% 0 0;
+          @include body;
+        }
+
+        .cta {
+          padding: 8% 0;
+        }
+      }
+    }
+    &.center {
+      position: relative;
+      height: 40vh;
+      @include md {
+        width: 38%;
+        height: 100%;
+      }
+      .crossHair {
+        display: none;
+        @include md {
+          display: block;
+          top: 150rem;
+          left: 5%;
+          position: absolute;
+        }
+      }
+    }
+    &.right {
+      backdrop-filter: blur(7.5rem);
+      -webkit-backdrop-filter: blur(7.5rem);
+      z-index: 13;
+
+      -webkit-box-shadow: -12rem 10rem 25rem -6rem rgba(0, 0, 0, 0.46);
+      box-shadow: -12rem 10rem 45rem -6rem rgba(0, 0, 0, 0.035);
+
+      padding-bottom: 5%;
+
+      @include md {
+        width: 34%;
+      }
+
+      .bgContainer {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        opacity: 0.1;
+        z-index: 1;
+      }
+
+      .specsContainer {
+        position: relative;
+        z-index: 2;
+
+        display: flex;
+        flex-direction: column;
+
+        .specsContent {
+          flex-grow: 1;
+          padding-left: $side-padding;
+          white-space: pre-line;
+          vertical-align: bottom;
+          gap: 20rem;
+
+          @include md {
+            height: 40vh;
+            padding-left: 25%;
+          }
+
+          &.specsA {
+            border-bottom: 1px solid $color-lavender;
+            height: 14vh;
+            @include md {
+              height: 40vh;
+            }
+
+            display: flex;
+            align-items: center;
+
+            .waterproofContent {
+            }
+          }
+
+          &.specsB {
+            padding-top: 40rem;
+            @include md {
+              padding-top: 15%;
+            }
+
+            .specs {
+              padding: 20rem 0;
+              width: 60%;
+              text-transform: uppercase;
+
+              color: $color-dark-gray;
+              letter-spacing: 0.05em;
+              font-weight: 400;
+              font-size: 1vh;
+              line-height: 1.5;
+
+              &:first-child {
+                padding-top: 0;
+              }
+
+              h3 {
+                padding-bottom: 10rem;
+                //font-size: 1.1vh;
+                @include small-text-bold-caps;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.techSpecHeadline {
+  color: $color-dark-gray;
+  @include small-text-bold-caps;
+}
+
+.techSpecDescription {
+  @include small-text-caps;
+  max-width: 130rem;
+}
+
+.irisCanvas {
+  width: 100%;
+  height: 100%;
+  z-index: 12;
+  position: absolute;
+}
+
+.mobileIris {
+  width: auto;
+  height: auto;
+}
+
+.droplet {
+  width: auto;
+  height: auto;
+}
+
+.mobileImgContainer {
+  @include landscape {
+    display: none;
+  }
+}

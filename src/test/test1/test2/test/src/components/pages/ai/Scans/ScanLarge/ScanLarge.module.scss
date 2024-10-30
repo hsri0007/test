@@ -1,0 +1,187 @@
+@import '~/styles/utils';
+
+.container {
+  position: relative;
+  background-color: $color-dark-dark-blue;
+}
+
+.contentWrap {
+  position: relative;
+}
+
+$mobileHeight: 110vh;
+
+.imageWrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  @include landscape {
+    position: sticky;
+    height: 100vh;
+  }
+
+  picture {
+    position: relative;
+    width: 100%;
+    height: $mobileHeight;
+    display: block;
+    top: 0;
+    padding-top: calc(100vh / 851 * 147);
+
+    @include landscape {
+      position: relative;
+      height: 100%;
+      top: auto;
+      padding-top: 0;
+    }
+
+    img {
+      height: calc(100vh / 851 * 388);
+
+      @include landscape {
+        margin-top: 0;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  @include landscape {
+    height: 46vh;
+    background-color: $color-dark-dark-blue;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+.headings {
+  padding: 0 $side-padding;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: calc(100vh / 851 * 147);
+  position: relative;
+  top: 0;
+  margin-bottom: calc($mobileHeight - 100vh / 851 * 147);
+
+  @include landscape {
+    display: block;
+    grid-column: 1 / span 4;
+    width: calc(100vw / 1920 * 681);
+    height: auto;
+    position: relative;
+    top: auto;
+    margin-bottom: 0;
+  }
+}
+
+.heading {
+  @include title;
+  color: $color-ai-green;
+
+  @include landscape {
+    @include h1-d;
+    margin-bottom: 15rem;
+    text-indent: -0.025em;
+    word-wrap: initial;
+  }
+}
+
+.clearance {
+  @include small-text-bold-caps;
+  color: $color-white;
+  margin-top: 1em;
+
+  @include landscape {
+    margin-top: 0;
+  }
+}
+
+.copy {
+  @include large-body;
+  color: $color-white;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--side-padding);
+  height: 395px;
+  // margin-top: calc(100vh / 851 * 38 + 50vh);
+  position: relative;
+  justify-content: flex-end;
+
+  @include landscape {
+    display: block;
+    grid-column: 5 / span 4;
+    width: calc(100vw / 1920 * 569);
+    height: auto;
+    margin-top: 0;
+    padding: 0;
+
+    *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  li {
+    margin-bottom: 10rem;
+    list-style-type: disc;
+    list-style-position: inside;
+
+    &::marker {
+      color: $color-ai-green;
+    }
+
+    @include landscape {
+      @include body-d;
+    }
+  }
+
+  p {
+    margin-bottom: 24rem;
+
+    @include landscape {
+      @include large-body-d;
+    }
+  }
+}
+
+.phoneImage {
+  position: absolute;
+  top: -15%;
+  right: 0;
+  width: 35%;
+  transform: translate3d(0, 0, 0);
+}
+
+.ctaContainer {
+  margin-top: 10rem;
+  padding-bottom: 40rem;
+
+  @include landscape {
+    padding-bottom: 0;
+  }
+}
+
+.arrowLink {
+  span {
+    @include small-text-bold-caps;
+    margin-bottom: -5rem;
+  }
+}

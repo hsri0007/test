@@ -1,0 +1,104 @@
+@import '~/styles/utils';
+
+.feature {
+  margin-bottom: 100rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include landscape {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20rem;
+    margin-bottom: 200rem;
+  }
+}
+
+.imageWrap {
+  overflow: hidden;
+  margin-bottom: 50rem;
+  box-shadow: 1px 3rem 20rem 0rem rgba(0, 0, 0, 0.1);
+}
+
+.imageLeft {
+  margin-left: calc(-1 * $side-padding);
+  border-radius: 0rem 7rem 7rem 0rem;
+
+  @include landscape {
+    grid-column: 1 / span 6;
+    border-radius: 0rem 20rem 20rem 0rem;
+  }
+}
+
+.imageRight {
+  margin-right: calc(-1 * $side-padding);
+  border-radius: 7rem 0rem 0rem 7rem;
+
+  @include landscape {
+    grid-column: 7 / -1;
+    border-radius: 20rem 0rem 0rem 20rem;
+  }
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.content {
+  @include landscape {
+    align-self: center;
+  }
+}
+
+.contentLeft {
+  @include landscape {
+    grid-column: 2 / span 4;
+  }
+}
+
+.contentRight {
+  @include landscape {
+    grid-column: 8 / span 4;
+  }
+}
+
+.heading {
+  margin-bottom: 24rem;
+  @include h3-m;
+
+  @include landscape {
+    @include h4-d;
+  }
+}
+
+.copy {
+  margin-bottom: 24rem;
+  @include large-body-m;
+
+  @include landscape {
+    @include large-body-d;
+  }
+}
+
+.link {
+  display: flex;
+  align-items: center;
+}
+
+.linkText {
+  margin-right: 10rem;
+  font-family: $font-sans-display;
+  font-weight: 800;
+  font-size: 14rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.linkIcon {
+  width: 24rem;
+  height: 24rem;
+}

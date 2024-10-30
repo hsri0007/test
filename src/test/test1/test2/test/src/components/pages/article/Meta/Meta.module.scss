@@ -1,0 +1,33 @@
+@import '~/styles/utils';
+
+.articleMeta {
+  margin-bottom: 35rem;
+
+  @include landscape {
+    grid-column: 1 / span 3;
+  }
+}
+
+.articleMetaGroup {
+  margin-bottom: 30rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.articleMetaLabel {
+  @include small-text-bold-caps;
+}
+
+.articleMetaValue {
+  @include small-body;
+}
+
+.pdfDownload {
+  width: 118px;
+  height: 35px;
+  font-size: 12px !important;
+  margin-top: 5rem;
+  cursor: pointer;
+}

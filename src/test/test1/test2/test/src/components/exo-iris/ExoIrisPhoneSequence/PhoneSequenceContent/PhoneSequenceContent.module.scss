@@ -1,0 +1,232 @@
+@import '~/styles/utils';
+
+.container {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: $color-dark-dark-blue;
+  color: $color-white;
+  z-index: 1;
+  box-sizing: border-box;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.grid {
+  position: sticky;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+}
+
+.leftColumn {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 45%;
+  background: $color-dark-dark-blue;
+
+  @include landscape {
+    left: calc(35vw);
+    width: 30vw;
+    height: 100%;
+    transform: translate3d(-23vw, 0, 0);
+    border-left: 1px solid transparent-color('lavender', 0.3);
+    border-right: 1px solid transparent-color('lavender', 0.3);
+  }
+}
+
+.numberWrapper {
+  position: relative;
+  overflow: clip;
+  width: 100%;
+  height: 45%;
+  border-top: 1px solid transparent-color('lavender', 0.3);
+
+  @include landscape {
+    height: 32%;
+    border-top: 0;
+  }
+}
+
+.numberArea {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 25%;
+  height: 100%;
+  border-right: 1px solid transparent-color('lavender', 0.3);
+
+  @include landscape {
+    border-right: 0;
+  }
+}
+
+.numberContainer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  transform: translate3d(0, 100%, 0);
+}
+
+.number {
+  @include title;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(100% - $header-height);
+  color: rgba(255, 255, 255, 0.5);
+
+  @include landscape {
+    width: 100%;
+    height: 100%;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 13rem 32rem;
+  }
+}
+
+.bottomSection {
+  position: relative;
+  width: 100%;
+  height: 55%;
+  border-bottom: 1px solid transparent-color('lavender', 0.3);
+  border-top: 1px solid transparent-color('lavender', 0.3);
+
+  @include landscape {
+    width: 100%;
+    height: 68%;
+  }
+}
+
+.corner {
+  position: absolute;
+  width: 15rem;
+  height: 15rem;
+  top: 30rem;
+  left: 30rem;
+  display: none;
+
+  @include landscape {
+    display: block;
+  }
+}
+
+.headingContainer {
+  position: relative;
+}
+
+.copyWrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: clip;
+}
+
+.copyContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20rem;
+  transform: translate3d(0, 100%, 0);
+  overflow: clip;
+
+  @include landscape {
+    padding: 50rem 64rem;
+    justify-content: flex-end;
+  }
+}
+
+.heading {
+  @include h3;
+  margin-bottom: 28rem;
+}
+
+.copy {
+  @include body;
+}
+
+.logoContainer {
+  position: absolute;
+  left: 25%;
+  top: 0;
+  width: 75%;
+  height: 21%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: $header-height;
+  padding-left: 25rem;
+
+  @include landscape {
+    display: block;
+    left: 42%;
+    width: 58%;
+    height: 100%;
+    padding: calc(64rem + $header-height) 64rem 64rem 64rem;
+  }
+}
+
+.logoText {
+  @include small-text-bold-caps;
+}
+
+.logo {
+  width: 148rem;
+  height: 29rem;
+}
+
+.phoneCanvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  canvas {
+    display: none !important;
+  }
+  @include landscape {
+    canvas {
+      display: block !important;
+    }
+  }
+}
+
+.mobilePhoneContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+
+  @include landscape {
+    display: none;
+  }
+}

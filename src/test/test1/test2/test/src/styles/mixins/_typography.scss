@@ -1,0 +1,400 @@
+@import '_media-queries';
+
+@mixin title-d {
+  font-family: $font-sans-display;
+  font-weight: 100;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  font-size: 120rem;
+}
+
+@mixin title-m {
+  font-family: $font-sans-display;
+  font-weight: 100;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-size: 54rem;
+}
+
+@mixin title {
+  @include title-m;
+  @include landscape {
+    @include title-d;
+  }
+}
+
+@mixin h1-d {
+  font-family: $font-sans-display;
+  font-size: 120rem;
+  font-weight: 100;
+  line-height: 1.14;
+  letter-spacing: -0.025em;
+}
+
+@mixin h1-m {
+  font-family: $font-sans-display;
+  font-weight: 300;
+  font-size: 40rem;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+
+  @include sm {
+    font-size: 52rem;
+  }
+}
+
+@mixin h1 {
+  @include h1-m;
+  @include landscape {
+    @include h1-d;
+  }
+}
+
+@mixin h2-d {
+  font-family: $font-sans-display;
+  font-weight: 200;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-size: 60rem;
+}
+
+@mixin h2 {
+  @include h2-m;
+  @include landscape {
+    @include h2-d;
+  }
+}
+
+@mixin h2-m {
+  font-family: $font-sans-display;
+  font-weight: 300;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  font-size: 28rem;
+
+  @include sm {
+    font-size: 40rem;
+  }
+}
+
+@mixin h3-d {
+  font-family: $font-sans-display;
+  letter-spacing: -0.02em;
+  font-weight: 200;
+  font-size: 48rem;
+  line-height: 1.2;
+}
+
+@mixin h3-m {
+  font-family: $font-sans-display;
+  font-weight: 400;
+  line-height: 1.3;
+  font-size: 24rem;
+  @include sm {
+    font-size: 36rem;
+  }
+}
+
+@mixin h3 {
+  @include h3-m;
+  @include landscape {
+    @include h3-d;
+  }
+}
+
+@mixin h4-d {
+  font-family: $font-sans-text;
+  font-weight: 400;
+  line-height: 1.28;
+  letter-spacing: -0.035em;
+  font-size: 36rem;
+}
+
+@mixin h4-m {
+  font-family: $font-sans-text;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  font-size: 20rem;
+}
+
+@mixin h4 {
+  @include h4-m;
+  @include landscape {
+    @include h4-d;
+  }
+}
+
+@mixin h5 {
+  font-family: $font-sans-text;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.017em;
+  font-size: 24rem;
+}
+
+@mixin large-body-d {
+  font-family: $font-sans-text;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  font-size: 27rem;
+}
+
+@mixin large-body-m {
+  font-family: $font-sans-text;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: -0.04em;
+  font-size: 18rem;
+}
+
+@mixin large-body {
+  @include large-body-m;
+  @include landscape {
+    @include large-body-d;
+  }
+}
+
+@mixin body-d {
+  font-family: $font-sans-text;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.017em;
+  font-size: 24rem;
+}
+
+@mixin body-m {
+  font-family: $font-sans-text;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: -0.04em;
+  font-size: 16rem;
+
+  @include sm {
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: -0.017em;
+    font-size: 24rem;
+  }
+}
+
+@mixin body {
+  @include body-m;
+  @include landscape {
+    @include body-d;
+  }
+}
+
+@mixin small-body-d {
+  font-family: $font-sans-text;
+  font-weight: 300;
+  line-height: 1.55;
+  letter-spacing: -0.03em;
+  font-size: 18rem;
+}
+
+@mixin small-body-m {
+  font-family: $font-sans-text;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: -0.04em;
+  font-size: 14rem;
+
+  @include sm {
+    font-size: 18rem;
+  }
+}
+
+@mixin small-body {
+  @include small-body-m;
+  @include landscape {
+    @include small-body-d;
+  }
+}
+
+@mixin quote-d {
+  font-family: $font-sans-display;
+  font-weight: 275;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  font-size: 48rem;
+}
+
+@mixin quote-m {
+  font-family: $font-sans-display;
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: 0;
+  font-size: 28rem;
+}
+
+@mixin quote {
+  @include quote-m;
+  @include landscape {
+    @include quote-d;
+  }
+}
+
+@mixin small-text-bold-d {
+  @include body-d; // This is the same as the desktop body style
+}
+
+@mixin small-text-bold-m {
+  font-family: $font-sans-text;
+  font-weight: 500;
+  line-height: 1.5;
+  font-size: 14rem;
+  letter-spacing: -0.04em;
+
+  @include sm {
+    line-height: 1.4;
+    font-size: 12rem;
+    letter-spacing: 0.1em;
+  }
+}
+
+@mixin small-text-bold {
+  @include small-text-bold-m;
+  @include landscape {
+    @include small-text-bold-d;
+  }
+}
+
+@mixin small-text-bold-caps-d {
+  font-family: $font-sans-text;
+  font-weight: 500;
+  line-height: 1.4;
+  font-size: 14rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@mixin small-text-bold-caps-m {
+  font-family: $font-sans-text;
+  font-weight: 500;
+  line-height: 1.5;
+  font-size: 12rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@mixin small-text-bold-caps {
+  @include small-text-bold-caps-m;
+  @include landscape {
+    @include small-text-bold-caps-d;
+  }
+}
+
+@mixin small-text-caps-d {
+  font-family: $font-sans-text;
+  font-weight: 400;
+  line-height: 1.4;
+  font-size: 12rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@mixin small-text-caps-m {
+  font-family: $font-sans-text;
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 13rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@mixin small-text-caps {
+  @include small-text-caps-m;
+  @include landscape {
+    @include small-text-caps-d;
+  }
+}
+
+@mixin legal-text-d {
+  font-family: $font-sans-text;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: -0.03em;
+  font-size: 12rem;
+}
+
+@mixin legal-text-m {
+  font-family: $font-sans-text;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: -0.03em;
+  font-size: 12rem;
+}
+
+@mixin legal-text {
+  @include legal-text-m;
+  @include landscape {
+    @include legal-text-d;
+  }
+}
+
+@mixin form-input-text {
+  font-size: 17.6rem;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  color: $color-gray;
+}
+
+@mixin form-input {
+  display: block;
+  width: 100%;
+  border-radius: 15rem;
+  border: 1px solid $color-lavender;
+  padding: 7rem 15rem;
+  margin-top: 8rem;
+  background-color: $color-white;
+  @include form-input-text;
+}
+
+@mixin form-focus-effect {
+  &:focus {
+    border: 1px solid $color-exo-blue;
+    outline: none;
+  }
+}
+
+@mixin form-select {
+  text-align: left;
+  display: block;
+  width: 100%;
+  border-radius: 15rem;
+  border: 1px solid $color-lavender;
+  padding: 7rem 15rem;
+  margin-top: 8rem;
+  color: $color-black;
+  background-color: $color-white;
+  @include form-input-text;
+}
+
+@mixin form-textarea {
+  resize: none;
+  text-align: left;
+  display: block;
+  width: 100%;
+  border-radius: 15rem;
+  border: 1px solid $color-lavender;
+  padding: 7rem 15rem;
+  margin-top: 8rem;
+  color: $color-black;
+  background-color: $color-white;
+  @include form-input-text;
+}
+
+@mixin form-label {
+  display: block;
+  padding: 5rem 0;
+  margin: 20rem 0;
+  font-size: 9.6rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  p.labelText {
+    margin-left: 15rem;
+  }
+}

@@ -1,0 +1,151 @@
+@import '~/styles/utils';
+
+.container {
+  padding-top: calc($header-height * 2); // save space for navs
+  padding-right: $side-padding;
+  padding-bottom: 150rem;
+  padding-left: $side-padding;
+  background: $color-light-light-gray;
+}
+
+.hero {
+  margin-bottom: 85rem;
+  text-align: center;
+
+  @include landscape {
+    margin-bottom: 130rem;
+  }
+
+  @include xxl {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+.heroHeading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45vh;
+  @include title;
+
+  @include landscape {
+    height: auto;
+    margin-top: 100rem;
+    margin-bottom: 100rem;
+  }
+
+  @include xxl {
+    grid-column: 1 / -1;
+  }
+}
+
+.heroCopy {
+  margin-bottom: 15rem;
+  @include h3;
+
+  @include landscape {
+    margin-bottom: 105rem;
+  }
+
+  @include xxl {
+    grid-column: 2 / span 10;
+  }
+}
+
+.heroSubhead {
+  @include small-text-bold-m;
+
+  @include landscape {
+    @include h4-d;
+  }
+
+  @include xxl {
+    grid-column: 1 / -1;
+  }
+}
+
+.cards {
+  @include sm {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+    gap: calc($grid-gap * 3) $grid-gap;
+  }
+
+  @include landscape {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @include xxl {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 25rem;
+  padding: 25rem 20rem;
+  border: 1px solid $color-lavender;
+  border-radius: 16rem;
+  background-color: $color-white;
+  box-shadow: 3rem 6rem 42rem 0rem rgba(0, 0, 0, 0.05);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include sm {
+    margin-bottom: 0;
+  }
+
+  @include landscape {
+    padding: 25rem;
+  }
+}
+
+.cardImageWrap {
+  height: 120rem;
+  margin-bottom: 30rem;
+
+  @include landscape {
+    height: 145rem;
+    margin-bottom: 40rem;
+  }
+}
+
+.cardImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.cardDesc {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  max-width: 100%;
+  margin-bottom: 25rem;
+  @include small-body-d;
+  -webkit-line-clamp: 6;
+  line-clamp: 6;
+  text-overflow: ellipsis;
+
+  @include landscape {
+    margin-bottom: auto;
+    @include body-d;
+    -webkit-line-clamp: 7;
+    line-clamp: 7;
+  }
+}
+
+.cardLink {
+  @include landscape {
+    margin-top: 50rem;
+  }
+}

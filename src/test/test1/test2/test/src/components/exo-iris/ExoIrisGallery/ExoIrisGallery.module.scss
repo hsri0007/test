@@ -1,0 +1,221 @@
+@import '~/styles/utils';
+
+.overlay {
+  background: $color-white;
+  //background: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 201;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 202;
+}
+
+.instructions {
+  display: none;
+  color: $color-light-light-gray;
+
+  @include landscape {
+    @include small-text-bold-caps-d;
+    display: block;
+    position: absolute;
+    top: 20rem;
+    left: $side-padding;
+    z-index: 203;
+  }
+}
+
+.close {
+  display: inline-block;
+  border: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  background: transparent;
+  -webkit-appearance: none;
+  position: fixed;
+  top: 20rem;
+  right: 20rem;
+  cursor: pointer;
+  z-index: 203;
+  color: $color-light-light-gray;
+
+  @include landscape {
+    top: 20rem;
+    right: 30rem;
+  }
+
+  @include xxl {
+    top: 40rem;
+    right: 40rem;
+  }
+}
+
+.closeSvg {
+  width: 28rem;
+  height: 28rem;
+
+  @include xl {
+    width: 36rem;
+    height: 36rem;
+  }
+
+  @include xxl {
+    width: 48rem;
+    height: 48rem;
+  }
+}
+
+.proofButton {
+  display: inline-flex;
+  border: none;
+  margin: 0;
+  line-height: 1;
+  background: transparent;
+  -webkit-appearance: none;
+  font-family: $font-sans-text;
+  font-size: 24rem;
+  font-weight: 400;
+  cursor: pointer;
+  align-items: center;
+  gap: 11rem;
+  padding: 8rem 24rem 10rem;
+  letter-spacing: -0.5rem;
+  border-radius: 50rem;
+  border: 1px solid $color-black;
+
+  svg {
+    width: 24rem;
+    height: 24rem;
+  }
+
+  &:hover {
+    color: $color-iris-blue;
+    border-color: $color-iris-blue;
+  }
+}
+
+.filterContainer {
+  overflow: auto;
+  white-space: nowrap;
+  width: 100%;
+  max-width: 100%;
+  position: sticky;
+  top: 0;
+  padding: 70rem 0 19rem;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  background: $color-gray-black;
+  z-index: 2;
+  border-bottom: 2rem solid transparent-color('light-light-gray', 0.3);
+
+  &::-webkit-scrollbar {
+    height: 1px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent-color('black', 0.3);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $color-black;
+  }
+
+  @include landscape {
+    &::-webkit-scrollbar {
+      height: 0;
+    }
+  }
+}
+
+.fieldset {
+  padding: 0 $side-padding;
+  display: inline-flex;
+  border: 0;
+  gap: 20rem;
+  position: relative;
+
+  @include landscape {
+    gap: 62rem;
+  }
+}
+
+.label {
+  // @include h5;
+  color: transparent-color('light-light-gray', 0.4);
+  transition: 0.2s color linear;
+  cursor: pointer;
+  position: relative;
+
+  &:hover:not(.labelActive) {
+    color: $color-iris-blue;
+  }
+
+  &:has(input:focus-visible) {
+    outline: 1px solid $color-iris-blue;
+  }
+
+  @include h2;
+  font-size: 4.2vw !important;
+}
+
+.labelActive {
+  color: $color-light-light-gray;
+}
+
+.input {
+  font-size: 0;
+}
+
+.contentContainer {
+  background: $color-gray-black;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.progress {
+  display: none;
+}
+
+.innerProgress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: 0;
+  height: 2px;
+  width: 100%;
+  background: $color-light-light-gray;
+}
+
+.thumbnailsContainer {
+  background: $color-gray-black;
+  padding: 31rem $side-padding 40rem;
+  gap: 16rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  @include sm {
+    padding-top: 75rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include landscape {
+    padding-top: 107rem;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+.cta {
+  width: 200px;
+}

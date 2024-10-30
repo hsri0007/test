@@ -1,0 +1,114 @@
+@import '~/styles/utils';
+
+.calloutContainer {
+  background-color: $color-dark-dark-blue;
+}
+
+.bgGradient {
+  pointer-events: none;
+  position: absolute;
+  width: 500rem;
+  height: 500rem;
+  left: 30%;
+  top: 0;
+  transform: translate(-50%, -70%);
+  background: radial-gradient(#6864dd 12.67%, transparent 50.95%);
+  opacity: 0.4;
+  z-index: -1;
+
+  @include landscape {
+    width: 1400rem;
+    height: 1400rem;
+  }
+}
+
+.mainContainer {
+  width: 100%;
+  background-color: #ebeef2;
+  margin: 0;
+
+  @include lg {
+    width: 90%;
+    margin: 0 auto;
+    backdrop-filter: blur(7px);
+    border: 2px solid rgb(var(--iris-blue));
+    border-radius: 20rem;
+    box-shadow: 3.39645px 6.7929px 50.9467px rgba(0, 0, 0, 0.02);
+    background-color: #ebeef2;
+  }
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+  min-height: 500px;
+  border-radius: 20rem;
+  padding-top: 30rem;
+  padding-bottom: 70rem;
+
+  @include lg {
+    width: 80%;
+    padding-bottom: 90rem;
+  }
+}
+
+.title {
+  font-family: $font-sans-display;
+  text-align: center;
+  margin: 40rem 0;
+  font-size: 20px;
+  font-weight: 400;
+
+  @include sm {
+    font-size: 28px;
+  }
+
+  @include lg {
+    font-family: $font-sans-display;
+    font-weight: 200;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    font-size: 3vw;
+    padding: 50rem 0;
+    width: max-content;
+    text-align: left;
+    margin-bottom: 40rem;
+  }
+}
+
+.inner {
+  display: flex;
+  gap: 50rem;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+
+  @include lg {
+    text-align: left;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 100rem;
+  }
+}
+
+.subtitle {
+  @include h2;
+  font-weight: 500 !important;
+
+  @include lg {
+    margin-bottom: 25rem;
+    font-weight: 400;
+    font-family: $font-sans-display;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    font-size: 3.185vw;
+  }
+}
+
+.description {
+  @include large-body;
+
+  @include lg {
+    font-size: 1.18vw;
+  }
+}

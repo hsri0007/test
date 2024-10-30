@@ -1,0 +1,85 @@
+@import '~/styles/_vars';
+
+@mixin screen($breakpoint) {
+  $bk: map-get($breakpoints, $breakpoint);
+  @if $bk == null {
+    $bk: $breakpoint;
+  }
+  @media screen and (min-width: #{$bk}) {
+    @content;
+  }
+}
+
+@mixin screen($breakpoint) {
+  $bk: map-get($breakpoints, $breakpoint);
+  @if $bk == null {
+    $bk: $breakpoint;
+  }
+  @media screen and (min-width: #{$bk}) {
+    @content;
+  }
+}
+
+// 2 columns starts at 0
+@mixin xxs {
+  @media (min-width: #{$breakpoint-xxs}) {
+    @content;
+  }
+}
+
+@mixin xs {
+  @media (min-width: #{$breakpoint-xs}) {
+    @content;
+  }
+}
+
+// 4 columns starts
+@mixin sm {
+  @media (min-width: #{$breakpoint-sm}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$breakpoint-md}) {
+    @content;
+  }
+}
+
+// 12 columns starts
+@mixin lg {
+  @media (min-width: #{$breakpoint-lg}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: #{$breakpoint-xl}) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media (min-width: #{$breakpoint-xxl}) {
+    @content;
+  }
+}
+
+// Overrides the reduce motion defaults for animations that shouldn't be disabled
+@mixin critical-motion {
+  @media screen and (prefers-reduced-motion: reduce), (update: fast) {
+    @content;
+  }
+}
+
+@mixin portrait {
+  @media screen and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin landscape {
+  @media screen and (orientation: landscape) {
+    @content;
+  }
+}

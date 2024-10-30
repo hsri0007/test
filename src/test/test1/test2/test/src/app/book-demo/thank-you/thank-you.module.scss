@@ -1,0 +1,59 @@
+@import '~/styles/utils';
+
+.thankYou {
+  padding: 80rem $side-padding;
+  background: linear-gradient(100deg, $color-lavender 12.67%, $color-pink 90.95%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100svh;
+  @include landscape {
+    padding: 250rem $side-padding;
+  }
+}
+
+.closeLink {
+  position: absolute;
+  top: calc($side-padding + $header-height);
+  right: $side-padding;
+  width: 30rem;
+  height: 30rem;
+  display: block;
+  @include landscape {
+    width: 50rem;
+    height: 50rem;
+  }
+}
+
+.closeIcon {
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 5rem;
+  @include sm {
+    gap: 12rem;
+  }
+  @include landscape {
+    gap: 20rem;
+  }
+}
+
+.subheading {
+  @include small-text-bold-caps;
+}
+
+.heading {
+  @include h1;
+}
+
+.body {
+  @include body;
+  margin: auto;
+  max-width: 420rem;
+  @include landscape {
+    max-width: 700rem;
+  }
+}

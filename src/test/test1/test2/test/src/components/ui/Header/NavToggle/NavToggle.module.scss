@@ -1,0 +1,80 @@
+@import '~/styles/utils';
+
+.toggleWrapper {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: $header-height;
+  height: 100%;
+  border-left: 1px solid transparent-color('lavender', 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include landscape {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.toggle {
+  width: 32rem;
+  height: 32rem;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 5;
+  border-radius: 16rem;
+  border: 1px solid transparent;
+  &:after,
+  &:before {
+    content: '';
+    position: relative;
+    background: currentColor;
+    height: 1px;
+    width: 16rem;
+    transition: transform $speed $evil-ease, transform-origin $speed $evil-ease,
+      color $speed $evil-ease, border-color $speed $evil-ease;
+  }
+  &:before {
+    transform: translateY(-3rem);
+    transform-origin: 0 50%;
+  }
+  &:after {
+    top: -1rem;
+    transform-origin: 0 50%;
+    transform: translateY(3rem) scaleX(0.8125);
+  }
+  [data-mobile-nav-expanded='true'] & {
+    color: $color-dark-blue;
+    border-color: $color-dark-blue;
+    &:before {
+      transform: rotateZ(45deg) scaleX(0.8125);
+      transform-origin: 50%;
+    }
+    &:after {
+      transform: rotateZ(-45deg) scaleX(0.8125);
+      transform-origin: 50%;
+    }
+  }
+}
+.cartIcon {
+  position: absolute;
+  margin-left: -130rem;
+  cursor: pointer;
+  height: 70% !important;
+  width: 70% !important;
+  margin-bottom: 10rem;
+
+  @include md {
+    height: 120%;
+    width: 120%;
+  }
+  & > svg {
+    height: 100%;
+    //width: 3vw;
+  }
+}

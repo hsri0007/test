@@ -1,0 +1,164 @@
+fragment exoIrisContent on ExoIris {
+  meta {
+    ...pageMeta
+  }
+  introHeading
+  introSubhead
+  introCopy
+  modularSectionsTopCollection {
+    items {
+      ... on ArticleCarousel {
+        ...articleCarouselSection
+      }
+      ... on EmailSignUp {
+        ...emailSignUpSection
+      }
+      ... on QuoteCarousel {
+        ...quoteCarouselSection
+      }
+      ... on ResponsiveVideo {
+        ...responsiveVideoSection
+      }
+    }
+  }
+  answersHeading
+  answersCopy
+  answer1Heading
+  answer1Image {
+    ...asset
+  }
+  answer1Video {
+    ...asset
+  }
+  answer2Heading
+  answer2Image {
+    ...asset
+  }
+  answer2Video {
+    ...asset
+  }
+  answer3Heading
+  answer3Image {
+    ...asset
+  }
+  answer3Video {
+    ...asset
+  }
+  answersProofFloatingImage {
+    ...asset
+  }
+  answersProofCopy
+  answersProofGalleryImagesCollection {
+    items {
+      ...galleryImage
+    }
+  }
+  seeImagesCollection {
+    items {
+      ...asset
+    }
+  }
+  seeHeading1
+  seeHeading2
+  seeHeading3
+  seeStatsCollection {
+    items {
+      ...techSpec
+    }
+  }
+  madeSimpleImage {
+    ...asset
+  }
+  madeSimpleHeading
+  madeSimpleCopy
+  madeSimpleCta {
+    ...link
+  }
+  seeDeeperPhoneCarouselCollection {
+    items {
+      ...asset
+    }
+  }
+  powerHeading
+  powerSubhead
+  powerCopy
+  powerCta {
+    ...link
+  }
+  powerStatsCollection {
+    items {
+      ...techSpec
+    }
+  }
+  horizontalHeading
+  phonesCollection {
+    items {
+      ...phoneSequenceSection
+    }
+  }
+  modularSectionsMiddleCollection {
+    items {
+      ... on ArticleCarousel {
+        ...articleCarouselSection
+      }
+      ... on EmailSignUp {
+        ...emailSignUpSection
+      }
+      ... on QuoteCarousel {
+        ...quoteCarouselSection
+      }
+      ... on ResponsiveVideo {
+        ...responsiveVideoSection
+      }
+    }
+  }
+  pricing {
+    ...pricing
+  }
+  exploreHighlightSectionCollection {
+    items {
+      ...exploreHighlight
+    }
+  }
+  physicalSpecsHeading
+  physicalSpecsCopy
+  physicalSpecsCta {
+    ...link
+  }
+  physicalSpecsStatsCollection {
+    items {
+      ...techSpec
+    }
+  }
+  trustCenter {
+    ...trustCenter
+  }
+  modularSectionsBottomCollection {
+    items {
+      ... on ArticleCarousel {
+        ...articleCarouselSection
+      }
+      ... on EmailSignUp {
+        ...emailSignUpSection
+      }
+      ... on QuoteCarousel {
+        ...quoteCarouselSection
+      }
+      ... on ResponsiveVideo {
+        ...responsiveVideoSection
+      }
+    }
+  }
+  outro {
+    ...outro
+  }
+}
+
+query iris($preview: Boolean!) {
+  ...pageWithModularSection
+  exoIrisCollection(limit: 1, preview: $preview) {
+    items {
+      ...exoIrisContent
+    }
+  }
+}

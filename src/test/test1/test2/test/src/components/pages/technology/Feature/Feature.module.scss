@@ -1,0 +1,137 @@
+@import '~/styles/utils';
+
+.feature {
+  margin-bottom: 70rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include landscape {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20rem;
+    margin-bottom: 235rem;
+  }
+}
+
+.imageWrap {
+  overflow: hidden;
+  margin-bottom: 25rem;
+  box-shadow: 1px 3rem 20rem 0rem rgba(0, 0, 0, 0.1);
+
+  @include landscape {
+    grid-row: 1;
+    margin-bottom: 0;
+  }
+
+  &.heartWrap {
+    aspect-ratio: 361/420;
+  }
+
+  .featureNormal & {
+    margin-left: calc(-1 * $side-padding);
+    border-radius: 0rem 7rem 7rem 0rem;
+
+    @include landscape {
+      grid-column: 1 / span 6;
+      margin-left: 0;
+      border-radius: 24rem;
+    }
+
+    @include xxl {
+      grid-column: 2 / span 5;
+    }
+  }
+
+  .featureReverse & {
+    margin-right: calc(-1 * $side-padding);
+    border-radius: 7rem 0rem 0rem 7rem;
+
+    @include landscape {
+      grid-column: 7 / -1;
+      margin-right: 0;
+      border-radius: 24rem;
+    }
+
+    @include xxl {
+      grid-column: 7 / span 5;
+    }
+  }
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  @include landscape {
+    grid-row: 1;
+    align-self: center;
+  }
+
+  .featureNormal & {
+    @include landscape {
+      grid-column: 8 / -1;
+    }
+
+    @include xxl {
+      grid-column: 8 / span 4;
+    }
+  }
+
+  .featureReverse & {
+    @include landscape {
+      grid-column: 1 / span 5;
+    }
+
+    @include xxl {
+      grid-column: 2 / span 4;
+    }
+  }
+}
+
+.heading {
+  margin-bottom: 25rem;
+  @include h1-m;
+
+  @include landscape {
+    margin-bottom: 44rem;
+    @include h2-d;
+  }
+}
+
+.copy {
+  margin-bottom: 24rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  * {
+    margin-bottom: 24rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  h2 {
+    @include h3-m;
+
+    @include landscape {
+      @include h4-d;
+    }
+  }
+
+  p {
+    @include body-m;
+
+    @include landscape {
+      @include large-body-d;
+    }
+  }
+}

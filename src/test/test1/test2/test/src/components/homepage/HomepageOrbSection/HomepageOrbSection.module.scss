@@ -1,0 +1,82 @@
+@import '~/styles/utils';
+
+.section {
+  padding-top: 80rem;
+  padding-bottom: 100rem;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  gap: 80rem;
+  text-align: center;
+  width: 100vw;
+  overflow: hidden;
+  @include landscape {
+    gap: 100rem;
+    padding-top: 100rem;
+    padding-bottom: 100rem;
+  }
+}
+
+.content {
+  padding: 0 $side-padding;
+  position: relative;
+  z-index: 2;
+}
+
+.heading {
+  @include h2;
+  max-width: 400rem;
+  margin: auto;
+  margin-bottom: 15rem;
+  @include sm {
+    max-width: 550rem;
+  }
+  @include landscape {
+    max-width: 55vw;
+  }
+}
+
+.copy {
+  @include body;
+  max-width: 400rem;
+  margin: auto;
+  margin-bottom: 40rem;
+  @include sm {
+    max-width: 700rem;
+  }
+  @include landscape {
+    max-width: 44vw;
+  }
+}
+
+.ctas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35rem;
+}
+
+.cta {
+}
+
+.ctaLabel {
+}
+
+.orbWrapper {
+  position: relative;
+  transform: translate3d(0, 0, 0);
+  width: n-grid-col-width(2);
+  height: n-grid-col-width(2);
+  @include landscape {
+    width: n-grid-col-width(6);
+    height: n-grid-col-width(4);
+  }
+}
+
+.orb {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}

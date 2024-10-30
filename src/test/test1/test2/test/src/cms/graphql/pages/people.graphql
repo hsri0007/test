@@ -1,0 +1,131 @@
+fragment teamPerson on Person {
+  sys {
+    id
+  }
+  name
+  title
+  gridPhoto {
+    ...asset
+  }
+  slug
+}
+
+fragment teamAndQuotes on OurPeopleTeamAndQuotesItem {
+  __typename
+  ... on Person {
+    ...teamPerson
+  }
+  ... on Quote {
+    sys {
+      id
+    }
+    content
+    attribution
+    attributionDetail
+  }
+}
+
+fragment peopleContent on OurPeople {
+  meta {
+    ...pageMeta
+  }
+  heading
+  heroQuote {
+    content
+    attribution
+    attributionDetail
+  }
+  modularSectionsTopCollection {
+    items {
+      ... on ArticleCarousel {
+        ...articleCarouselSection
+      }
+      ... on EmailSignUp {
+        ...emailSignUpSection
+      }
+      ... on ResponsiveVideo {
+        ...responsiveVideoSection
+      }
+      ... on QuoteCarousel {
+        ...quoteCarouselSection
+      }
+    }
+  }
+  teamAndQuotesCollection {
+    items {
+      ...teamAndQuotes
+    }
+  }
+  modularSectionsBottomCollection {
+    items {
+      ... on ArticleCarousel {
+        ...articleCarouselSection
+      }
+      ... on EmailSignUp {
+        ...emailSignUpSection
+      }
+      ... on ResponsiveVideo {
+        ...responsiveVideoSection
+      }
+      ... on QuoteCarousel {
+        ...quoteCarouselSection
+      }
+    }
+  }
+  outro {
+    ...outro
+  }
+}
+
+query people($preview: Boolean!) {
+  ...pageWithModularSection
+  ourPeopleCollection(limit: 1, preview: $preview) {
+    items {
+      ...peopleContent
+    }
+  }
+}
+
+fragment person on Person {
+  sys {
+    id
+  }
+  meta {
+    ...pageMeta
+  }
+  name
+  title
+  headshot {
+    ...asset
+  }
+  accentColor
+  bioCollection {
+    items {
+      __typename
+      ... on Copy {
+        sys {
+          id
+        }
+        content
+      }
+      ... on Quote {
+        sys {
+          id
+        }
+        content
+      }
+    }
+  }
+}
+
+fragment personBySlug on Query {
+  personCollection(limit: 1, where: { slug: $slug }, preview: $preview) {
+    items {
+      ...person
+    }
+  }
+}
+
+query getPersonBySlug($preview: Boolean!, $slug: String) {
+  ...personBySlug
+}

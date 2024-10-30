@@ -1,0 +1,52 @@
+@import '~/styles/utils';
+
+.container {
+  .certificate {
+    padding: 0 0 100rem 20rem;
+
+    @include landscape {
+      margin: 0 auto;
+      max-width: 1167rem;
+      padding-bottom: 100rem;
+    }
+
+    .text {
+      @include h2;
+      text-align: center;
+    }
+
+    .arrowLink {
+      text-align: center;
+      width: 100%;
+      margin-top: 40rem;
+
+      div {
+        margin-right: 40rem;
+      }
+    }
+  }
+
+  .imageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 90%;
+    margin: auto;
+    padding-top: 40rem;
+    flex-direction: column;
+
+    @include sm {
+      flex-direction: row;
+    }
+  }
+
+  ul {
+    list-style-position: outside !important;
+    margin-top: 30rem;
+
+    li {
+      margin-left: 25rem !important;
+      margin-bottom: 20rem;
+    }
+  }
+}

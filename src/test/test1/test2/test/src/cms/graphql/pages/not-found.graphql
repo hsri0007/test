@@ -1,0 +1,11 @@
+query notFound($preview: Boolean!) {
+  notFoundPageCollection(limit: 1, preview: $preview) {
+    items {
+      heading
+      copy
+      cta {
+        ...link
+      }
+    }
+  }
+}

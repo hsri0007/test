@@ -1,0 +1,54 @@
+@import '~/styles/utils';
+
+.section {
+  padding: 0 $side-padding;
+}
+
+.grid {
+  @include standard-grid;
+  align-items: center;
+  justify-content: center;
+  row-gap: 25rem;
+  margin-bottom: 300rem;
+  @include sm {
+    row-gap: 40rem;
+  }
+  @include landscape {
+    row-gap: 60rem;
+  }
+}
+
+.spacer {
+  display: none;
+  @include landscape {
+    display: block;
+    grid-column: span 3;
+  }
+}
+
+.quoteWrapper {
+  grid-column: span 2;
+  @include landscape {
+    grid-column: span 6;
+  }
+}
+
+.quote {
+  display: flex;
+  flex-direction: column;
+  gap: 15rem;
+  padding-right: 20%;
+}
+
+.quoteContent {
+  @include h4;
+}
+
+.attribution {
+  @include small-text-bold;
+  font-style: normal;
+}
+
+.quoteIcon {
+  width: 32rem;
+}

@@ -1,0 +1,175 @@
+@import '~/styles/utils';
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: calc(var(--side-padding) * 0.5);
+  padding: calc(var(--side-padding) * 0.5) 0;
+}
+
+.innerContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: calc(100% - $side-padding * 2);
+  padding-bottom: 40rem;
+  background: $color-light-light-gray;
+  // box-shadow: 3.39645rem 6.7929rem 50.9467rem rgba(0, 0, 0, 0.1);
+  border-radius: 10rem;
+  position: relative;
+  overflow: hidden;
+  height: calc(100vh - var(--side-padding));
+  justify-content: space-between;
+  transform: translateZ(0);
+
+  @include landscape {
+    border-radius: 20rem;
+    justify-content: flex-start;
+  }
+}
+
+.innerContainerTop {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.innerContainerBottom {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.logoContainer {
+  position: relative;
+  margin: auto;
+  margin-top: 30rem;
+  margin-bottom: 20rem;
+
+  @include landscape {
+    margin-top: 72rem;
+    margin-bottom: auto;
+  }
+}
+
+.logo {
+  margin: auto;
+  width: auto;
+  height: 30rem;
+
+  @include landscape {
+    height: 58rem;
+  }
+}
+
+.title {
+  @include h1;
+  text-align: center;
+  position: relative;
+  box-sizing: border-box;
+
+  @include sm {
+    max-width: 425rem;
+  }
+
+  @include landscape {
+    margin-bottom: 40rem;
+    max-width: unset;
+    font-size: clamp(20px, 120rem, 100px);
+  }
+}
+
+.copy {
+  @include body;
+  z-index: 2;
+  text-align: center;
+  box-sizing: content-box;
+  font-size: 14rem;
+  max-width: 253rem;
+  margin-bottom: 10rem;
+
+  @include sm {
+    max-width: 425rem;
+  }
+
+  @include landscape {
+    max-width: 909rem;
+    margin-bottom: 32rem;
+  }
+}
+
+.canvasContainer {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: none;
+
+  @include landscape {
+    display: block;
+  }
+}
+
+.mobileImage {
+  object-fit: contain;
+  pointer-events: none;
+  height: auto;
+  width: 100%;
+  position: relative;
+  display: block;
+
+  @include landscape {
+    display: none;
+  }
+}
+
+.gradientContainer {
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: visible;
+  background: $color-light-gray;
+  display: block;
+}
+
+.discoverLink {
+  margin-bottom: 20rem;
+  font-size: 24rem;
+  z-index: 2;
+
+  span {
+    font-size: inherit;
+  }
+
+  // @include sm {
+  //   margin-bottom: 40rem;
+  // }
+
+  @include landscape {
+    margin: 0;
+    position: absolute;
+    bottom: 35rem;
+    left: 40rem;
+    font-size: 48rem;
+  }
+}
+
+.buyNowButton {
+  z-index: 2;
+  font-size: 18rem;
+  text-transform: none;
+
+  @include landscape {
+    position: absolute;
+    font-size: 24rem;
+    bottom: 35rem;
+    right: 40rem;
+  }
+}

@@ -1,0 +1,37 @@
+xxs:
+  - size: [0.35, 0.38]
+    position: [0.40, 0.45]
+    color: '#10F8E4'
+    timeShift: 0
+    speed: [0.8, 0.7]
+    movement: [0.1, 0.1]
+    mouseParallax: [0.05, 0.1]
+    dynamicScale: [0.2, 0.2]
+
+  - size: [0.40, 0.40]
+    position: [0.60, 0.5]
+    color: '#24B0FF'
+    timeShift: 0.6
+    speed: [0.6, 0.9]
+    movement: [0.1, 0.2]
+    mouseParallax: [0.13, 0.22]
+    dynamicScale: [0.1, 0.1]
+
+md:
+  - size: [0.2, 0.2]
+    position: [0.30, 0.35]
+    color: '#10F8E4'
+    timeShift: 0
+    speed: [0.8, 0.7]
+    movement: [0.05, 0.05]
+    mouseParallax: [0.05, 0.1]
+    dynamicScale: [0.2, 0.2]
+
+  - size: [0.2, 0.2]
+    position: [0.50, 0.4]
+    color: '#24B0FF'
+    timeShift: 0.6
+    speed: [0.6, 0.9]
+    movement: [0.1, 0.2]
+    mouseParallax: [0.13, 0.22]
+    dynamicScale: [0.1, 0.1]

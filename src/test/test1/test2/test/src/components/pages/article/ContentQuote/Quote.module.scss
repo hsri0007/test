@@ -1,0 +1,22 @@
+@import '~/styles/utils';
+
+.quote {
+  @include landscape {
+    padding-top: 70rem;
+    padding-bottom: 70rem;
+  }
+}
+
+.quoteIcon {
+  display: block;
+  margin-bottom: 10rem;
+  fill: $color-dark-gray;
+}
+
+.quoteText {
+  @include quote-m;
+
+  @include landscape {
+    @include h2-d;
+  }
+}

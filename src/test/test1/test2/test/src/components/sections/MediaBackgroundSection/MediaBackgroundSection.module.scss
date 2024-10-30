@@ -1,0 +1,264 @@
+@import '~/styles/utils';
+
+.section {
+  padding: 10rem $side-padding;
+  @include md {
+    &.isHalf {
+      &.left {
+        padding-right: 10rem;
+      }
+      &.right {
+        padding-left: 10rem;
+      }
+    }
+  }
+  @include landscape {
+    padding: 45rem $side-padding;
+  }
+}
+
+.container {
+  border-radius: 10rem;
+  width: 100%;
+  position: relative;
+  padding: 30rem 0;
+  background: $color-light-light-gray;
+  color: $color-foreground;
+  overflow: hidden;
+  transform: translateZ(0);
+
+  @include sm {
+    border-radius: 15rem;
+  }
+  @include md {
+    padding: 30rem 30rem;
+  }
+  @include landscape {
+    border-radius: 20rem;
+    padding: 50rem 50rem;
+  }
+}
+
+.topGradient,
+.bottomGradient {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 33.333%;
+  background: linear-gradient(180deg, #eaedf1 0%, rgba(234, 237, 241, 0) 100%);
+  backdrop-filter: blur(4px);
+  z-index: 1;
+}
+
+.topGradient {
+  top: 0;
+  box-shadow: 0px -40px 50.94675px 0px rgba(0, 0, 0, 0.02);
+}
+
+.bottomGradient {
+  bottom: 0;
+  background: linear-gradient(360deg, #eaedf1 0%, rgba(234, 237, 241, 0) 100%);
+  box-shadow: 0 40px 50.94675px 0 rgba(0, 0, 0, 0.02);
+}
+
+.content {
+  position: inherit;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.logo {
+  width: 88rem;
+  height: auto;
+  margin-bottom: 20rem;
+
+  @include landscape {
+    width: 135rem;
+    margin: auto;
+    margin-bottom: 10rem;
+  }
+
+  @include xl {
+    width: 164rem;
+    margin: auto;
+    margin-bottom: 16rem;
+  }
+}
+
+.heading {
+  @include h1-m;
+  padding: 0 20rem;
+
+  @include landscape {
+    @include h1-d;
+    margin-bottom: 31rem;
+  }
+}
+
+.copy {
+  @include small-body-m;
+  max-width: 660rem;
+  padding: 0 20rem;
+  margin-top: -40rem;
+
+  @include md {
+    margin-top: 0;
+  }
+
+  @include lg {
+    @include body-d;
+  }
+
+  @include landscape {
+    max-width: 880rem;
+  }
+}
+
+.image {
+  max-width: 80%;
+  max-height: 60vh;
+  padding: 30rem 20rem;
+  @include landscape {
+    max-height: 80vh;
+    padding: 40rem 20rem;
+
+    &:is(img) {
+      max-width: 900rem;
+    }
+
+    &:is(video) {
+      aspect-ratio: 16/9;
+      max-width: 60%;
+    }
+  }
+}
+
+.caption {
+  @include small-text-caps-m;
+  display: block;
+  text-align: center;
+  margin: 20rem 0;
+  max-width: 185rem;
+  z-index: 1;
+
+  @include md {
+    @include small-text-caps-d;
+    margin: 0;
+    max-width: 400rem;
+  }
+}
+
+.captionDesktop {
+  @include landscape {
+    @include md {
+      position: absolute;
+      bottom: 27px;
+      right: 40px;
+    }
+  }
+}
+
+.ctaWrapper {
+  position: absolute;
+  bottom: 20rem;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  @include landscape {
+    justify-content: flex-start;
+    padding: 0 35rem;
+    bottom: 30rem;
+  }
+}
+
+.cta {
+  z-index: 2;
+  position: inherit;
+  width: 100%;
+
+  @include landscape {
+    width: unset;
+    position: absolute;
+    left: 40rem;
+    bottom: 35rem;
+  }
+
+  &.disabled {
+    pointer-events: none;
+    &:hover {
+      color: inherit;
+    }
+  }
+}
+
+.phonesContainer {
+  position: relative;
+  max-width: 55%;
+  padding: 40rem 0 50rem;
+
+  @include lg {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 0.31fr 0.38fr 0.31fr;
+    max-width: 50%;
+    gap: 20rem;
+  }
+}
+
+.phoneContainer {
+  width: 100%;
+  position: relative;
+
+  &.isContain {
+    video {
+      object-fit: contain;
+    }
+  }
+}
+
+.phoneContainer__hollowPhone {
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.mediaContainer {
+  position: absolute;
+  z-index: 1;
+  width: 92.9%;
+  height: 97.5%;
+  top: 1.5%;
+  left: 3.6%;
+  mask-image: url('/assets/images/iphone-14-hollow-mask.svg');
+  mask-repeat: no-repeat;
+  mask-mode: alpha;
+  background-color: black;
+
+  [data-video-wrapper] {
+    background-color: black;
+  }
+}
+
+.media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  .isContain & {
+    object-fit: contain;
+  }
+}

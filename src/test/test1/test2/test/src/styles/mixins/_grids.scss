@@ -1,0 +1,34 @@
+@mixin standard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: $grid-gap;
+
+  @include sm {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include landscape {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+// used when we need something to bleed into the standard page margin; be mindful
+// of extra columns when using `grid-column`
+@mixin full-bleed-grid {
+  display: grid;
+  grid-template-columns: $side-padding 1fr 1fr $side-padding;
+  grid-gap: $grid-gap;
+
+  @include sm {
+    grid-template-columns: $side-padding repeat(4, 1fr) $side-padding;
+  }
+
+  @include landscape {
+    grid-template-columns: $side-padding repeat(12, 1fr) $side-padding;
+  }
+}
+
+// Returns a value that is the total with of n columns including gaps
+@function n-grid-col-width($n) {
+  @return calc(calc(#{$grid-col-width} * #{$n}) + calc(#{$grid-gap} * #{$n - 1}));
+}

@@ -1,0 +1,181 @@
+@import '~/styles/utils';
+
+.container {
+  background: $color-white;
+  padding: 66rem 0;
+
+  @include landscape {
+    padding: 96rem 0;
+  }
+}
+
+.triggerButton {
+  @include small-body-m;
+  font-weight: 500;
+  border: 2rem solid $color-black;
+  border-radius: 50rem;
+  padding: 8rem 20rem 10rem;
+  cursor: pointer;
+
+  &:hover {
+    border: 2rem solid $color-iris-blue;
+    color: $color-iris-blue;
+  }
+}
+
+.copyContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 $side-padding;
+  margin-bottom: 60rem;
+
+  @include landscape {
+    margin-bottom: 110rem;
+  }
+}
+
+.heading {
+  @include h1-m;
+  margin-bottom: 20rem;
+  text-align: center;
+
+  @include landscape {
+    @include h1-d;
+    margin-bottom: 36rem;
+  }
+}
+
+.subhead {
+  @include h4-m;
+  text-align: center;
+
+  @include landscape {
+    @include h4-d;
+  }
+}
+
+.cardContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 0 $side-padding;
+  gap: 20rem;
+  margin-bottom: 60rem;
+
+  @include landscape {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(9, auto);
+    justify-items: flex-start;
+    position: relative;
+    row-gap: 0;
+    --card-side-padding: 45rem;
+  }
+
+  &--three-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.ctaContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  padding: 0 $side-padding;
+  margin-bottom: 60rem;
+
+  @include landscape {
+    flex-flow: row nowrap;
+    gap: 23rem;
+  }
+}
+
+.ctaCopy {
+  @include body-m;
+  text-align: center;
+  margin-bottom: 20rem;
+  max-width: 24ch;
+
+  @include landscape {
+    max-width: unset;
+    margin-bottom: 0;
+  }
+}
+
+.linksContainer {
+  background: $color-dark-dark-blue;
+  color: $color-white;
+  margin: 0 $side-padding;
+  padding: 28rem 20rem;
+  border-radius: 20rem;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 36rem;
+
+  @include landscape {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 38rem $side-padding 42rem;
+  }
+}
+
+.linkContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.linkIconContainer {
+  width: 40rem;
+  height: 40rem;
+  border: 1px solid $color-white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12rem;
+
+  @include landscape {
+    width: 64rem;
+    height: 64rem;
+  }
+}
+
+.icon1 {
+  width: 50%;
+}
+
+.icon2 {
+  width: 50%;
+}
+
+.linkHeading {
+  @include h4-m;
+  margin-bottom: 6rem;
+  text-align: center;
+
+  @include landscape {
+    margin-bottom: 12rem;
+  }
+}
+
+.linkCopy {
+  @include small-body-m;
+  margin-bottom: 8rem;
+  text-align: center;
+
+  @include landscape {
+    @include small-body-d;
+    max-width: 298rem;
+    margin-bottom: 30rem;
+  }
+}
+
+.link {
+  color: $color-white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

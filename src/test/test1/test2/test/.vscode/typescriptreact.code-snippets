@@ -1,0 +1,17 @@
+{
+  "SVG Component": {
+    "prefix": "@svg",
+    "body": [
+      "import { SvgProps } from '~/utils/types';",
+      "",
+      "export const ${1:SvgName} = ({ className, title }: SvgProps) => {",
+      "\treturn (",
+      "\t\t{/* Paste SVG here */}",
+      "\t\t{/* Move this immediately after the opening svg tag */}",
+      "\t\t{title && <title>{title}</title>}",
+      "\t);",
+      "}"
+    ],
+    "description": "Create a new SVG component"
+  }
+}

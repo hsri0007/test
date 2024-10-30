@@ -1,0 +1,346 @@
+@import '~/styles/utils';
+
+.container {
+  // height: calc(100% + 100vh);
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  // Creates a smooth transition to hide hard edge
+  background: linear-gradient(180deg, white 0%, white 50%, transparent 100%);
+  background-size: 100% 100%;
+  background-position: 0% 0%;
+  // z-index: 1;
+  opacity: 1;
+}
+
+.svgContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 66vw;
+  z-index: 3;
+  clip-path: url(#myClip);
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(7.5rem);
+  pointer-events: none;
+
+  @include landscape {
+    height: 100vh;
+    top: 0;
+  }
+}
+
+.copyContainer {
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  // position: fixed;
+  left: 0rem;
+  top: 0rem;
+}
+
+.headerContainer {
+  position: absolute;
+  top: 16vh;
+  width: 100%;
+}
+
+.header {
+  @include title;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+}
+
+// .deeper,
+.wider,
+.better {
+  visibility: hidden;
+  filter: blur(15rem);
+}
+
+.copyGrid {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 53.92rem;
+  margin-bottom: 80rem;
+
+  @include landscape {
+    margin-bottom: 0;
+    margin-top: 17vh;
+    gap: unset;
+    @include standard-grid;
+    grid-template-rows: 24vh 26vh 1fr;
+    align-items: start;
+    padding: 0 $side-padding;
+  }
+}
+
+.gridItem {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
+
+  @include landscape {
+    visibility: hidden;
+  }
+}
+
+.degrees {
+  grid-column: 2 / 4;
+  grid-row: 2 / -1;
+}
+
+.harmonics {
+  grid-column: 5 / 9;
+  grid-row: 3;
+}
+
+.centimeters {
+  grid-column: 10 / 12;
+  grid-row: 2 / -1;
+}
+
+.gridHeader {
+  @include title;
+
+  @include landscape {
+    font-size: 72rem;
+    font-family: $font-sans-display;
+    font-weight: 300;
+  }
+}
+
+.smallHeader {
+  font-size: 40rem;
+}
+
+.gridCopy {
+  @include body-m;
+  text-align: center;
+  max-width: 25ch;
+
+  @include landscape {
+    @include small-body-d;
+  }
+}
+
+.degreesImage {
+  width: 48rem;
+  height: auto;
+
+  @include landscape {
+    width: 94rem;
+  }
+}
+
+.harmonicsImage {
+  width: 85.5rem;
+  height: auto;
+
+  @include landscape {
+    width: 155rem;
+  }
+}
+
+.centimetersImage {
+  width: 50rem;
+  height: auto;
+
+  @include landscape {
+    padding-top: 20rem;
+    width: 90rem;
+  }
+}
+
+.madeSimpleContainer {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  height: 100vh;
+  padding-top: 0;
+
+  @include landscape {
+    position: absolute;
+    top: 9vh;
+    left: 0;
+    visibility: hidden;
+    filter: blur(15rem);
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+}
+
+.madeSimpleHeader {
+  @include title;
+  text-align: center;
+  padding: 0 $side-padding;
+  margin-bottom: 14rem;
+
+  @include landscape {
+    // font-size: 92rem;
+    @include h2-d;
+    margin-bottom: 14rem;
+  }
+
+  @include xxl {
+    // font-size: 120rem;
+    // margin-bottom: 40rem;
+  }
+}
+
+.madeSimpleCopy {
+  @include body-m;
+  text-align: center;
+  padding: 0 20rem;
+  width: 100%;
+  opacity: 0.6;
+
+  @include landscape {
+    font-size: 28rem;
+    font-family: $font-sans-text;
+    font-weight: 325;
+    line-height: 1.5;
+    letter-spacing: -0.03em;
+    max-width: 1015rem; //
+  }
+}
+
+.madeSimpleCta {
+  margin-top: -75rem;
+
+  @include md {
+    margin-top: 30rem;
+  }
+}
+
+.statItem {
+  display: grid;
+  grid-template-columns: 43rem 1fr;
+  grid-template-rows: auto auto;
+  width: 100%;
+  column-gap: 10rem;
+  padding: 0 $side-padding;
+  margin-bottom: 20rem;
+
+  @include landscape {
+    display: flex;
+    flex-flow: column nowrap;
+    max-width: 176rem;
+    position: absolute;
+    visibility: hidden;
+    padding: 0;
+  }
+}
+
+.statItemLeft {
+  @include landscape {
+    align-items: flex-end;
+    bottom: 20vh;
+    left: 20vw;
+    p,
+    h3 {
+      text-align: right;
+    }
+  }
+}
+
+.statItemRight {
+  @include landscape {
+    top: 20vh;
+    right: 20vw;
+  }
+}
+
+.statImage {
+  width: 43rem;
+  height: 43rem;
+  grid-column: 1;
+  grid-row: 1 / -1;
+
+  @include landscape {
+    width: 70rem;
+    height: 70rem;
+    margin-bottom: 10.72rem;
+  }
+}
+
+.statHeader {
+  @include h3-m;
+
+  @include landscape {
+    @include body-d;
+  }
+}
+
+.statCopy {
+  @include small-body-m;
+
+  @include landscape {
+    @include small-body-d;
+  }
+}
+
+.desktopOnlyCopy {
+  display: none;
+
+  @include landscape {
+    display: block;
+  }
+}
+
+.mobileOnlyCopy {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  bottom: 130rem;
+  // padding-bottom: 90rem;
+
+  @include landscape {
+    display: none;
+  }
+}
+
+.canvasContainer {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: blue;
+}
+
+.seeDeeperQuicklinkId {
+  position: absolute;
+  top: 100vh;
+  height: 10px;
+  z-index: 9999;
+  width: 100%;
+  pointer-events: none;
+}

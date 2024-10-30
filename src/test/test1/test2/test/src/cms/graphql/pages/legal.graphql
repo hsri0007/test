@@ -1,0 +1,46 @@
+fragment legalContent on LegalPage {
+  title
+  slug
+  content
+  contentMore
+}
+
+query privacyPolicy($preview: Boolean!) {
+  legalPageCollection(limit: 1, preview: $preview, where: { title: "Privacy Policy" }) {
+    items {
+      ...legalContent
+    }
+  }
+}
+
+query socialPolicy($preview: Boolean!) {
+  legalPageCollection(limit: 1, preview: $preview, where: { title: "Social Policy" }) {
+    items {
+      ...legalContent
+    }
+  }
+}
+
+query cookiePolicy($preview: Boolean!) {
+  legalPageCollection(limit: 1, preview: $preview, where: { title: "Cookie Policy" }) {
+    items {
+      ...legalContent
+    }
+  }
+}
+
+query exoWorksTermsOfUse($preview: Boolean!) {
+  legalPageCollection(limit: 1, preview: $preview, where: { title: "Exo Works Terms of Use" }) {
+    items {
+      ...legalContent
+    }
+  }
+}
+
+query exoWorksPrivacyPolicy($preview: Boolean!) {
+  legalPageCollection(limit: 1, preview: $preview, where: { title: "Exo Works Privacy Policy" }) {
+    items {
+      ...legalContent
+    }
+  }
+}

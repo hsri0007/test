@@ -1,0 +1,248 @@
+@import '~/styles/utils';
+
+@mixin container-padding {
+  padding-left: var(--side-padding);
+  padding-right: var(--side-padding);
+}
+
+.ScreenComparison {
+  position: relative;
+  overflow: hidden;
+}
+
+.circlesContainer {
+  z-index: 1;
+}
+
+.inner {
+  background-color: rgb(var(--background));
+  padding: 70rem 0;
+  color: rgb(var(--foreground));
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+
+  @include landscape {
+    padding: 100rem 0;
+  }
+}
+
+.inner__content {
+  z-index: 2;
+  position: relative;
+}
+
+.topText {
+  @include container-padding;
+
+  max-width: 1100rem;
+  margin: 0 auto;
+  width: 100%;
+  margin-bottom: 75rem;
+
+  @include landscape {
+    text-align: center;
+    margin-bottom: 150rem;
+  }
+}
+
+.topText__title {
+  @include h2;
+  color: rgb(var(--ai-green));
+  margin-bottom: 30rem;
+}
+
+.topText__description {
+  @include large-body;
+}
+
+.bottomText {
+  @include container-padding;
+  margin-bottom: 72rem;
+
+  @include landscape {
+    margin-bottom: 92rem;
+    text-align: center;
+  }
+}
+
+.bottomText__title {
+  @include h4;
+  color: rgb(var(--ai-green));
+  margin-bottom: 15rem;
+
+  @include landscape {
+    text-align: center;
+  }
+}
+
+.bottomText__description {
+  @include large-body;
+
+  @include landscape {
+    text-align: center;
+  }
+}
+
+.phoneComparisonMasterContainer {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template: 'a';
+  align-items: center;
+  justify-content: center;
+}
+
+.phonesContainer {
+  opacity: 0;
+  grid-area: a;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 25rem;
+  min-width: 850rem;
+  position: relative;
+  padding-bottom: 10rem;
+  // left: 50%;
+  // transform: translateX(-50%);
+
+  @include landscape {
+    position: static;
+    left: auto;
+    transform: none;
+    gap: 40rem;
+    align-items: center;
+    min-width: 0;
+    transform: none;
+  }
+}
+
+.phoneContainer {
+  display: flex;
+  flex-direction: column;
+
+  &:nth-child(1) {
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    @include landscape {
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &:nth-child(2) {
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 150rem;
+
+    @include landscape {
+      margin-top: 0;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.imageQualityTitle {
+  @include small-text-bold-caps;
+  margin-bottom: 10rem;
+}
+
+.starsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  margin-bottom: 20rem;
+}
+
+.starFilled,
+.starEmpty {
+  width: 26rem;
+}
+
+.starFilled {
+  path {
+    fill: rgb(var(--gold));
+  }
+}
+
+.starEmpty {
+  path {
+    stroke: rgb(var(--gold));
+  }
+}
+
+.phone {
+  --phone-width: 320rem;
+  --phone-height: 661rem;
+
+  width: calc(var(--phone-width) * 0.65);
+  height: calc(var(--phone-height) * 0.65);
+
+  @include landscape {
+    width: var(--phone-width);
+    height: var(--phone-height);
+  }
+}
+
+.buttons {
+  @include container-padding;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+  gap: 10rem;
+  margin-bottom: 54rem;
+
+  @include landscape {
+    margin-bottom: 90rem;
+    max-width: none;
+  }
+}
+
+.lineBreak {
+  display: block;
+  width: 100%;
+
+  @include landscape {
+    display: none;
+  }
+}
+
+.toggleButton {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 0;
+  text-align: inherit;
+  letter-spacing: inherit;
+  font-size: inherit;
+  text-transform: inherit;
+  display: inline-block;
+  margin: 0;
+  text-decoration: none;
+  appearance: none;
+  color: rgb(var(--white));
+  border: 1px solid rgb(var(--white));
+  height: 52rem;
+  padding: 0 24rem;
+  border-radius: 8rem;
+  @include body;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &:first-child {
+    margin-bottom: -8rem;
+
+    @include landscape {
+      margin-bottom: 0;
+    }
+  }
+
+  &.active {
+    background-color: rgb(var(--ai-green));
+  }
+}

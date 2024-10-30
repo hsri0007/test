@@ -1,0 +1,103 @@
+@import '~/styles/utils';
+
+.container {
+  height: 450vh;
+  background-color: $color-dark-dark-blue;
+  color: $color-white;
+}
+
+.grid {
+  position: sticky;
+  top: 0;
+  display: grid;
+  grid-template-rows: 17.5fr 27.5fr 55fr;
+  height: 100vh;
+}
+
+.rowTop {
+  overflow: hidden;
+  display: grid;
+  padding-left: calc(2 * $side-padding);
+  border-top: 1px solid transparent-color('lavender', 0.3);
+}
+
+.numbers {
+  display: grid;
+  justify-self: flex-start;
+  align-self: center;
+  height: 100%;
+  padding-right: calc(2 * $side-padding);
+  border-right: 1px solid transparent-color('lavender', 0.3);
+}
+
+.number {
+  grid-row: 1;
+  grid-column: 1;
+  align-self: center;
+  @include title;
+  color: $color-exo-fluro;
+  height: 100%;
+  transform: translate3d(0, -100%, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rowMid {
+  overflow: hidden;
+  display: grid;
+  grid-row: 2;
+  padding: 0 $side-padding;
+  border-top: 1px solid transparent-color('lavender', 0.3);
+}
+
+.content {
+  grid-row: 1;
+  grid-column: 1;
+  align-self: center;
+  height: 100%;
+  transform: translate3d(0, -100%, 0);
+  display: flex;
+  justify-content: center;
+  flex-flow: column nowrap;
+}
+
+.contentHeading {
+  margin-bottom: 16rem;
+  @include h3-m;
+}
+
+.contentCopy {
+  @include small-body-m;
+}
+
+.rowBot {
+  overflow: hidden;
+  display: grid;
+  grid-row: 3;
+  padding-right: $side-padding;
+  padding-left: $side-padding;
+  border-top: 1px solid transparent-color('lavender', 0.3);
+}
+
+.images {
+  display: grid;
+  align-self: center;
+}
+
+.image {
+  grid-row: 1;
+  grid-column: 1;
+  object-fit: contain;
+  position: relative;
+  object-fit: contain;
+  height: 0;
+  padding-bottom: 100%;
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

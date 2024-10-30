@@ -1,0 +1,69 @@
+fragment integrationsContent on IntegrationsPage {
+  meta {
+    ...pageMeta
+  }
+  heroImage {
+    ...asset
+  }
+  deviceTopHeading
+  deviceTopSubheading
+  deviceTopCopy
+  deviceImage {
+    ...asset
+  }
+  deviceRepeatedImage {
+    ...asset
+  }
+  deviceBottomHeading
+  deviceBottomCopy
+  deviceBottomCta {
+    ...link
+  }
+  featuresHeading
+  feature1Image {
+    ...asset
+  }
+  feature1Heading
+  feature1Copy
+  feature1Cta {
+    ...link
+  }
+  feature2Image {
+    ...asset
+  }
+  feature2Heading
+  feature2Copy
+  feature2Cta {
+    ...link
+  }
+  feature3Image {
+    ...asset
+  }
+  feature3Heading
+  feature3Copy
+  feature3Cta {
+    ...link
+  }
+  feature4Image {
+    ...asset
+  }
+  feature4Heading
+  feature4Copy
+  feature4Cta {
+    ...link
+  }
+  trustCenter {
+    ...trustCenter
+  }
+  outro {
+    ...outro
+  }
+}
+
+query integrations($preview: Boolean!, $product: String!) {
+  integrationsPageCollection(where: { product: $product }, limit: 1, preview: $preview) {
+    items {
+      ...integrationsContent
+    }
+  }
+}

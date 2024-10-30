@@ -1,0 +1,49 @@
+@import '~/styles/utils';
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 195rem $side-padding 85rem;
+  @include landscape {
+    padding: 250rem $side-padding 122rem;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 135rem;
+  @include md {
+    max-width: n-grid-col-width(2);
+  }
+  @include landscape {
+    gap: 167rem;
+    max-width: n-grid-col-width(8);
+  }
+}
+
+.heading {
+  @include title;
+}
+
+.quote {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 15rem;
+}
+
+.quoteContent {
+  @include quote;
+}
+
+.attribution {
+  @include small-text-bold;
+  font-style: normal;
+}

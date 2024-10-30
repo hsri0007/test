@@ -1,0 +1,20 @@
+fragment resourcesArticles on Query {
+  articleCollection(
+    order: date_DESC
+    where: {
+      OR: [
+        { category_in: ["Blog", "Event", "Guides", "Podcast", "Case Study"] }
+        { tags_contains_some: ["Blog", "Event", "Guides", "Podcast"] }
+      ]
+    }
+    preview: $preview
+  ) {
+    items {
+      ...articleWithoutContent
+    }
+  }
+}
+
+query resources($preview: Boolean!) {
+  ...resourcesArticles
+}

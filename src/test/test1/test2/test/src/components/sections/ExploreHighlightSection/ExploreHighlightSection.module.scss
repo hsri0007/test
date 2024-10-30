@@ -1,0 +1,61 @@
+@import '~/styles/utils';
+
+.explore {
+  background: $color-white;
+  padding: 0 $side-padding 60rem;
+  margin-top: -112rem;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10rem 44rem;
+  background: $color-dark-dark-blue;
+  border-radius: 20rem;
+  border: 1px solid $color-lavender;
+  gap: 16rem;
+
+  @include landscape {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading {
+  @include h5;
+  color: $color-white;
+}
+
+.desc {
+  @include small-body-d;
+  color: $color-white;
+  padding: 12rem 30rem 30rem;
+  text-align: center;
+}
+
+.cta {
+  color: $color-light-light-gray;
+  span {
+    color: $color-light-light-gray;
+    font-family: $font-sans-display;
+    font-size: 14rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 150%;
+    letter-spacing: 2.52rem;
+    text-transform: uppercase;
+    padding-top: 3rem;
+  }
+}
+
+.icon {
+  width: 133px;
+  height: 133px;
+}

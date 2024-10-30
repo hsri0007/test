@@ -1,0 +1,4 @@
+.fttemplates/**
+*.vert
+*.frag
+*.glsl

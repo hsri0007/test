@@ -1,0 +1,171 @@
+@import '~/styles/utils';
+
+.submenu {
+  position: fixed;
+  transition: color $quick $ease-out, background-color $quick $ease-out, opacity $quick $ease-out,
+    min-height $speed $ease-out 10s;
+  will-change: color, background-color, opacity, transform, min-height;
+  opacity: 0;
+  pointer-events: none;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  padding: $side-padding;
+  padding-left: 35rem;
+  height: 100vh;
+  @include landscape {
+    position: absolute;
+    padding: 40rem 80rem;
+    top: $header-height;
+    z-index: 2;
+    left: 0;
+    width: calc(100% + #{$side-padding});
+    border: 1px solid transparent-color('lavender', 0.3);
+    border-top: none;
+    background: $color-header-background;
+    backdrop-filter: blur(7rem);
+    transform: translate3d(0, 0, 0);
+    color: $color-foreground;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: hidden;
+    gap: 50rem;
+    height: auto;
+    min-height: 0;
+
+    &.submenu_about-us {
+      justify-content: flex-end;
+    }
+    &.submenu_products {
+      left: 70rem;
+    }
+  }
+}
+
+.active {
+  transform: translateY(0);
+  pointer-events: all;
+  opacity: 1;
+  transition: opacity $speed $ease-out;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 25rem;
+  justify-content: center;
+  height: 100%;
+  @include landscape {
+    height: auto;
+    gap: 0;
+  }
+}
+
+.item {
+  @include small-text-bold-caps-d;
+  @include landscape {
+    @include body-d;
+    .submenu_about-us & {
+      text-align: right;
+    }
+    text-transform: none;
+    .link {
+      padding: 8rem 0;
+      display: inline-block;
+    }
+    &:first-child {
+      .link {
+        padding-top: 0;
+      }
+    }
+    &:last-child {
+      .link {
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+.link {
+  transition: color $quick $evil-ease;
+  &:hover {
+    color: $color-exo-blue;
+  }
+  .iris-blue &:hover {
+    color: $color-iris-blue;
+  }
+  .works-purple &:hover {
+    color: $color-works-purple;
+  }
+  .ai-green &:hover {
+    color: $color-ai-green;
+  }
+}
+
+.imageWrapperContainer {
+  display: none;
+  opacity: 0;
+  position: relative;
+  @include landscape {
+    opacity: 1;
+    display: block;
+    flex: 2;
+    height: 0;
+  }
+}
+
+.imageWrapper {
+  display: none;
+  opacity: 0;
+  @include landscape {
+    display: block;
+    opacity: 0;
+    width: 100%;
+    border: 2rem solid $color-lavender;
+    border-radius: 10rem;
+    overflow: hidden;
+    background: $color-header-background;
+    backdrop-filter: blur(7rem);
+    height: 254rem;
+    transition: opacity 0s $ease-out;
+    position: absolute;
+    box-shadow: 1.7308261394500732rem 3.4616522789001465rem 25.962390899658203rem 0rem
+      rgba(0, 0, 0, 0.1);
+    &.iris-blue {
+      border-color: $color-iris-blue;
+    }
+    &.works-purple {
+      border-color: $color-works-purple;
+    }
+    &.imageActive {
+      opacity: 1;
+      transition: opacity $speed, border-color $speed;
+    }
+  }
+}
+
+.image {
+  transition: opacity $speed $ease-out;
+  position: absolute;
+  object-fit: cover;
+  opacity: 0;
+  width: auto;
+  height: 100%;
+  &.imageActive {
+    opacity: 1;
+  }
+}
+
+.caption {
+  @include quote-m;
+  font-size: 16rem;
+  transition: opacity $speed $ease-out;
+  position: absolute;
+  opacity: 0;
+  bottom: 20rem;
+  left: 30rem;
+  &.captionActive {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,57 @@
+# Modular Sections
+
+fragment articleCarouselSection on ArticleCarousel {
+  __typename
+  sys {
+    id
+  }
+  darkTheme
+  heading
+  maxArticles
+  categoryWhitelist
+  categoryBlacklist
+}
+
+fragment quoteCarouselSection on QuoteCarousel {
+  __typename
+  sys {
+    id
+  }
+  darkTheme
+  quotesCollection {
+    items {
+      ...fullQuote
+    }
+  }
+}
+
+fragment responsiveVideoSection on ResponsiveVideo {
+  __typename
+  sys {
+    id
+  }
+  darkTheme
+  eyebrow
+  heading
+  backgroundVideo
+  video {
+    ...asset
+  }
+  mobileVideo {
+    ...asset
+  }
+  previewVideo {
+    ...asset
+  }
+}
+
+fragment emailSignUpSection on EmailSignUp {
+  __typename
+  darkTheme
+  heading
+  copy
+  internalName
+  sys {
+    id
+  }
+}

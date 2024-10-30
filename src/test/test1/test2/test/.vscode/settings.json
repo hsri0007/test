@@ -1,0 +1,16 @@
+{
+  "typescript.tsdk": "node_modules/.pnpm/typescript@5.0.4/node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.preferences.autoImportFileExcludePatterns": ["next/link", "clsx"],
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#080B1B",
+    "titleBar.activeForeground": "#F7F9FC",
+    "titleBar.inactiveBackground": "#080B1B",
+    "titleBar.inactiveForeground": "#EAEDF1"
+  },
+  "editor.formatOnSave": true,
+  "px-to-rem.px-per-rem": 16,
+  "files.associations": {
+    "**/.fttemplates/**/*.tsx": "html"
+  }
+}

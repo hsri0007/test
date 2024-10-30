@@ -1,0 +1,28 @@
+@import '~/styles/utils';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 75rem;
+
+  @include sm {
+    margin-top: 90rem;
+  }
+}
+
+.rule {
+  width: 88rem;
+  height: 1px;
+  margin-bottom: 20rem;
+  border: none;
+  background-color: $accent-color;
+
+  @include sm {
+    width: 276rem;
+  }
+}
+
+.button {
+  cursor: pointer;
+}

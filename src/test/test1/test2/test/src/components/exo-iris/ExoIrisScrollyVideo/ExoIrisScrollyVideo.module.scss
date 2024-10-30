@@ -1,0 +1,14 @@
+@import '~/styles/utils';
+
+.container {
+  width: 100%;
+  z-index: 12;
+  height: 800vh;
+  // background: red;
+  position: relative;
+}
+
+.videoContainer {
+  position: sticky;
+  top: 0;
+}

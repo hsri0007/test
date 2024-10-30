@@ -1,0 +1,104 @@
+@import '~/styles/utils';
+
+.dialog {
+  background: $color-dark-dark-blue;
+  position: fixed;
+  bottom: 20rem;
+  left: 20rem;
+  z-index: 1000;
+  width: 390px;
+  max-width: calc(100vw - 40rem);
+  min-height: 100rem;
+  border: 1.5px solid $color-light-light-gray;
+  color: $color-light-light-gray;
+  box-shadow: 2.318px 4.635px 34.765px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  padding: 26px 10px 26px 26px;
+  max-height: calc(100svh - 40rem);
+  overflow: scroll;
+  transform: translateY(100%) translateZ(0);
+  opacity: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  &[data-state='open'] {
+    transform: translateY(0) translateZ(0);
+    opacity: 1;
+  }
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+.title {
+  @include h4;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-family: $font-sans-text;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 325;
+  line-height: 150%; /* 18px */
+  letter-spacing: -0.36px;
+}
+
+.close {
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  top: -16px;
+}
+
+.body {
+  padding-top: 16px;
+  padding-right: 16px;
+}
+
+// Overrides hubspot styles
+.dialog {
+  :global(.hs-button) {
+    display: inline-flex;
+    padding: 8px 24px 10px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 50px;
+    background: $color-white;
+    color: $color-dark-gray;
+    @include small-text-bold-d;
+    font-size: 14px;
+    &:hover {
+      color: $color-white;
+    }
+  }
+  :global(.hs-form-field label) {
+    font-family: $font-sans-text;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 325;
+    line-height: 150%; /* 18px */
+    letter-spacing: -0.36px;
+    padding: 0;
+    text-transform: none;
+  }
+  :global(.hs-form-field input) {
+    color: $color-black;
+    font-size: 16px;
+    border-radius: 14px;
+    height: 42px;
+    padding: 7px 14px;
+  }
+  :global(.hs-form) {
+    gap: 18px;
+  }
+  :global(.hs-submit) {
+    padding-top: 0;
+  }
+}

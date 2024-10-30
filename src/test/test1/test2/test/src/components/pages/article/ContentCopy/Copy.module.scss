@@ -1,0 +1,85 @@
+@import '~/styles/utils';
+
+.copy {
+  > * {
+    margin-top: 0;
+    margin-bottom: 70rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin-bottom: 30rem;
+
+    @include landscape {
+      margin-bottom: 45rem;
+    }
+  }
+
+  h1 {
+    // @design: need font styling
+  }
+
+  h2 {
+    @include h4;
+  }
+
+  h3 {
+    // @design: need font styling
+  }
+
+  ol,
+  ul {
+    margin-left: 12rem;
+    list-style-position: inside;
+
+    @include landscape {
+      margin-left: 20rem;
+    }
+  }
+
+  ul li {
+    list-style-type: square;
+  }
+
+  ol li {
+    list-style-type: decimal;
+  }
+
+  li {
+    @include large-body;
+  }
+
+  p {
+    margin-bottom: 0;
+    @include large-body;
+
+    & + * {
+      margin-top: 70rem;
+    }
+
+    & + p {
+      margin-top: 15rem;
+
+      @include landscape {
+        margin-top: 25rem;
+      }
+    }
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  strong {
+    font-weight: bold;
+  }
+
+  em {
+    font-style: italic;
+  }
+}

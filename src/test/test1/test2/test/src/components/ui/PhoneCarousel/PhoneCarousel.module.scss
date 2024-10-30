@@ -1,0 +1,167 @@
+@import '~/styles/utils';
+
+.PhoneCarousel {
+  display: block;
+  position: relative;
+  padding-left: 70rem;
+  padding-right: 70rem;
+  margin-top: 40rem;
+  transform: scale(0.85) translateY(-10%);
+
+  @include md {
+    transform: none;
+  }
+}
+
+.swiper {
+  width: 100%;
+  max-width: 930rem;
+  margin: 0 auto;
+}
+
+.swiperWrapper {
+}
+
+.swiperSlide {
+  text-align: center;
+  // height: 480rem;
+  width: 520rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include md {
+    width: auto;
+    height: 600rem;
+  }
+
+  &:global(.swiper-slide-active) {
+    .phoneContainer {
+      opacity: 1;
+
+      @include md {
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.PhoneCarouselButton {
+  width: 50rem;
+  height: 50rem;
+  border: 1px solid #222222;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: calc(50% - 40rem);
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  @include md {
+    display: flex;
+  }
+
+  &.left {
+    right: calc(100% - 40rem);
+  }
+
+  &.right {
+    left: calc(100% - 40rem);
+  }
+
+  &:hover {
+    border-color: $color-exo-blue;
+
+    svg {
+      path {
+        color: $color-exo-blue;
+      }
+    }
+  }
+}
+
+.iconContainer {
+  width: 12rem;
+  transform: translate(-1px, -1px);
+
+  .right & {
+    transform: translate(1px, 1px) rotate(-180deg);
+  }
+
+  svg {
+    width: 100%;
+  }
+}
+
+.phoneContainer {
+  opacity: 0.5;
+  transition: transform 0.4s;
+  position: relative;
+  height: 100%;
+
+  @include md {
+    opacity: 1;
+    transform: scale(0.86);
+  }
+}
+
+.phoneContainerInner {
+  height: 100%;
+  position: relative;
+}
+
+.phoneContainer__hollowPhone {
+  height: auto;
+  position: relative;
+  z-index: 2;
+
+  @include md {
+    height: 100%;
+  }
+}
+
+.mediaContainer {
+  position: absolute;
+  z-index: 1;
+  width: 94%;
+  height: 86.3%;
+  top: 7.8%;
+  left: 3%;
+  background-color: black;
+}
+
+.media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: black;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10rem;
+  margin-top: 30rem;
+}
+
+.navigationItem {
+  background-color: #222222;
+  opacity: 0.2;
+  transition: opacity 0.2s, background-color 0.2s;
+  width: 48rem;
+  height: 5rem;
+  border-radius: 7rem;
+  cursor: pointer;
+
+  &.active {
+    background-color: $color-dark-blue;
+    opacity: 1;
+  }
+}

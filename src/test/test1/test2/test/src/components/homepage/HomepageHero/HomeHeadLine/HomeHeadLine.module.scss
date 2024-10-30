@@ -1,0 +1,80 @@
+@import '~/styles/utils';
+
+.headlineWrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.headlineCanvasWrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.headlineTextWrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.001;
+  // opacity: 0;
+}
+
+.headline {
+  @include title;
+  text-align: center;
+  position: relative;
+  letter-spacing: normal;
+  font-size: 49rem;
+  @include sm {
+    font-size: 65rem;
+  }
+
+  @include md {
+    font-size: 80rem;
+  }
+
+  @include xl {
+    font-size: 120rem;
+  }
+  // @include landscape {
+  //   transform: translateX(var(--headline-offset));
+  // }
+}
+
+.headlineCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.ctaButtons {
+  position: relative;
+  margin-top: 59vh;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  z-index: 1;
+  margin-bottom: 20px;
+
+  @include sm {
+    margin-top: 62vh;
+  }
+
+  @include md {
+    margin-top: 63vh;
+  }
+
+  @include xl {
+    margin-top: 66vh;
+  }
+}

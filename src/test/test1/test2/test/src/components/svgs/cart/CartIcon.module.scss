@@ -1,0 +1,11 @@
+@import '~/styles/utils';
+
+.icon {
+  cursor: pointer;
+  height: 120%;
+  width: 120%;
+  & > svg {
+    height: 100%;
+    // width: 100%;
+  }
+}

@@ -1,0 +1,148 @@
+@import '~/styles/utils';
+
+.container {
+  background-color: $color-dark-dark-blue;
+  color: $color-white;
+
+  @include landscape {
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+  }
+}
+
+.meta {
+  padding: 50rem $side-padding 50rem $side-padding;
+  border-bottom: 1px solid transparent-color('lavender', 0.3);
+  text-align: center;
+
+  @include landscape {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-row: 1;
+    grid-column: 1 / -1;
+    padding-top: 110rem;
+    padding-bottom: 110rem;
+  }
+}
+
+.metaHeading {
+  margin-bottom: 30rem;
+  @include title;
+
+  @include landscape {
+    grid-column: 3 / span 8;
+    margin-bottom: 60rem;
+    @include h1-d;
+  }
+
+  @include xxl {
+    grid-column: 4 / span 6;
+  }
+}
+
+.metaSubhead {
+  @include body-m;
+
+  @include landscape {
+    grid-column: 4 / span 6;
+    @include large-body-d;
+  }
+
+  @include xxl {
+    grid-column: 5 / span 4;
+  }
+}
+
+.contact {
+  padding: 25rem $side-padding 30rem $side-padding;
+  border-bottom: 1px solid transparent-color('lavender', 0.3);
+
+  @include landscape {
+    grid-row: 2;
+    grid-column: 1;
+    padding: $side-padding;
+    border-right: 1px solid transparent-color('lavender', 0.3);
+    border-bottom: none;
+  }
+}
+
+.contactHeading {
+  margin-bottom: 20rem;
+  @include h1-m;
+
+  @include landscape {
+    margin-bottom: 40rem;
+    @include h2-d;
+  }
+}
+
+.contactCopy {
+  @include body-d;
+  margin-bottom: 25rem;
+
+  @include landscape {
+    margin-bottom: 30rem;
+  }
+}
+
+.contactCta {
+}
+
+.apps {
+  padding: 25rem $side-padding 70rem $side-padding;
+
+  @include landscape {
+    grid-row: 2;
+    grid-column: 2;
+    padding: $side-padding;
+  }
+}
+
+.appsHeading {
+  margin-bottom: 30rem;
+  @include h3-m;
+
+  @include landscape {
+    margin-bottom: 40rem;
+    @include body-d;
+  }
+}
+
+.appsList {
+  display: flex;
+  flex-direction: column;
+  gap: 25rem;
+
+  @include landscape {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60rem;
+  }
+}
+
+.appsItem {
+  display: flex;
+  align-items: center;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.appsItemIcon {
+  width: 19rem;
+  height: 19rem;
+  margin-right: 10rem;
+  color: $color-exo-fluro;
+
+  @include landscape {
+    width: 42rem;
+    height: 70rem;
+    margin-right: 20rem;
+  }
+}
+
+.appsItemText {
+  @include small-text-bold-caps-m;
+  font-size: 13rem;
+}

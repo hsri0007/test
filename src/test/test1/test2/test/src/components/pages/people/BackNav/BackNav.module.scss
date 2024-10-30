@@ -1,0 +1,24 @@
+@import '~/styles/utils';
+
+.backNav {
+  display: none;
+
+  @include landscape {
+    display: block;
+    padding-top: 120rem;
+  }
+}
+
+.backLabel {
+  color: var(--bg-type-gray-black, #222);
+  text-align: center;
+  font-family: $font-sans-text;
+  font-size: 12rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%; /* 12rem */
+  letter-spacing: 1.2rem;
+  text-transform: uppercase;
+  margin-left: 13rem;
+  opacity: 0.3;
+}

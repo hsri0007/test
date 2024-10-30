@@ -1,0 +1,113 @@
+@import '~/styles/utils';
+
+.container {
+  background-color: $color-dark-dark-blue;
+  color: $color-white;
+  min-height: 100vh;
+
+  @include landscape {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    border-bottom: 1px solid transparent-color('lavender', 0.3);
+  }
+}
+
+.words {
+  padding: 60rem 0 60rem;
+  border-bottom: 1px solid transparent-color('lavender', 0.3);
+  @include title;
+  text-align: center;
+
+  @include landscape {
+    overflow: hidden;
+    grid-column: 1 / -1;
+    padding-top: 80rem;
+    padding-bottom: 80rem;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.75vw;
+  }
+}
+
+.wordLeft,
+.wordRight {
+  @include landscape {
+    display: inline-block;
+  }
+}
+
+.headings {
+  padding: 30rem $side-padding 30rem $side-padding;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  @include landscape {
+    grid-row: 2;
+    grid-column: 3/11;
+    padding: 0 calc(#{$side-padding} * 0.5) $side-padding calc(#{$side-padding} * 0.5);
+    border-right: 1px solid transparent-color('lavender', 0.3);
+    border-left: 1px solid transparent-color('lavender', 0.3);
+    height: 75vh;
+  }
+}
+
+.textContainer {
+}
+
+.heading {
+  margin-bottom: 20rem;
+  text-align: center;
+  @include h1-m;
+
+  @include landscape {
+    margin-bottom: 40rem;
+    @include h2-d;
+  }
+}
+
+.copy {
+  @include body-d;
+  text-align: center;
+}
+
+.staticBlurBGContainer {
+  flex: 1;
+}
+
+.staticBlurBG {
+  position: relative;
+  .blurEl {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 25vw;
+    height: 25vw;
+    border-radius: 50%;
+    filter: blur(100rem);
+    opacity: 0.18;
+    &.green {
+      opacity: 0.15;
+      background-color: #10f8e4;
+      transform: translate(-40%, -40%);
+    }
+    &.blue {
+      width: 20vw;
+      height: 20vw;
+      background-color: #24b0ff;
+      filter: blur(60rem);
+      transform: translate(-90%, -95%);
+    }
+  }
+}
+
+.spacer {
+  width: 100%;
+  height: 80vw;
+  @include landscape {
+    display: none;
+  }
+}

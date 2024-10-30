@@ -1,0 +1,247 @@
+@import '~/styles/utils';
+
+.section {
+  padding: 15rem 0;
+  @include landscape {
+    padding: 20rem 0;
+  }
+}
+
+.content {
+  background: $color-light-light-gray;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  @include landscape {
+    align-items: center;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: calc(50% + #{$grid-gap});
+      height: 100rem;
+      z-index: 2;
+      background: linear-gradient(
+        180deg,
+        transparent-color('light-light-gray', 1),
+        transparent-color('light-light-gray', 0.9),
+        transparent-color('light-light-gray', 0.6),
+        transparent-color('light-light-gray', 0)
+      );
+      .alignLeft & {
+        right: 0;
+      }
+      .alignRight & {
+        left: 0;
+      }
+    }
+    gap: $grid-gap;
+    .alignLeft & {
+      flex-direction: row;
+    }
+    .alignRight & {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.imageWrapper {
+  width: 100%;
+  transform: translateZ(0);
+  &.alignVMiddle {
+    align-self: center;
+  }
+  .addPadding &,
+  .addPaddingForPhones & {
+    padding: 60rem 0 30rem 0;
+    width: auto;
+    margin: auto;
+    max-width: 32%;
+
+    @include sm {
+      max-width: 30%;
+    }
+
+    @include landscape {
+      padding: 60rem 0;
+    }
+  }
+
+  .addPaddingForPhones & {
+    max-width: none;
+    @include landscape {
+      max-width: calc(100% - 350rem);
+    }
+  }
+
+  overflow: hidden;
+  @include landscape {
+    height: 100%;
+    min-width: calc(50vw - calc(#{$side-padding} * 3));
+    .addPadding &,
+    .addPaddingForPhones & {
+      height: auto;
+      width: auto;
+    }
+    // .addPaddingForPhones & {
+    //   margin: auto;
+    //   width: 50%;
+    //   height: auto;
+    //   min-width: 0;
+    //   // width: auto;
+    //   max-width: 500px;
+    // }
+  }
+}
+
+.image {
+  width: 100%;
+  .addPaddingForPhones & {
+    margin: auto;
+    max-height: 80svh;
+    object-fit: contain;
+    object-position: unset;
+    max-width: 500rem; // Prevents phone from being larger than
+
+    @include sm {
+      min-width: 450rem;
+    }
+  }
+  @include landscape {
+    height: 100%;
+    max-width: 960rem;
+    object-fit: contain;
+    .alignLeft & {
+      object-position: left bottom;
+    }
+    .alignRight & {
+      object-position: right bottom;
+    }
+    .addPadding &,
+    .addPaddingForPhones & {
+      width: auto;
+      width: 39%;
+      height: 39%;
+      left: 50%;
+      transform: translateX(-50%);
+      position: relative;
+      margin: auto;
+      height: auto;
+      object-fit: contain;
+      object-position: unset;
+    }
+
+    .addPaddingForPhones & {
+      height: auto;
+      width: 80%;
+      min-width: 450rem;
+      max-width: 500rem; // Prevents phone from being larger than
+    }
+  }
+}
+
+.cardSide {
+  width: 100%;
+  z-index: 2;
+  position: relative;
+}
+
+.cardWrapper {
+  width: 100%;
+  padding: 0 $side-padding 60rem;
+  @include landscape {
+    padding: 100rem 0;
+    .alignLeft & {
+      padding-right: calc(#{n-grid-col-width(2)} + #{$side-padding});
+    }
+    .alignRight & {
+      padding-left: calc(#{n-grid-col-width(2)} + #{$side-padding});
+    }
+  }
+}
+
+.card {
+  box-shadow: 3.4rem 28rem 25rem 0rem rgba(0, 0, 0, 0.05);
+  border-radius: 0rem 0rem 20rem 20rem;
+  transform: translateZ(0);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 16.15%,
+    rgba(255, 255, 255, 0.01) 100%
+  );
+  backdrop-filter: blur(7rem);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.cardHead {
+  display: flex;
+  flex-direction: column;
+  gap: 20rem;
+  padding: 40rem 20rem;
+  @include landscape {
+    padding: 40rem;
+  }
+  @include xxl {
+    padding: 100rem;
+  }
+}
+
+.cardTitle {
+  text-align: center;
+  @include h1-m;
+  @include landscape {
+    text-align: left;
+    @include h2-d;
+  }
+}
+
+.cardDescription {
+  @include small-body;
+}
+
+.spec {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid $color-lavender;
+  padding: 40rem 20rem;
+  gap: 30rem;
+  @include landscape {
+    padding: 40rem;
+  }
+  @include xxl {
+    padding: 40rem 100rem;
+  }
+}
+
+.specTitle {
+  @include small-text-bold-caps;
+  max-width: 35%;
+
+  @include landscape {
+    text-align: left;
+  }
+}
+
+.specDescriptionWrapper {
+  text-align: right;
+  @include landscape {
+    max-width: 300rem;
+  }
+}
+
+.specDescription {
+  @include small-text-caps;
+  text-align: right;
+  padding-bottom: 10rem;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}

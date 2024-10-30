@@ -1,0 +1,294 @@
+@import '~/styles/utils';
+
+@mixin quicklinks-theming {
+  &[data-theme='light'] {
+    --fg: #222;
+    --bg: #fff;
+    --outline: #{$color-lavender};
+  }
+
+  &[data-theme='dark'] {
+    --fg: #fff;
+    --bg: rgba(216, 218, 236, 0.3);
+    --outline: #{$color-lavender};
+  }
+}
+
+.ExoIrisQuickLinks {
+  @include quicklinks-theming;
+  position: fixed;
+  z-index: 200;
+  transition: transform $speed $evil-ease, opacity $speed $evil-ease;
+  transform: translateY(0);
+  will-change: transform, opacity;
+  top: calc(calc(#{$header-height} * 2) - 1px);
+  width: 100%;
+  pointer-events: none;
+  backdrop-filter: blur(7rem);
+  display: none;
+
+  &.isAnimatingBars {
+    pointer-events: none !important;
+  }
+
+  &.mobileNavOpen {
+    display: block;
+    pointer-events: all;
+  }
+
+  @include landscape {
+    width: auto;
+    top: 50%;
+    right: 40rem;
+    transform: translateY(-50%);
+    pointer-events: all;
+    display: block;
+    backdrop-filter: unset;
+  }
+
+  &.headerNotReady,
+  &.scrollDisabled {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &.notAtPageTop {
+    transform: translateY(calc(#{$header-height} * -1));
+
+    @include landscape {
+      transform: translateY(-50%);
+    }
+  }
+
+  &.scrollingUp {
+    transform: translateY(0);
+
+    @include landscape {
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.desktopNav {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.desktopNav__item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10rem;
+  cursor: pointer;
+  position: relative;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  user-select: none;
+}
+
+.desktopNav__button {
+  @include small-text-caps-m;
+  outline: none;
+  border: none;
+  appearance: none;
+  padding: 0;
+  margin-bottom: -1rem;
+  opacity: 0;
+  transform: translateX(10rem);
+  transition: opacity 0.2s, transform 0.2s;
+  cursor: pointer;
+  color: var(--fg);
+
+  .hovered & {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.desktopNav__hoverable {
+  position: absolute;
+  cursor: pointer;
+  right: -5rem;
+  top: -5rem;
+  width: 30rem;
+  height: calc(100% + 5rem);
+  display: block;
+  z-index: 2;
+}
+
+.desktopNav__barContainer {
+  height: 21rem;
+  width: 5rem;
+  border-radius: 7rem;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(var(--fg), 0.2);
+  transition: background-color 0.2s;
+
+  .hovered & {
+    background-color: transparent;
+  }
+}
+
+.desktopNav__barFill,
+.desktopNav__barOutline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.desktopNav__barOutline {
+  border-radius: 7rem;
+  border: 1px solid var(--fg);
+  opacity: 0.2;
+
+  .hovered & {
+    opacity: 1;
+  }
+}
+
+.desktopNav__barFill {
+  background-color: var(--fg);
+  opacity: 0;
+
+  .ExoIrisQuickLinks:not(.isAnimatingBars) & {
+    transition: opacity 0.3s;
+  }
+
+  .active & {
+    opacity: 1;
+  }
+}
+
+.mobileNav {
+  // backface-visibility: hidden;
+  // transform-style: preserve-3d;
+  // perspective: 1000px;
+  position: relative;
+  width: 100%;
+  // backdrop-filter: blur(15rem);
+  padding: 86rem 0 58rem;
+  pointer-events: none;
+
+  .mobileNavOpen & {
+    pointer-events: all;
+  }
+}
+
+.mobileNavBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+  opacity: 0;
+
+  .mobileNavOpen & {
+    opacity: 0.45;
+  }
+}
+
+.mobileNavList {
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 34rem;
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+
+  .mobileNavOpen & {
+    pointer-events: all;
+    opacity: 1;
+  }
+}
+
+.mobileNavList__item {
+  &.active {
+  }
+}
+
+.mobileNavList__button {
+  @include small-text-caps-d;
+  padding: 0;
+  border: none;
+  appearance: none;
+  color: var(--fg);
+}
+
+.mobileNav__toggle {
+  @include quicklinks-theming;
+  transition: transform $speed $evil-ease, opacity $speed $evil-ease;
+  z-index: 201;
+  position: fixed;
+  right: 12rem;
+  top: calc(#{$header-height} * 2 + 10rem);
+  display: grid;
+  grid-template-areas: 'a';
+  width: 38rem;
+  height: 30rem;
+  border-radius: 100rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--outline);
+  background: var(--bg);
+
+  line {
+    stroke: var(--fg);
+  }
+
+  path {
+    fill: var(--fg);
+  }
+
+  &.headerNotReady,
+  &.scrollDisabled {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &.notAtPageTop {
+    transform: translateY(calc(#{$header-height} * -1));
+
+    @include landscape {
+      transform: translateY(-50%);
+    }
+  }
+
+  &.scrollingUp {
+    transform: translateY(0);
+
+    @include landscape {
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.mobileNav__onIcon {
+  width: 19rem;
+  grid-area: a;
+  opacity: 0;
+  transform: translate(0rem, -1rem);
+
+  .mobileNavOpen & {
+    opacity: 1;
+  }
+}
+
+.mobileNav__offIcon {
+  width: 18rem;
+  grid-area: a;
+  opacity: 1;
+  transform: translate(1rem, -1rem);
+
+  .mobileNavOpen & {
+    opacity: 0;
+  }
+}

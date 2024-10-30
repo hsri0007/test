@@ -1,0 +1,84 @@
+fragment exoWorksContent on ExoWorks {
+  meta {
+    ...pageMeta
+  }
+  productBannerCopy
+  productBannerHeader1
+  productBannerSubheader1
+  productBannerHeader2
+  productBannerSubheader2
+  introHeading
+  introSubhead
+  introTitle
+  introVideo {
+    ...asset
+  }
+  introFeatureList
+  feature1Heading
+  feature1Description
+  feature1Asset {
+    ...asset
+  }
+  feature2Heading
+  feature2Description
+  feature2Asset {
+    ...asset
+  }
+  feature3Heading
+  feature3Description
+  feature3Asset {
+    ...asset
+  }
+  feature4Heading
+  feature4Description
+  feature4SubCopy
+  feature4Asset {
+    ...asset
+  }
+  feature5Heading
+  feature5Description
+  feature5Asset {
+    ...asset
+  }
+  feature6Heading
+  feature6Description
+  feature6SubCopy
+  feature6Asset {
+    ...asset
+  }
+  trustCenter {
+    ...trustCenter
+  }
+  testimonialsCollection {
+    items {
+      ...fullQuote
+    }
+  }
+  pricing {
+    ...pricing
+  }
+  unlockMoreHeading
+  unlockMoreFeature1Image {
+    ...asset
+  }
+  unlockMoreFeature1ImageThumbnail {
+    ...asset
+  }
+  unlockMoreFeature1Heading
+  unlockMoreFeature1Description
+  unlockMoreFeature1Cta {
+    ...link
+  }
+  outro {
+    ...outro
+  }
+}
+
+query works($preview: Boolean!) {
+  ...pageWithModularSection
+  exoWorksCollection(limit: 1, preview: $preview) {
+    items {
+      ...exoWorksContent
+    }
+  }
+}

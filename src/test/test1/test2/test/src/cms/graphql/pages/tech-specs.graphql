@@ -1,0 +1,28 @@
+fragment techSpecContent on TechSpecsPage {
+  meta {
+    ...pageMeta
+  }
+  heroHeading
+  heroCopy
+  featuredTechSpecsCollection {
+    items {
+      ...featuredTechSpec
+    }
+  }
+  techSpecsCollection {
+    items {
+      ...techSpec
+    }
+  }
+  outro {
+    ...outro
+  }
+}
+
+query techSpecs($preview: Boolean!, $product: String!) {
+  techSpecsPageCollection(where: { product: $product }, limit: 1, preview: $preview) {
+    items {
+      ...techSpecContent
+    }
+  }
+}

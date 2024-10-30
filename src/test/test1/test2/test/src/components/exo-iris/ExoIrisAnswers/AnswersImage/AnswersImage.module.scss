@@ -1,0 +1,96 @@
+@import '~/styles/utils';
+
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-bottom: 210rem;
+  padding: 0 $side-padding;
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000;
+  transform: translate3d(0, 0, 0);
+  transform: translateZ(0);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include sm {
+    margin-bottom: 300rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @include landscape {
+    grid-column: 2 / 8;
+    max-width: 800rem;
+    padding-left: 0;
+    padding-right: $side-padding;
+    box-sizing: content-box;
+    display: grid;
+    justify-items: center;
+  }
+}
+
+.imageContainer {
+  aspect-ratio: 335 / 370;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 93rem;
+
+  @include sm {
+    max-width: 550rem;
+  }
+
+  @include landscape {
+    max-width: 18.75vw;
+  }
+}
+
+// needs to animate in, will go from scaled off the container to normal size
+.border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(45deg, #dadeef, #f6eaef);
+  clip-path: polygon(
+    0% 0%,
+    0% 100%,
+    1.8% 100%,
+    1.8% 1.8%,
+    98.2% 1.8%,
+    98.2% 98.2%,
+    1.8% 98.2%,
+    1.8% 100%,
+    100% 100%,
+    100% 0%
+  );
+  transform: scale(1.01);
+}
+
+.video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.title {
+  @include title;
+
+  @include landscape {
+    @include h1-d;
+    font-size: 6.25vw !important;
+  }
+}

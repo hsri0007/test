@@ -1,0 +1,164 @@
+@import '~/styles/utils';
+
+.header {
+  will-change: color, background-color;
+  transition: color $quick $ease-out, background-color $quick $ease-out;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: $header-height;
+  padding: 0 $side-padding;
+  color: $color-foreground;
+
+  // nested backdrop-filter fix
+  &::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid transparent-color('lavender', 0.3);
+    background: $color-header-background;
+    backdrop-filter: blur(7rem);
+  }
+}
+
+.mobileLogo,
+.logo {
+  position: relative;
+
+  svg {
+    position: absolute;
+    top: 0;
+    height: 100%;
+  }
+}
+
+.mobileLogo {
+  display: inline-block;
+  height: 20rem;
+
+  @include landscape {
+    display: none;
+  }
+}
+
+.logo {
+  display: none;
+  height: 35rem;
+
+  @include landscape {
+    display: inline-block;
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 15rem;
+
+  @include landscape {
+    gap: 50rem;
+    margin-left: auto;
+  }
+}
+
+.cta {
+  margin-right: -5rem; // Visually balances the cta with the side padding
+}
+
+.toggleWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $header-height;
+  height: 100%;
+  margin-right: calc(-1 * $side-padding);
+  border-left: 1px solid transparent-color('lavender', 0.3);
+
+  @include landscape {
+    display: none;
+  }
+}
+
+.toggle {
+  transition: transform $speed $evil-ease;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: none;
+
+  &.open {
+    transform: rotate(3.142rad);
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 1px;
+    height: 12rem;
+    margin-top: -6rem;
+    margin-left: -6rem;
+    background-color: currentColor;
+  }
+
+  &::before {
+    transform: translate3d(2rem, 0, 0) rotate(-45deg);
+  }
+
+  &::after {
+    transform: translate3d(10rem, 0, 0) rotate(45deg);
+  }
+}
+
+.navItems {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15rem;
+
+  @include landscape {
+    flex-direction: row;
+    gap: 50rem;
+  }
+}
+
+.navItem {
+  z-index: 2;
+  font-family: $font-sans-text;
+  font-weight: 500;
+  font-size: 14rem;
+  letter-spacing: -0.04em;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: color $speed $evil-ease, opacity $speed $evil-ease;
+  opacity: 0.45;
+
+  &.isCurrent {
+    opacity: 1;
+  }
+
+  &:hover {
+    color: inherit;
+    opacity: 1;
+  }
+
+  @include landscape {
+    font-family: $font-sans-text;
+    font-weight: 500;
+    font-size: 12rem;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+}

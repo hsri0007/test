@@ -1,0 +1,131 @@
+query home($preview: Boolean!) {
+  ...pageWithModularSection
+  homeCollection(limit: 1, preview: $preview) {
+    items {
+      meta {
+        ...pageMeta
+      }
+      heroHeading
+      heroSubhead
+      heroCopy
+      irisHeading
+      irisCopy
+      irisPrimaryCta {
+        ...link
+      }
+      irisSecondaryCta {
+        ...link
+      }
+      worksHeading
+      worksCopy
+      worksVideosAltDescription
+      worksPrimaryCta {
+        ...link
+      }
+      worksSecondaryCta {
+        ...link
+      }
+      worksPhoneImagesCollection {
+        items {
+          ...asset
+        }
+      }
+      ecosystemHeading
+      ecosystemCopy
+      ecosystemCtasCollection {
+        items {
+          ...linkInCollection
+        }
+      }
+      modularSectionsTopCollection {
+        items {
+          ... on ArticleCarousel {
+            ...articleCarouselSection
+          }
+          ... on EmailSignUp {
+            ...emailSignUpSection
+          }
+          ... on ResponsiveVideo {
+            ...responsiveVideoSection
+          }
+          ... on QuoteCarousel {
+            ...quoteCarouselSection
+          }
+        }
+      }
+      modularSectionsMiddleCollection {
+        items {
+          ... on ArticleCarousel {
+            ...articleCarouselSection
+          }
+          ... on EmailSignUp {
+            ...emailSignUpSection
+          }
+          ... on ResponsiveVideo {
+            ...responsiveVideoSection
+          }
+          ... on QuoteCarousel {
+            ...quoteCarouselSection
+          }
+        }
+      }
+      ecosystemFeature1Logo {
+        ...asset
+      }
+      ecosystemFeature1Heading
+      ecosystemFeature1Copy
+      ecosystemFeature1MediaCollection {
+        items {
+          ...asset
+        }
+      }
+      ecosystemFeature1Image {
+        ...asset
+      }
+      ecosystemFeature1ImageMobile {
+        ...asset
+      }
+
+      ecosystemFeatureImage1Desktop {
+        ...asset
+      }
+      ecosystemFeatureImage1Mobile {
+        ...asset
+      }
+      ecosystemFeatureImage2Desktop {
+        ...asset
+      }
+      ecosystemFeatureImage3Desktop {
+        ...asset
+      }
+      ecosystemFeature1Cta {
+        ...link
+      }
+      ecosystemFeature1Caption
+      testimonialsCollection {
+        items {
+          ...testimonial
+        }
+      }
+      modularSectionsBottomCollection {
+        items {
+          ... on ArticleCarousel {
+            ...articleCarouselSection
+          }
+          ... on EmailSignUp {
+            ...emailSignUpSection
+          }
+          ... on ResponsiveVideo {
+            ...responsiveVideoSection
+          }
+          ... on QuoteCarousel {
+            ...quoteCarouselSection
+          }
+        }
+      }
+      outro {
+        ...outro
+      }
+    }
+  }
+}

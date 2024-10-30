@@ -1,0 +1,345 @@
+@import '~/styles/utils';
+
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 0;
+  position: relative;
+  // z-index: 0;
+  backdrop-filter: blur(15rem);
+  background: white;
+  overflow: clip;
+
+  @include landscape {
+    // padding: 200rem 0;
+  }
+}
+
+.headline {
+  @include title;
+  text-align: center;
+  margin: 0 auto 40rem auto;
+  padding: 0 $side-padding;
+
+  @include landscape {
+    @include h2;
+    max-width: 60vw;
+    margin: 0 auto 59rem auto;
+  }
+}
+
+.copy {
+  @include large-body;
+  text-align: center;
+  margin-bottom: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 $side-padding;
+
+  @include landscape {
+    max-width: 55vw;
+  }
+}
+
+.headingContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 100rem;
+
+  z-index: 0;
+
+  @include landscape {
+    height: 100vh;
+    padding-bottom: 13.5vh;
+    padding-top: 0;
+    justify-content: center;
+  }
+}
+
+.imagesArea {
+  position: relative;
+  z-index: 2;
+
+  @include landscape {
+    height: 100vh;
+    width: 100%;
+    left: 0;
+  }
+}
+
+.imagesAreaOffset {
+  position: relative;
+  width: 100%;
+
+  @include landscape {
+    height: 300vh;
+    left: 0;
+    top: -60vh;
+  }
+}
+
+.imagesContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 $side-padding;
+
+  @include landscape {
+    position: sticky;
+    flex-direction: row;
+    justify-content: center;
+    height: 100vh;
+    padding-top: 0;
+    top: 0;
+  }
+}
+
+.answerItem {
+  display: flex;
+  flex-direction: column;
+  margin: 15rem auto;
+  position: relative;
+
+  @include landscape {
+    margin: 0 auto;
+    transform: translate3d(0, 25%, 0);
+    opacity: 0;
+  }
+
+  .imageContainer {
+    margin-top: 0;
+
+    @include landscape {
+      margin-top: -200rem;
+    }
+  }
+}
+
+.proofContainerDesktop {
+  position: absolute;
+  bottom: 150rem;
+  display: none;
+
+  @include landscape {
+    display: block;
+  }
+
+  .proofCopy {
+    max-width: unset;
+  }
+
+  .proofGallery {
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+  }
+}
+
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 6rem solid #dadeef;
+  background: black;
+  width: 288rem;
+  height: 275rem;
+  position: relative;
+
+  @include landscape {
+    width: 24vw;
+    height: 26vw;
+  }
+
+  .playIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+
+    svg {
+      height: 57rem;
+      width: 58rem;
+
+      @include landscape {
+        height: 96rem;
+        width: 96rem;
+      }
+    }
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  object-fit: contain;
+  margin: 0 auto;
+  display: flex;
+}
+
+.imageHeading {
+  @include h2;
+  margin-top: 7.63rem;
+}
+
+.proofContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+
+  @include landscape {
+    display: none;
+  }
+}
+
+.proofCopy {
+  @include h3-m;
+  text-align: center;
+  max-width: 15ch;
+  margin-bottom: 16rem;
+
+  @include landscape {
+    @include h4-d;
+    margin-bottom: 40rem;
+  }
+}
+
+.floatingImagesContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+
+  & > div:nth-child(1) {
+    top: 8.5vh;
+    left: -10.5vw;
+    // border: 2rem solid lime;
+
+    @include sm {
+      left: -4vw;
+    }
+
+    @include landscape {
+      top: 22.5vh;
+    }
+  }
+
+  & > div:nth-child(3) {
+    top: 84.5vh;
+    left: -31.5vw;
+    // border: 2rem solid blue;
+
+    @include sm {
+      left: -11.5vw;
+    }
+
+    @include landscape {
+      left: 11.5vw;
+      top: 81.5vh;
+    }
+  }
+
+  & > div:nth-child(5) {
+    top: 120vh;
+    left: -22vw;
+    // border: 2rem solid red;
+
+    @include sm {
+      left: 2vw;
+    }
+
+    @include landscape {
+      top: 133vh;
+      left: -12vw;
+    }
+  }
+
+  & > div:nth-child(2) {
+    top: 28.5vh;
+    right: -11.5vw;
+    // border: 2rem solid yellow;
+
+    @include landscape {
+      top: 38.5vh;
+      right: 15.5vw;
+    }
+  }
+
+  & > div:nth-child(4) {
+    top: 93.5vh;
+    right: -11.5vw;
+    // border: 2rem solid pink;
+
+    @include sm {
+      right: -5.5vw;
+    }
+
+    @include landscape {
+      top: 102.5vh;
+      right: 5.5vw;
+    }
+  }
+
+  & > div:nth-child(6) {
+    display: none;
+    // border: 2rem solid brown;
+
+    @include landscape {
+      display: flex;
+      top: 150vh;
+      left: 39.6vw;
+    }
+  }
+}
+
+.floatingImageContainer {
+  width: 49.7vw;
+  aspect-ratio: 361 / 400;
+  display: flex;
+  position: absolute;
+  opacity: 0;
+  // filter: blur(15rem);
+  // transition: 1.2s opacity linear, 1.2s filter linear;
+
+  @include sm {
+    width: 33.5vw;
+  }
+
+  @include landscape {
+    width: unset;
+    height: 33.4vh;
+  }
+}
+
+// .floatingImageContainerVisible {
+//   opacity: 1;
+//   filter: blur(0rem);
+// }
+
+.floatingImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.proofBottomContainer {
+  display: none;
+
+  @include landscape {
+    display: block;
+    height: 30vh;
+  }
+}

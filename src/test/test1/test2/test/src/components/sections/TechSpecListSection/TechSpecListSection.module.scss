@@ -1,0 +1,35 @@
+@import '~/styles/utils';
+
+.list {
+  padding: 40rem $side-padding;
+  @include landscape {
+    padding: 20rem calc(#{$side-padding} + calc(#{$grid-col-width} + #{$grid-gap}));
+  }
+}
+
+.spec {
+  display: flex;
+  flex-direction: column;
+  gap: 35rem;
+  padding: 40rem 0;
+  border-bottom: 1px solid $color-lavender;
+  &:last-child {
+    border-bottom: none;
+  }
+  @include landscape {
+    gap: $grid-gap;
+    flex-direction: row;
+  }
+}
+
+.title {
+  @include h3-m;
+  @include landscape {
+    @include body-d;
+    min-width: n-grid-col-width(4);
+  }
+}
+
+.description {
+  @include small-body;
+}

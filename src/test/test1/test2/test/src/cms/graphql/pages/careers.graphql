@@ -1,0 +1,56 @@
+fragment careersContent on CareersPage {
+  meta {
+    ...pageMeta
+  }
+  heroEyebrow
+  heroHeading
+  image1 {
+    ...asset
+  }
+  image2 {
+    ...asset
+  }
+  image3 {
+    ...asset
+  }
+  heading1
+  heading2
+  heading3
+  copy1
+  copy2
+  copy3
+  cta1 {
+    ...link
+  }
+  cta2 {
+    ...link
+  }
+  cta3 {
+    ...link
+  }
+  modularSectionsCollection {
+    items {
+      ... on ArticleCarousel {
+        ...articleCarouselSection
+      }
+      ... on QuoteCarousel {
+        ...quoteCarouselSection
+      }
+      ... on ResponsiveVideo {
+        ...responsiveVideoSection
+      }
+    }
+  }
+  outro {
+    ...outro
+  }
+}
+
+query careers($preview: Boolean!) {
+  ...pageWithModularSection
+  careersPageCollection(limit: 1, preview: $preview) {
+    items {
+      ...careersContent
+    }
+  }
+}

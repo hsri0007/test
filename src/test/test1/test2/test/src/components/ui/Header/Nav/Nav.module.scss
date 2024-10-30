@@ -1,0 +1,70 @@
+@import '~/styles/utils';
+
+.navWrapper {
+  height: 100%;
+}
+
+.nav {
+  position: fixed;
+  background: $color-white;
+  color: $color-dark-gray;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding: $side-padding;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity $speed $evil-ease;
+  [data-mobile-nav-expanded='true'] & {
+    opacity: 1;
+    pointer-events: all;
+  }
+  @include landscape {
+    transition: none;
+    pointer-events: all;
+    opacity: 1;
+    background: transparent;
+    color: inherit;
+    position: relative;
+    width: auto;
+    height: 100%;
+    padding: 0;
+  }
+}
+
+.navItems {
+  display: flex;
+  gap: 18rem;
+  flex-direction: column;
+  text-align: left;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100%;
+  width: 50%;
+  padding-right: 35rem;
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1px;
+    height: 50rem;
+    background: $color-lavender;
+    top: calc(50% - 25rem);
+  }
+  @include landscape {
+    padding: 0;
+    padding-left: 64rem;
+    width: auto;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    &:after {
+      opacity: 0;
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@import '~/styles/utils';
+
+.container {
+  padding-top: calc($header-height * 2); // save space for navs
+  padding-right: $side-padding;
+  padding-left: $side-padding;
+  background: $color-light-light-gray;
+}
+
+.label {
+  @include h3-m;
+
+  @include landscape {
+    display: none;
+  }
+}

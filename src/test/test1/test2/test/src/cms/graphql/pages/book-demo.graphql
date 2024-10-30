@@ -1,0 +1,39 @@
+fragment bookDemoContent on BookADemo {
+  virtualDemo
+  pageMeta {
+    ...pageMeta
+  }
+  heading
+  subheading
+  details
+  video {
+    ...asset
+  }
+  thankYouHeading
+  thankYouSubheading
+  thankYouBody
+  demoCtaImage {
+    ...asset
+  }
+  demoCtaHeading
+  demoCtaSubheading
+  demoCtaLiveDemoButtonCopy
+  demoCtaVirtualDemoButtonCopy
+  liveDemoFormTitle
+  liveDemoFormCopy
+  virtualDemoFormTitle
+  virtualDemoFormCopy
+  virtualDemoPageHeading
+  virtualDemoVideo {
+    ...asset
+  }
+  virtualDemoPageSubheading
+}
+
+query bookDemo($preview: Boolean!, $product: String!) {
+  bookADemoCollection(where: { product: $product }, limit: 1, preview: $preview) {
+    items {
+      ...bookDemoContent
+    }
+  }
+}

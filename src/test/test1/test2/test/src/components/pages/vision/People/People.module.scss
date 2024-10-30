@@ -1,0 +1,150 @@
+@import '~/styles/utils';
+
+.container {
+  padding: 40rem $side-padding;
+  background-color: $color-light-light-gray;
+
+  @include landscape {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 80rem 20rem;
+    padding-top: 115rem;
+    padding-bottom: 115rem;
+  }
+}
+
+.heading {
+  margin-bottom: 32rem;
+  @include h1;
+
+  @include landscape {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+  }
+
+  @include xxl {
+    grid-column: 2 / span 10;
+  }
+}
+
+.columnLeft {
+  margin-bottom: 100rem;
+
+  @include landscape {
+    grid-column: 1 / span 4;
+    margin-bottom: 0;
+  }
+
+  @include xxl {
+    grid-column: 2 / span 3;
+  }
+}
+
+.content {
+  margin-bottom: 50rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include landscape {
+    margin-bottom: 80rem;
+  }
+}
+
+.contentCopy {
+  margin-bottom: 15rem;
+  @include large-body;
+}
+
+.contentLink {
+}
+
+.columnRight {
+  @include landscape {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20rem;
+    grid-column: 6 / span 7;
+  }
+
+  @include xxl {
+    grid-column: 6 / span 6;
+  }
+}
+
+.person {
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 0.75;
+  margin-bottom: 25rem;
+  border-radius: 16rem;
+  background-color: $color-photo-background;
+  box-shadow: 3rem 6rem 42rem 0rem rgba(0, 0, 0, 0.05);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include landscape {
+    margin-bottom: 0;
+  }
+}
+
+@include landscape {
+  .person-1 {
+    grid-row: 1 / span 2;
+    grid-column: 1;
+  }
+
+  .person-2 {
+    grid-row: 2 / span 2;
+    grid-column: 2;
+  }
+
+  .person-3 {
+    grid-row: 3 / span 2;
+    grid-column: 1;
+  }
+}
+
+.personImage {
+  position: absolute;
+  top: 48rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.personContent {
+  z-index: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.personName {
+  margin-bottom: auto;
+  @include body;
+  padding: 12rem 20rem;
+
+  @include landscape {
+    padding: 15rem 25rem;
+  }
+}
+
+.personTitle {
+  @include small-text-bold-caps;
+  padding: 13rem 20rem;
+  background: $color-white;
+  border: 1px solid $color-lavender;
+  border-bottom-left-radius: 16rem;
+  border-bottom-right-radius: 16rem;
+  @include landscape {
+    padding: 15rem 25rem;
+    border-bottom-left-radius: 20rem;
+    border-bottom-right-radius: 20rem;
+  }
+}

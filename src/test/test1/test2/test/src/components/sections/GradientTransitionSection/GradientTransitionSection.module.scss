@@ -1,0 +1,15 @@
+@import '~/styles/utils';
+
+.gradientContainer {
+  z-index: 5;
+  overflow: hidden;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}

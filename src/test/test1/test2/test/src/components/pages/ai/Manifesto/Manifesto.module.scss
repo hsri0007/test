@@ -1,0 +1,125 @@
+@import '~/styles/utils';
+
+.container {
+  background-color: $color-white;
+}
+
+.heading {
+  padding: 40rem $side-padding;
+  border-bottom: 1px solid $color-lavender;
+  @include title;
+  text-align: center;
+
+  @include landscape {
+    padding-top: 100rem;
+    padding-bottom: 100rem;
+    @include h1-d;
+  }
+}
+
+.ordered {
+  @include landscape {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+  }
+}
+
+.orderedItem {
+  display: grid;
+  grid-template-columns: 20rem 1fr;
+  align-items: center;
+  column-gap: 20rem;
+  padding: 25rem $side-padding;
+  border-bottom: 1px solid $color-lavender;
+
+  @include landscape {
+    grid-template-columns: auto 1fr;
+    padding-top: 50rem;
+    padding-bottom: 50rem;
+    padding: 50rem 0;
+    gap: 100rem;
+
+    &:nth-child(odd) {
+      border-right: 1px solid $color-lavender;
+      padding-left: 130rem;
+      padding-right: $side-padding;
+    }
+
+    &:nth-child(even) {
+      padding-left: $side-padding;
+      padding-right: 130rem;
+    }
+  }
+}
+
+.orderedNumber {
+  @include h2-m;
+  text-align: center;
+
+  @include landscape {
+    @include h3-d;
+  }
+}
+
+.orderedCopy {
+  @include body-m;
+
+  @include landscape {
+    grid-column: 2 / -1;
+    @include large-body-d;
+  }
+}
+
+.unordered {
+  padding: 50rem $side-padding;
+
+  @include landscape {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 55rem 60rem;
+    padding: 90rem 130rem;
+  }
+}
+
+.unorderedItem {
+  margin-bottom: 20rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include landscape {
+    display: grid;
+    grid-template-columns: 75rem 1fr;
+    column-gap: 30rem;
+    margin-bottom: 0;
+  }
+}
+
+.unorderedIcon {
+  display: block;
+  margin-bottom: 10rem;
+  height: auto;
+  width: auto;
+
+  @include landscape {
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+
+.unorderedContent {
+}
+
+.unorderedHeading {
+  @include small-text-bold-caps;
+
+  @include landscape {
+    margin-bottom: 5rem;
+  }
+}
+
+.unorderedCopy {
+  @include small-body;
+}

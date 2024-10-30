@@ -1,0 +1,15 @@
+query articleSlugs {
+  articleCollection {
+    items {
+      slug
+    }
+  }
+}
+
+query personSlugs {
+  personCollection {
+    items {
+      slug
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@import '~/styles/utils';
+
+.section {
+  position: relative;
+  z-index: 2;
+  color: $color-foreground;
+}
+
+.halfSection {
+  @include md {
+    width: 50%;
+    display: inline-block;
+  }
+}

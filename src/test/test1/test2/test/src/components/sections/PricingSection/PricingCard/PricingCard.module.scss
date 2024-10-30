@@ -1,0 +1,215 @@
+@import '~/styles/utils';
+
+.container {
+  background: $color-white;
+  border: 1px solid $color-lavender;
+  box-shadow: 3.39645rem 6.7929rem 50.9467rem rgba(0, 0, 0, 0.05);
+  border-radius: 20rem;
+  padding: 38rem 45rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+
+  @include landscape {
+    // @include sr-only;
+  }
+}
+
+// not a regular container; just draws the box behind the content, but doesn't actally contain any children
+.desktopContainer {
+  display: none;
+
+  @include landscape {
+    display: block;
+    background: $color-white;
+    border: 1px solid $color-lavender;
+    box-shadow: 3.39645rem 6.7929rem 50.9467rem rgba(0, 0, 0, 0.05);
+    border-radius: 20rem;
+    padding: 38rem 45rem;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    grid-row: 1 / -1;
+    z-index: -1;
+
+    &::before,
+    &::after {
+      box-sizing: inherit;
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.name {
+  @include h3-m;
+  margin-bottom: 21rem;
+
+  @include landscape {
+    @include h4-d;
+    grid-row: 1;
+    padding: 38rem var(--card-side-padding) 0;
+    margin-bottom: 21rem;
+  }
+}
+
+.subhead {
+  @include body-m;
+  margin-bottom: 40rem;
+
+  @include landscape {
+    @include small-body-m;
+    padding: 0 var(--card-side-padding);
+    grid-row: 2;
+  }
+}
+
+.priceContainer {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+
+  @include landscape {
+    grid-row: 3;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 20rem;
+    padding: 0 var(--card-side-padding);
+    margin-bottom: 30rem;
+  }
+}
+
+.price {
+  @include h1-m;
+  margin-bottom: 7rem;
+
+  @include landscape {
+    @include h3-d;
+    margin-bottom: 0;
+    padding-bottom: 2rem;
+  }
+}
+
+.buyNow {
+  @include small-text-bold;
+  border-radius: 25rem;
+  background: $color-black;
+  color: $color-white;
+  padding: 8rem 24rem 10rem;
+  margin-bottom: 7rem;
+
+  @include landscape {
+    @include body-d;
+    margin-bottom: 0;
+    text-transform: none;
+  }
+}
+
+.priceDetails {
+  @include small-body-m;
+  margin-bottom: 33rem;
+
+  @include landscape {
+    grid-row: 4;
+    padding: 0 var(--card-side-padding);
+  }
+}
+
+.bubbleText {
+  @include small-text-caps-m;
+  background: $color-lavender;
+  padding: 10rem 9.75rem;
+  border-radius: 50rem;
+  margin-bottom: 15rem;
+  width: max-content;
+
+  @include landscape {
+    // grid-row: 5;
+    // padding: 10rem 9.75rem;
+    margin: 0 40rem 10rem 40rem;
+    display: inline-flex;
+    // align-self: center;
+  }
+}
+
+.list {
+  padding: 0 0 0 21rem;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 9rem;
+  margin-bottom: 33rem;
+
+  @include landscape {
+    grid-row: 6;
+    margin: 0 var(--card-side-padding) 33rem;
+  }
+}
+
+.listItem {
+  @include h3-m;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 18rem;
+
+  @include landscape {
+    @include body-d;
+  }
+
+  &::before {
+    content: '';
+    background: $color-iris-blue;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    position: absolute;
+    left: -23rem;
+  }
+}
+
+.legalCopy {
+  @include small-body-m;
+  margin-bottom: 19rem;
+
+  @include landscape {
+    grid-row: 7;
+    margin: 0 var(--card-side-padding) 20rem;
+  }
+}
+
+.divider {
+  width: 50rem;
+  height: 1px;
+  background: #222222;
+  margin-bottom: 19rem;
+
+  @include landscape {
+    grid-row: 8;
+    margin: 0 var(--card-side-padding) 20rem;
+  }
+}
+
+.installCopy {
+  @include small-text-bold-caps;
+
+  @include landscape {
+    grid-row: 9;
+    margin: 0 var(--card-side-padding);
+    // adds bottom padding to fake container
+    padding-bottom: 45rem;
+  }
+}
+
+.desktopOnly {
+  display: none;
+
+  @include landscape {
+    display: flex;
+  }
+}

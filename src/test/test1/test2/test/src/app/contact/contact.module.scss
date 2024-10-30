@@ -1,0 +1,58 @@
+@import '~/styles/utils';
+
+.container {
+  padding-top: calc($header-height * 2); // save space for navs
+  padding-right: $side-padding;
+  padding-bottom: 150rem;
+  padding-left: $side-padding;
+  background: $color-light-light-gray;
+}
+
+.hero {
+  margin-bottom: 85rem;
+  text-align: center;
+}
+
+.heroHeading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45vh;
+  @include title;
+
+  @include landscape {
+    height: auto;
+    margin-top: 100rem;
+    margin-bottom: 100rem;
+  }
+}
+
+.heroCopy {
+  margin: auto;
+  margin-bottom: 15rem;
+  @include h3;
+  @include lg {
+    max-width: n-grid-col-width(8);
+  }
+  @include xl {
+    max-width: n-grid-col-width(6);
+  }
+}
+
+.heroSubhead {
+  @include small-text-bold-m;
+
+  @include landscape {
+    @include h4-d;
+  }
+}
+
+.formContainer {
+  margin: auto;
+  @include landscape {
+    max-width: n-grid-col-width(6);
+  }
+  @include xl {
+    max-width: n-grid-col-width(4);
+  }
+}

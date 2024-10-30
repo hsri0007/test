@@ -1,0 +1,13 @@
+@import '~/styles/utils';
+
+.cursorWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(#{$mouse-x}, #{$mouse-y});
+  z-index: 1000;
+  pointer-events: none;
+  &.pressed {
+    transform: translate(#{$mouse-x}, #{$mouse-y}) scale(0.9);
+  }
+}

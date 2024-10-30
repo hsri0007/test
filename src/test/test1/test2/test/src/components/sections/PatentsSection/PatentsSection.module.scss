@@ -1,0 +1,79 @@
+@import '~/styles/utils';
+
+.container {
+  padding: 100rem 20rem;
+  margin-top: 60rem;
+
+  @include landscape {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: $color-light-light-gray;
+  }
+}
+
+.title {
+  @include h1-m;
+  margin-bottom: 40rem;
+  font-weight: 400;
+
+  @include landscape {
+    @include h1-d;
+    font-weight: 400;
+  }
+}
+
+.content {
+  @include body-m;
+
+  @include landscape {
+    @include large-body-d;
+  }
+
+  p {
+    margin-bottom: 20rem;
+  }
+}
+
+.contentSection {
+  margin: 0 auto;
+  max-width: 1167rem;
+}
+
+.menuTitle {
+  display: flex;
+  gap: 2em;
+  margin-bottom: 2em;
+  .active {
+    background-color: #dadced;
+  }
+  button {
+    transition: all 0.3s;
+    cursor: pointer;
+    width: 150px;
+    border-color: transparent;
+    border-radius: 16px;
+    font-size: 1em;
+    padding: 5px 10px;
+    @include sm {
+      width: 219px;
+      font-size: 2em;
+    }
+  }
+}
+
+.body {
+  border-radius: 16px;
+  width: 100%;
+  background-color: #fff;
+  padding: 30px;
+  margin: 4em 0;
+}
+
+.tabContent {
+  min-height: 500px;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+}

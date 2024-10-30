@@ -1,0 +1,158 @@
+@import '~/styles/utils';
+
+.itemWrapper {
+  display: contents;
+}
+
+.item {
+  opacity: 0;
+  overflow: hidden;
+  transition-property: opacity, filter;
+  transition-duration: $speed-metal;
+  transition-timing-function: $evil-ease;
+  margin-bottom: 20rem;
+  border: 1px solid $accent-color;
+  border-radius: 16rem;
+  background-color: $color-white;
+  box-shadow: 3rem 6rem 42rem 0rem rgba(0, 0, 0, 0.05);
+  filter: blur(15rem);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &.itemInview {
+    opacity: 1;
+    filter: none;
+  }
+
+  @include sm {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+}
+
+.itemFeatured {
+  @include sm {
+    grid-column: 1 / span 2;
+  }
+
+  @include landscape {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column: 1 / span 4;
+    flex-direction: row;
+  }
+}
+
+.itemImageWrap {
+  position: relative;
+  padding-top: 56.5%;
+
+  @include landscape {
+    .itemFeatured & {
+      align-self: stretch;
+      grid-row: 1;
+      grid-column: 2;
+      padding-top: 0;
+    }
+  }
+}
+
+.itemImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.itemContent {
+  padding: 20rem 20rem 15rem 20rem;
+
+  @include sm {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 50rem;
+  }
+
+  @include md {
+    gap: 20rem;
+  }
+
+  @include lg {
+    gap: 50rem;
+  }
+
+  @include landscape {
+    padding: 25rem 25rem 20rem 25rem;
+
+    .itemFeatured & {
+      grid-row: 1;
+      grid-column: 1;
+    }
+  }
+}
+
+.itemTitle {
+  margin-bottom: 60rem;
+  @include h2-m;
+
+  &.isLarge {
+    @include h1-m;
+  }
+
+  @include sm {
+    margin-bottom: auto;
+    font-size: 28rem; // override font-size increase from `h2-m` mixin
+
+    &.isLarge {
+      @include h3-d;
+    }
+  }
+
+  @include landscape {
+    .itemFeatured & {
+      @include h2-d;
+    }
+  }
+}
+
+.itemBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include md {
+    flex-direction: column;
+    gap: 6rem;
+    align-items: flex-start;
+  }
+  @include lg {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.itemLink {
+  &:hover {
+    color: $color-exo-blue;
+  }
+}
+
+.itemPill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8rem 22rem;
+  border-radius: 19rem;
+  background-color: $accent-color;
+  @include small-text-bold-m;
+
+  @include landscape {
+    padding: 10rem 26rem;
+  }
+}

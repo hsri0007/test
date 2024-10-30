@@ -1,0 +1,23 @@
+fragment contactContent on Contact {
+  pageMeta {
+    ...pageMeta
+  }
+  title
+  slug
+  headline
+  subhead
+  formSubmissionUrl
+  formSpecialtyDropdownOptions
+  formTopicDropdownOptions
+  formHowDidYouHearAboutUs
+  legalCopy
+  consentCopy
+}
+
+query contact($preview: Boolean!) {
+  contactCollection(limit: 1, preview: $preview) {
+    items {
+      ...contactContent
+    }
+  }
+}

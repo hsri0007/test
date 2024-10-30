@@ -1,0 +1,548 @@
+fragment pageMeta on PageMeta {
+  pageTitle
+  description
+  keywords
+  socialImage {
+    url
+    width
+    height
+  }
+}
+
+fragment link on Link {
+  label
+  href
+  external
+}
+
+fragment linkInCollection on Link {
+  sys {
+    id
+  }
+  label
+  href
+}
+
+fragment asset on Asset {
+  sys {
+    id
+  }
+  contentType
+  url(transform: { format: WEBP })
+  description
+  width
+  height
+}
+
+fragment galleryImage on GalleryImage {
+  sys {
+    id
+  }
+  category
+  thumbnail {
+    ...asset
+  }
+  asset {
+    ...asset
+  }
+}
+
+fragment fullQuote on Quote {
+  sys {
+    id
+  }
+  content
+  attribution
+  attributionDetail
+  photo {
+    ...asset
+  }
+}
+
+fragment outro on Outro {
+  heading
+  copy
+  animatedHeading
+  hideBackground
+  ctasCollection {
+    items {
+      ...linkInCollection
+    }
+  }
+}
+
+fragment pricingColumn on PricingColumn {
+  name
+  description
+  subheader
+  price
+  buttonText
+  buttonLink
+  priceDetails
+  bubble
+  featureList
+  legal
+  install
+  rowContentsCollection {
+    items {
+      content
+    }
+  }
+}
+
+fragment pricing on Pricing {
+  heading
+  subhead
+  rowHeadingsCollection {
+    items {
+      content
+    }
+  }
+  columnsCollection {
+    items {
+      ...pricingColumn
+    }
+  }
+  ctaCopy
+  ctaButtonText
+  showCta
+}
+
+fragment articleCarouselArticle on Article {
+  sys {
+    id
+  }
+  title
+  date
+  shortTitle
+  migrationSlug
+  slug
+  category
+  excerpt
+}
+
+fragment pageWithModularSection on Query {
+  articleCollection(order: date_DESC, limit: 50, preview: $preview) {
+    items {
+      ...articleCarouselArticle
+    }
+  }
+}
+
+fragment techSpec on TechSpec {
+  sys {
+    id
+  }
+  title
+  description
+  image {
+    ...asset
+  }
+}
+
+fragment featuredTechSpec on TechSpec {
+  sys {
+    id
+  }
+  title
+  description
+  addPadding
+  addPaddingForPhones
+  verticalAlignment
+  image {
+    ...asset
+  }
+  mobileImage {
+    ...asset
+  }
+  additionalTechSpecsCollection(limit: 20) {
+    items {
+      ...techSpec
+    }
+  }
+}
+
+fragment articleMeta on Article {
+  pageMeta {
+    ...pageMeta
+  }
+}
+
+# note: this fragment can replace articleCarouselArticle (defined above)
+fragment articleWithoutContent on Article {
+  category
+  date
+  featuredArticle
+  shortTitle
+  slug
+  source
+  sys {
+    id
+  }
+  tags
+  thumbnail {
+    ...asset
+  }
+  title
+  download {
+    ...asset
+  }
+}
+
+fragment articleContent on Article {
+  contentCollection {
+    items {
+      __typename
+      ... on Audio {
+        ...articleContentAudio
+      }
+      ... on Copy {
+        ...articleContentCopy
+      }
+      ... on Image {
+        ...articleContentImage
+      }
+      ... on Quote {
+        ...articleContentQuote
+      }
+      ... on Video {
+        ...articleContentVideo
+      }
+    }
+  }
+}
+
+fragment articleContentAudio on Audio {
+  anchorUrl
+  sys {
+    id
+  }
+}
+
+fragment articleContentCopy on Copy {
+  copyContent: content
+  sys {
+    id
+  }
+}
+
+fragment articleContentImage on Image {
+  appearance
+  imageContent: content {
+    ...asset
+  }
+  sys {
+    id
+  }
+}
+
+fragment articleContentQuote on Quote {
+  content
+  sys {
+    id
+  }
+}
+
+fragment articleContentVideo on Video {
+  sys {
+    id
+  }
+  youTubeId
+}
+
+fragment articleBySlug on Query {
+  articleCollection(limit: 1, where: { slug: $slug }, preview: $preview) {
+    items {
+      ...articleMeta
+      ...articleWithoutContent
+      ...articleContent
+    }
+  }
+}
+
+fragment exploreHighlight on ExploreHighlightSection {
+  icon {
+    ...asset
+  }
+  heading
+  description
+  cta {
+    ...link
+  }
+}
+
+fragment phoneSequenceSection on PhoneSequenceSection {
+  sys {
+    id
+  }
+  title
+  description
+  phoneAsset {
+    ...asset
+  }
+}
+
+fragment testimonial on Testimonial {
+  author
+  workplace
+  quote
+  authorProfileImage {
+    ...asset
+  }
+}
+
+fragment trustCenter on TrustCenter {
+  heading
+  subhead
+  cta {
+    ...link
+  }
+  complianceOrgsCollection {
+    items {
+      ...asset
+    }
+  }
+}
+
+fragment footer on Query {
+  footerCollection(limit: 1) {
+    items {
+      firstNavSectionCollection {
+        items {
+          ...link
+        }
+      }
+      secondNavSectionCollection {
+        items {
+          ...link
+        }
+      }
+      addressLine1
+      addressLine2
+      bottomNavCollection {
+        items {
+          ...link
+        }
+      }
+      socialIconsCollection {
+        items {
+          platform
+          url
+        }
+      }
+      copyrightText
+    }
+  }
+}
+
+fragment productNavigationLink on ProductNavigationLink {
+  label
+  url
+  color
+  image {
+    ...asset
+  }
+}
+
+fragment navigation on Query {
+  navigationCollection(limit: 1) {
+    items {
+      home {
+        ...link
+      }
+      productsCollection {
+        items {
+          ...productNavigationLink
+        }
+      }
+      technologyLink {
+        ...link
+      }
+      resources {
+        ...link
+      }
+      support {
+        ...link
+      }
+      aboutUsCollection {
+        items {
+          ...link
+        }
+      }
+      bannerText
+    }
+  }
+}
+
+fragment securityAndTrustCenter on SecurityAndTrustCenter {
+  sys {
+    id
+  }
+  heroHeading
+  heroSubHeader
+  meta {
+    pageTitle
+    description
+    keywords
+    socialImage {
+      title
+      description
+      contentType
+      fileName
+      size
+      url
+      width
+      height
+    }
+  }
+  image1 {
+    title
+    description
+    contentType
+    fileName
+    size
+    url
+    width
+    height
+  }
+  heading1
+  description1
+  cta1
+  heading2
+  description2
+  cta2
+  image2 {
+    title
+    description
+    contentType
+    fileName
+    size
+    url
+    width
+    height
+  }
+  heading3
+  description3
+  cta3
+  image3 {
+    title
+    description
+    contentType
+    fileName
+    size
+    url
+    width
+    height
+  }
+  outro {
+    heading
+    copy
+    animatedHeading
+    hideBackground
+    ctasCollection {
+      items {
+        sys {
+          id
+        }
+        label
+        href
+      }
+    }
+  }
+}
+
+fragment securityTrustCenterData on SecurityAndTrustCenter {
+  heading1
+  body1
+  ctaCertificate {
+    label
+    href
+    external
+  }
+  headingCertificate
+  complianceOrgs2Collection {
+    items {
+      title
+      url
+      description
+      contentType
+      width
+      height
+    }
+  }
+  meta {
+    pageTitle
+    description
+    keywords
+    socialImage {
+      title
+      description
+      contentType
+      fileName
+      size
+      url
+      width
+      height
+    }
+  }
+}
+fragment privacyTrustCenterData on SecurityAndTrustCenter {
+  heading2
+  body2
+  ctaCertificate {
+    label
+    href
+    external
+  }
+  headingCertificate
+  complianceOrgs2Collection {
+    items {
+      title
+      url
+      description
+      contentType
+      width
+      height
+    }
+  }
+  meta {
+    pageTitle
+    description
+    keywords
+    socialImage {
+      title
+      description
+      contentType
+      fileName
+      size
+      url
+      width
+      height
+    }
+  }
+}
+fragment resourcesTrustCenterData on SecurityAndTrustCenter {
+  heading3
+  body3
+  ctaCertificate {
+    label
+    href
+    external
+  }
+  headingCertificate
+  meta {
+    pageTitle
+    description
+    keywords
+    socialImage {
+      title
+      description
+      contentType
+      fileName
+      size
+      url
+      width
+      height
+    }
+  }
+}

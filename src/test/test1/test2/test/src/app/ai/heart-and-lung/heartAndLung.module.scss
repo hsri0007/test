@@ -1,0 +1,88 @@
+@import '~/styles/utils';
+
+.outro {
+  padding-top: 66rem !important;
+  padding-bottom: 112rem !important;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+
+  h2 {
+    margin-bottom: -40rem;
+
+    @include landscape {
+      margin-bottom: 0;
+    }
+  }
+
+  @include landscape {
+    padding-top: 200rem !important;
+    padding-bottom: 330rem !important;
+  }
+}
+
+.outroSubtextList {
+  padding: 0 var(--side-padding);
+  margin: 0;
+  max-width: 1300rem;
+  margin: 150rem auto 0 auto;
+  z-index: 1;
+  position: relative;
+
+  @include landscape {
+    margin: 250rem auto 0 auto;
+  }
+}
+
+.outroSubtextList__item {
+  @include legal-text;
+  text-align: left;
+  position: relative;
+  padding-left: 20rem;
+  margin-bottom: 10rem;
+}
+
+.outroSubtextList__number {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.outroSubtextList__text {
+}
+
+.page {
+  background-color: rgb(var(--light-light-gray));
+}
+
+.outroTextContent {
+  position: relative;
+}
+
+.gradient {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  transform: none;
+  opacity: 1;
+  z-index: 0;
+  width: 100%;
+  height: 60%;
+  bottom: -100rem;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(199, 239, 251, 1) 18%,
+    rgba(204, 241, 251, 1) 36%,
+    rgba(255, 255, 255, 0) 100%
+  );
+
+  @include landscape {
+    background: radial-gradient(#c7effb 12.67%, transparent 70.95%);
+    right: 0;
+    top: 50%;
+    left: auto;
+    bottom: auto;
+    transform: translate(75%, -50%) scaleY(0.4);
+    width: 75vw;
+    height: 75vw;
+  }
+}

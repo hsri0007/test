@@ -1,0 +1,211 @@
+@import '~/styles/utils';
+
+.footer {
+  background: transparent;
+  color: $color-dark-gray;
+  padding: 50rem $side-padding 50rem;
+  @include sm {
+    padding: 60rem $side-padding 30rem;
+  }
+  @include landscape {
+    padding: 75rem $side-padding 50rem;
+  }
+}
+
+.content {
+  display: grid;
+  gap: $grid-gap;
+  grid-template-areas: 'logo primary' 'logo secondary' 'social social' 'legal legal' 'address address' 'copyright copyright';
+  grid-template-columns: 1fr 1fr;
+  @include sm {
+    row-gap: 30rem;
+    grid-template-areas: 'logo primary primary secondary' 'address . . .' 'copyright legal legal social';
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @include landscape {
+    row-gap: 105rem;
+    grid-template-areas: 'logo logo . . primary primary primary secondary secondary address address address' 'copyright copyright . . legal legal legal legal . social social social';
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+// Logo Section
+
+.sectionLogo {
+  grid-area: logo;
+}
+
+.logo {
+  width: 108rem;
+}
+
+// Primary Section
+
+.sectionPrimary {
+  grid-area: primary;
+  padding-bottom: 25rem;
+  @include sm {
+    padding: 0;
+  }
+}
+
+.primaryLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 16rem;
+}
+
+.primaryLinkItem {
+  position: relative;
+}
+
+.primaryLink {
+  @include h4;
+  transition: color $quick $evil-ease;
+  will-change: color;
+  &:hover {
+    color: $color-exo-blue;
+  }
+  &.irisLink:hover {
+    color: $color-iris-blue;
+  }
+  &.worksLink:hover {
+    color: $color-works-purple;
+  }
+  &.aiLink:hover {
+    color: $color-ai-green;
+  }
+}
+
+// Secondary Section
+
+.sectionSecondary {
+  grid-area: secondary;
+  padding-bottom: 45rem;
+  @include sm {
+    padding: 0;
+  }
+}
+
+.secondaryLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 16rem;
+}
+
+.secondaryLinkItem {
+  position: relative;
+}
+
+.secondaryLink {
+  @include small-body;
+  transition: color $quick $evil-ease;
+  will-change: color;
+  &:hover {
+    color: $color-exo-blue;
+  }
+}
+
+// Social Section
+
+.sectionSocial {
+  grid-area: social;
+  text-align: center;
+  padding-bottom: 13rem;
+  @include sm {
+    padding: 0;
+    text-align: left;
+  }
+}
+
+.socialLinks {
+  display: flex;
+  gap: 20rem;
+  justify-content: center;
+  @include sm {
+    justify-content: flex-start;
+  }
+}
+
+.socialLinkItem {
+  display: inline-block;
+  position: relative;
+}
+
+.socialLink {
+  @include legal-text;
+  transition: color $quick $evil-ease;
+  will-change: color;
+  &:hover {
+    color: $color-exo-blue;
+  }
+}
+
+// Legal Section
+
+.sectionLegal {
+  grid-area: legal;
+  text-align: center;
+  padding-bottom: 45rem;
+  @include sm {
+    padding: 0;
+    text-align: left;
+  }
+}
+
+.legalLinks {
+  display: flex;
+  gap: 40rem;
+  justify-content: center;
+  padding-bottom: 45rem;
+  @include sm {
+    justify-content: flex-start;
+  }
+}
+
+.legalLinkItem {
+  position: relative;
+}
+
+.legalLink {
+  @include legal-text;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Address Section
+
+.sectionAddress {
+  grid-area: address;
+  text-align: center;
+  padding-bottom: 13rem;
+  @include sm {
+    text-align: left;
+    padding-bottom: 26rem;
+  }
+  @include landscape {
+    padding: 0;
+  }
+}
+
+.address {
+  @include small-body;
+  position: relative;
+}
+
+// Copyright Section
+
+.sectionCopyright {
+  grid-area: copyright;
+  text-align: center;
+  @include sm {
+    text-align: left;
+  }
+}
+
+.copyright {
+  @include legal-text;
+  position: relative;
+}

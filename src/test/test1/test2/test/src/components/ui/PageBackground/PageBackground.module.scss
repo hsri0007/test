@@ -1,0 +1,11 @@
+@import '~/styles/utils';
+
+.pageBackground {
+  width: 100vw;
+  height: 100vh;
+  height: 100vh;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}

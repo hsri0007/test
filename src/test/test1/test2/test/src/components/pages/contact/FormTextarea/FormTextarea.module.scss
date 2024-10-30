@@ -1,0 +1,11 @@
+@import '~/styles/utils';
+
+.formLabel {
+  @include form-label;
+}
+
+.textAreaEl {
+  height: 300rem;
+  @include form-textarea;
+  @include form-focus-effect;
+}

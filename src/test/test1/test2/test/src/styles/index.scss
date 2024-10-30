@@ -1,0 +1,258 @@
+// Style Reset
+@import '../../node_modules/sanitize.css/sanitize.css';
+@import '../../node_modules/sanitize.css/forms.css';
+@import '../../node_modules/sanitize.css/typography.css';
+
+// Utils
+@import './utils';
+
+:root {
+  --pink: 235 212 214; // #ebd4d6
+  --gold: 236 194 111; // #ecc26f
+  --lavender: 216 218 236; // #d8daec
+  --light-gray: 234 237 241; // #eaedf1
+  --light-light-gray: 247 249 252; // #F7F9FC
+  --gray: 56 64 73; // #384049
+  --dark-gray: 34 34 34; // #22222
+  --dark-blue: 14 23 70; // #0e1746
+  --works-purple: 104 100 221; // #6864dd
+  --ai-green: 0 158 130; // #009E82
+  --iris-blue: 110 153 234; // #6e99ea
+  --exo-blue: 36 176 255; // #24b0ff
+  --exo-fluro: 16 248 228; // #10F8E4
+  --dark-dark-blue: 8 11 27; // #080b1b
+  --black: 0 0 0; // #000000
+  --white: 255 255 255; // #ffffff
+
+  --accent-color: $color-exo-blue;
+  --accent-color-name: #{'exo-blue'};
+
+  // Responsive
+  --theme-name: #{'light'};
+  --background: var(--white);
+  --foreground: var(--dark-gray);
+  --foreground-alt: var(--dark-dark-blue);
+  --highlight: var(---light-gray);
+  --highlight-opacity: 1;
+  --header-background-opacity: 0.2;
+  // layout
+  --side-padding: #{$side-padding-mobile};
+  --grid-gap: #{$grid-gap-mobile};
+  --header-height: #{$header-height-mobile};
+
+  --grid-col-count: #{$grid-col-count-mobile};
+
+  @include portrait {
+    font-size: calc(100vw / 393);
+
+    @include xs {
+      font-size: calc(100vw / 500);
+    }
+
+    @include sm {
+      font-size: calc(100vw / 700);
+    }
+
+    @include md {
+      font-size: calc(100vw / 900);
+    }
+
+    // @media (min-aspect-ratio: 507/852) {
+    //   font-size:calc(100vw / 507);
+    // }
+
+    // @media (min-aspect-ratio: 622/852) {
+    //   font-size:calc(100vw / 622);
+    // }
+
+    // @media (min-aspect-ratio: 736/852) {
+    //   font-size:calc(100vw / 736);
+    // }
+  }
+
+  @include landscape {
+    font-size: calc(100vh / 1080);
+
+    // @media (max-aspect-ratio: 1710/1080) {
+    //   font-size: calc(100vh / 1220);
+    // }
+
+    // @media (max-aspect-ratio: 1500/1080) {
+    //   font-size: calc(100vh / 1360);
+    // }
+
+    // @media (max-aspect-ratio: 1290/1080) {
+    //   font-size: calc(100vh / 1500);
+    // }
+  }
+
+  @include sm {
+    --side-padding: #{$side-padding-tablet};
+    --grid-gap: #{$grid-gap-tablet};
+    --grid-col-count: #{$grid-col-count-tablet};
+  }
+
+  @include landscape {
+    --side-padding: #{$side-padding-desktop};
+    --grid-gap: #{$grid-gap-desktop};
+    --header-height: #{$header-height-desktop};
+    --grid-col-count: #{$grid-col-count-desktop};
+  }
+
+  @include xxl {
+    --header-height: #{$header-height-oversized};
+  }
+}
+
+[data-theme='light'] {
+  --theme-name: #{'light'};
+  --background: var(--white);
+  --foreground: var(--dark-gray);
+  --foreground-alt: var(--dark-dark-blue);
+  --highlight: var(---light-gray);
+  --highlight-opacity: 1;
+  --header-background-opacity: 0.2;
+}
+
+[data-theme='dark'] {
+  --theme-name: #{'dark'};
+  --background: var(--dark-dark-blue);
+  --foreground: var(--white);
+  --foreground-alt: var(--white);
+  --highlight: var(---light-gray);
+  --highlight-opacity: 0.1;
+  --header-background-opacity: 0.01;
+}
+
+/*
+Cursor
+*/
+[data-cursor-hidden='true'] {
+  --cursor-hidden: true;
+}
+
+[data-cursor-hidden='false'] {
+  --cursor-hidden: false;
+}
+
+[data-cursor-inactive-hidden='true'] {
+  --cursor-inactive-hidden: true;
+}
+
+[data-cursor-inactive-hidden='false'] {
+  --cursor-inactive-hidden: false;
+}
+
+@each $name in $cursor-names {
+  [data-cursor='#{$name}'] {
+    --cursor: #{$name};
+    cursor: none;
+  }
+}
+
+[data-cursor-hidden-desktop='true'] {
+  @include landscape {
+    cursor: none;
+  }
+}
+
+/*
+  Remove default margin
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media screen and (prefers-reduced-motion: reduce), (update: slow) {
+  /* Remove duration for all animation by default when a user requests a reduced animation experience */
+  // This should only be overridden with the critical motion mixin
+  * {
+    animation-iteration-count: 1 !important;
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  left: -10000rem;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  accent-color: $accent-color;
+  font-size: 16rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body > main {
+  flex: 1;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+// Color Utility Classes
+@each $label, $color in $rgb-colors {
+  [data-color='#{$label}'] {
+    @if $label == 'highlight' {
+      color: $color-highlight;
+    } @else {
+      color: rgb(#{$color});
+    }
+  }
+  [data-background-color='#{$label}'] {
+    @if $label == 'highlight' {
+      background: $color-highlight;
+    } @else {
+      background: rgb(#{$color});
+    }
+  }
+  [data-border-color='#{$label}'] {
+    @if $label == 'highlight' {
+      border-color: $color-highlight;
+    } @else {
+      border-color: rgb(#{$color});
+    }
+  }
+  [data-fill-color='#{$label}'] {
+    @if $label == 'highlight' {
+      fill: $color-highlight;
+    } @else {
+      fill: rgb(#{$color});
+    }
+  }
+  [data-accent-color='#{$label}'] {
+    --accent-color-name: #{$label};
+    @if $label == 'highlight' {
+      --accent-color: $color-highlight;
+    } @else {
+      --accent-color: rgb(#{$color});
+    }
+    accent-color: $accent-color;
+  }
+}
+
+@import './hubspot-forms.scss';

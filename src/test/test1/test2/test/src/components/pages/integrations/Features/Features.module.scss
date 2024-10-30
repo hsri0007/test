@@ -1,0 +1,41 @@
+@import '~/styles/utils';
+
+.container {
+  padding: 75rem $side-padding 175rem $side-padding;
+  background-color: $color-light-gray;
+
+  @include landscape {
+    padding-top: 165rem;
+  }
+}
+
+.headings {
+  margin-bottom: 70rem;
+  text-align: center;
+
+  @include sm {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20rem;
+  }
+
+  @include landscape {
+    margin-bottom: 185rem;
+  }
+}
+
+.heading {
+  @include title;
+
+  @include sm {
+    grid-column: 2 / span 10;
+  }
+
+  @include landscape {
+    @include h1-d;
+  }
+
+  @include xl {
+    grid-column: 4 / span 6;
+  }
+}

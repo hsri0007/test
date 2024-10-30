@@ -1,0 +1,7 @@
+{
+  "SCSS Utils": {
+    "prefix": "@scss-utils",
+    "body": ["@import '~/styles/utils';"],
+    "description": "Import SCSS Mixins and Variables"
+  }
+}

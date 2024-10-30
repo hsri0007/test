@@ -1,0 +1,187 @@
+@import '~/styles/mixins';
+@import '~/styles/_vars.scss';
+
+.canvasContainer {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  pointer-events: none;
+  z-index: 2;
+
+  div {
+    pointer-events: none;
+  }
+
+  canvas {
+    pointer-events: none;
+  }
+}
+
+.h1 {
+  @include h1-d;
+}
+
+.h2 {
+  @include h2-d;
+}
+
+.gradientContainer {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  pointer-events: none;
+  background: $color-light-gray;
+}
+
+.gradient {
+  width: 25vw;
+  height: 25vw;
+  filter: blur(50rem);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.scrollyContent,
+.noMoreScrolly {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scrollyContent {
+  position: relative;
+  width: 100vw;
+  height: 300vh;
+  overflow: clip;
+
+  // @include screen(1024rem) {
+  //   height: 300vh;
+  // }
+}
+
+.exo,
+.iris {
+  @include title;
+  font-size: 16.5vw;
+  position: absolute;
+  top: 40vh;
+  visibility: hidden;
+  filter: blur(15rem);
+  transition: 0.3s filter;
+  user-select: none;
+
+  @include landscape {
+    font-size: 170rem;
+  }
+}
+
+.iris {
+  margin-left: 3%;
+
+  @include md {
+    margin-left: -60px;
+  }
+
+  @include landscape {
+    margin-left: -30rem;
+  }
+}
+
+.irisContainer {
+  z-index: 3;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  transition: 0.3s filter;
+}
+
+.blurred {
+  filter: blur(15rem);
+}
+
+.tm {
+  font-size: 22rem;
+  font-weight: 400;
+  position: absolute;
+  top: 20%;
+  visibility: hidden;
+
+  @include sm {
+    font-size: 36rem;
+  }
+
+  @include landscape {
+    font-size: 2.29vw;
+  }
+}
+
+.subhead {
+  @include h3-m;
+  font-weight: 300;
+  position: absolute;
+  top: 85svh;
+  filter: blur(15rem);
+  visibility: hidden;
+  max-width: 182rem;
+  text-align: center;
+
+  @include sm {
+    max-width: unset;
+  }
+
+  @include landscape {
+    @include h3-d;
+    max-width: unset;
+  }
+}
+
+.copyWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  // height: calc(100% + 100vh);
+  height: 100%;
+}
+
+.copyContainer {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.copy {
+  @include h2-m;
+  position: relative;
+  top: 14vh;
+  text-align: center;
+  padding: 0 $side-padding;
+  transform: translate3d(0, 100vh, 0);
+
+  @include landscape {
+    @include h3-d;
+    max-width: 55vw;
+    padding: 0;
+    margin: 0 auto;
+  }
+}
+
+.irisCanvasContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  // height: calc(100% + 100vh);
+  height: 100%;
+}
+
+.irisCanvas {
+  position: sticky;
+}

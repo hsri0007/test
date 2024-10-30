@@ -1,0 +1,169 @@
+@import '~/styles/utils';
+
+.container {
+  padding-top: 50rem;
+  padding-bottom: 75rem;
+  background-color: $color-dark-dark-blue;
+  overflow: hidden;
+
+  @include landscape {
+    padding-top: 100rem;
+    padding-bottom: 225rem;
+  }
+}
+
+.headings {
+  padding-right: $side-padding;
+  padding-left: $side-padding;
+  text-align: center;
+  color: $color-white;
+  max-width: 1300rem;
+
+  @include sm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+  }
+}
+
+.headingsTop {
+  margin-bottom: 100rem;
+
+  @include landscape {
+    margin-bottom: 150rem;
+  }
+}
+
+.headingsBottom {
+}
+
+.heading {
+  @include title;
+  margin-bottom: 35rem;
+  color: $color-light-light-gray;
+  max-width: 1000rem;
+
+  @include landscape {
+    @include h1-d;
+    margin-bottom: 60rem;
+  }
+}
+
+.subhead {
+  margin-bottom: 21rem;
+  @include h3-m;
+
+  @include landscape {
+    @include h4-d;
+  }
+}
+
+.copy {
+  @include body-m;
+  max-width: 793rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include landscape {
+    @include large-body-d;
+  }
+}
+
+.deviceContent {
+  // overflow: hidden;
+  position: relative;
+}
+
+.deviceBackground {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: -37.5vw;
+  width: 175vw;
+  height: 75vh;
+  margin: auto;
+
+  @include sm {
+    left: 0;
+    width: 70vw;
+    height: 112.5vh;
+  }
+}
+
+.bgImageMobile {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+
+  @include landscape {
+    display: none;
+  }
+}
+
+.bgImageDesktop {
+  display: none;
+
+  @include landscape {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.deviceCircle {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.deviceWrap {
+  position: relative;
+  width: 56.75vw;
+  max-width: 420rem;
+  margin-right: auto;
+  margin-bottom: 30rem;
+  margin-left: auto;
+
+  @include landscape {
+    margin-bottom: 55rem;
+  }
+}
+
+.deviceImage {
+  display: block;
+  width: 100%;
+}
+
+.repeatWrap {
+  position: relative;
+  display: grid;
+  width: 52.5vw;
+  max-width: 390rem;
+  margin-right: auto;
+  margin-bottom: 100rem;
+  margin-left: auto;
+
+  @include landscape {
+    margin-bottom: 130rem;
+  }
+}
+
+.repeatItem {
+  overflow: hidden;
+  transform-origin: center top;
+  grid-row: 1;
+  grid-column: 1;
+  border: 1px solid $color-white;
+  border-radius: 5rem;
+  background-color: $color-black;
+}
+
+.repeatImage {
+  display: block;
+  width: 100%;
+}

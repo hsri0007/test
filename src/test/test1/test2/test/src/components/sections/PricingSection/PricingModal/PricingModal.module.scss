@@ -1,0 +1,158 @@
+@import '~/styles/utils';
+
+.triggerButton {
+  @include small-body-m;
+  font-weight: 500;
+  border: 2rem solid $color-black;
+  border-radius: 50rem;
+  padding: 8rem 20rem 10rem;
+}
+
+.container {
+  padding: 0 $side-padding;
+  margin-top: 180rem;
+}
+
+.overlay {
+  background: $color-white;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 101;
+}
+
+.contentContainer {
+  background: $color-white;
+  position: fixed;
+  // position: absolute;
+  z-index: 105;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  display: flex;
+  justify-content: center;
+  padding: 80rem $side-padding 40rem;
+}
+
+.close {
+  display: inline-block;
+  border: none;
+  margin: 0;
+  padding-top: 15rem;
+  line-height: 1;
+  background: white;
+  -webkit-appearance: none;
+  position: fixed;
+  top: 0;
+  right: 19rem;
+  cursor: pointer;
+  z-index: 106;
+
+  @include landscape {
+    top: 60rem;
+    right: 30rem;
+  }
+
+  @include xxl {
+    top: 60rem;
+    right: 40rem;
+  }
+}
+
+.closeSvg {
+  width: 28rem;
+  height: 28rem;
+  color: $color-black;
+  background: $color-white;
+
+  @include xl {
+    width: 36rem;
+    height: 36rem;
+  }
+
+  @include xxl {
+    width: 48rem;
+    height: 48rem;
+  }
+}
+
+.buyLinksContainer {
+  display: grid;
+  grid-template-columns: 1fr repeat(2, 83rem);
+  position: fixed;
+  bottom: 26rem;
+  width: 100vw;
+  padding: 0 $side-padding;
+
+  @include sm {
+    grid-template-columns: 1fr repeat(2, 33%);
+    bottom: 40rem;
+  }
+
+  @include landscape {
+    grid-template-columns: 425rem repeat(2, 1fr);
+    bottom: 100rem;
+  }
+
+  &--threeColumns {
+    grid-template-columns: 1fr repeat(3, 83rem);
+
+    @include sm {
+      grid-template-columns: 1fr repeat(3, 25%);
+    }
+  }
+}
+
+.buyLinkContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buyLink {
+  background: $color-black;
+  color: $color-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50rem;
+  max-width: 100%;
+  padding: 8rem 20rem 10rem;
+  margin-top: 10rem;
+
+  @include landscape {
+    @include body-d;
+    padding: 8rem 20rem 10rem;
+  }
+}
+
+.buyLinkMobile {
+  @include landscape {
+    display: none;
+  }
+}
+
+.buyLinkDesktop {
+  display: none;
+
+  @include landscape {
+    display: block;
+  }
+}
+
+.subHeader {
+  @include small-body;
+}
+.closeCantainer {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 101;
+  background-color: white;
+  min-height: 43rem;
+}

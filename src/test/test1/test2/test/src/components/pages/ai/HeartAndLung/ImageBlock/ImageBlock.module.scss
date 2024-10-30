@@ -1,0 +1,87 @@
+@import '~/styles/utils';
+
+.ImageBlock {
+  padding-bottom: 90rem;
+}
+
+.inner {
+}
+
+.titleContainer {
+  padding: 0 var(--side-padding) 42rem;
+
+  @include landscape {
+    padding: 0 var(--side-padding) 145rem;
+  }
+}
+
+.title {
+  @include h2;
+  max-width: 1270rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.imageTextContainer {
+  max-width: 1700rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40rem;
+  margin: 0 auto;
+  padding: 0 var(--side-padding);
+
+  @include landscape {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+
+.imageContainer {
+  min-width: none;
+  width: 100vw;
+  height: 130vw;
+  position: relative;
+  overflow: hidden;
+
+  @include landscape {
+    width: auto;
+    border-radius: 24rem;
+    min-width: 720rem;
+    height: 840rem;
+  }
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.textContainer {
+  width: 100%;
+  padding: 0 var(--side-padding);
+
+  @include landscape {
+    padding: 0;
+    width: 620rem;
+  }
+}
+
+.textTitle {
+  @include h4;
+  margin-bottom: 0rem;
+
+  @include landscape {
+    margin-bottom: 10rem;
+  }
+}
+
+.text {
+  @include large-body;
+  white-space: pre-line;
+}

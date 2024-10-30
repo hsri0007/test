@@ -1,0 +1,25 @@
+@import '~/styles/utils';
+
+.article {
+  padding: calc($header-height + 100rem) $side-padding 250rem $side-padding;
+  background-color: $color-light-light-gray;
+
+  @include landscape {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20rem;
+  }
+}
+
+.articleTitle {
+  margin-bottom: 40rem;
+  @include h2;
+  @include xl {
+    @include h1;
+  }
+
+  @include landscape {
+    grid-column: 4 / -1;
+    margin-bottom: 70rem;
+  }
+}

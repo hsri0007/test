@@ -1,0 +1,60 @@
+@import '~/styles/utils';
+
+.formLabel {
+  @include form-label;
+}
+
+.SelectTrigger {
+  @include form-select;
+  display: inline-flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.SelectTrigger:hover {
+  background-color: $color-light-gray;
+  border: 1px solid transparent;
+}
+
+.SelectTrigger[data-placeholder] {
+  color: $color-black;
+}
+
+.SelectIcon {
+  color: $color-black;
+}
+
+.SelectContent {
+  overflow: hidden;
+  width: 100%;
+  background-color: white;
+  border-radius: 6rem;
+  box-shadow: 0rem 10rem 38rem -10rem rgba(22, 23, 24, 0.35),
+    0rem 10rem 20rem -15rem rgba(22, 23, 24, 0.2);
+}
+
+.SelectViewport {
+  padding: 5rem;
+}
+
+.SelectItem {
+  font-size: 13rem;
+  line-height: 1;
+  border-radius: 3rem;
+  display: flex;
+  align-items: center;
+  height: 25rem;
+  padding: 0 35rem 0 25rem;
+  position: relative;
+  user-select: none;
+  border: none;
+}
+.SelectItem[data-disabled] {
+  color: $color-black;
+  pointer-events: none;
+}
+.SelectItem[data-highlighted] {
+  outline: none;
+  background-color: $color-lavender;
+  color: $color-black;
+}

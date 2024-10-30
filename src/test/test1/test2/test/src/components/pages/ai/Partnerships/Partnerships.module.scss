@@ -1,0 +1,45 @@
+@import '~/styles/utils';
+
+.container {
+  padding: 50rem $side-padding;
+  // background-color: $color-white;
+
+  @include landscape {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20rem;
+    padding-top: 150rem;
+    padding-bottom: 150rem;
+    text-align: center;
+  }
+}
+
+.heading {
+  margin-bottom: 20rem;
+  @include h1;
+
+  @include landscape {
+    grid-column: 1 / -1;
+    margin-bottom: 40rem;
+  }
+}
+
+.copy {
+  margin-bottom: 25rem;
+  @include large-body;
+
+  @include landscape {
+    grid-column: 3 / span 8;
+    margin-bottom: 30rem;
+  }
+
+  @include xxl {
+    grid-column: 4 / span 6;
+  }
+}
+
+.cta {
+  @include landscape {
+    grid-column: 1 / -1;
+  }
+}

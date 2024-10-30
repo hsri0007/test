@@ -1,0 +1,205 @@
+@import '~/styles/utils';
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  border: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 48rem;
+  table-layout: fixed;
+
+  @include sm {
+    margin-bottom: 64rem;
+  }
+
+  @include landscape {
+    margin-bottom: 144rem;
+  }
+}
+
+.thead {
+  position: sticky;
+  top: 42rem;
+  // margin-top: 100rem;
+  z-index: 1;
+  background-color: white;
+  height: 20vh;
+}
+
+.tbody {
+  margin-top: 100rem;
+}
+
+.row,
+.cell {
+  border: 1px solid $color-lavender;
+  border-collapse: collapse;
+}
+
+.cell {
+  padding: 5rem;
+
+  @include landscape {
+    padding: 18rem 22rem;
+  }
+}
+
+.titleCellCol {
+  width: calc(100vw - 166rem - 40rem);
+
+  @include sm {
+    width: 33%;
+  }
+
+  @include landscape {
+    width: 425rem;
+  }
+
+  &--threeColumns {
+    width: calc(100vw - 249rem - 40rem);
+
+    @include sm {
+      width: 25%;
+    }
+  }
+}
+
+.standardCellCol {
+  width: 83rem;
+
+  @include sm {
+    width: 33%;
+  }
+
+  @include landscape {
+    width: unset;
+  }
+
+  &--threeColumns {
+    @include sm {
+      width: 25%;
+    }
+
+    @include landscape {
+      width: 25%;
+    }
+  }
+}
+
+.tableHead {
+  font-size: 14rem;
+  padding: 5rem;
+
+  @include sm {
+    font-size: 20rem;
+  }
+
+  @include landscape {
+    @include h4-d;
+    padding: 10rem;
+  }
+}
+
+.title {
+  @include small-text-bold-caps-m;
+  font-size: 9rem;
+  margin-bottom: 5rem;
+
+  a {
+    color: blue;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @media all and (min-width: 390px) {
+    font-size: 9rem;
+  }
+
+  @include sm {
+    @include body-d;
+    margin-bottom: 10rem;
+    text-transform: none;
+  }
+}
+
+.subhead {
+  @include small-body-m;
+
+  @include sm {
+    @include small-body-d;
+    max-width: 204rem;
+  }
+}
+
+.checkContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.check {
+  color: $color-iris-blue;
+  width: 19rem;
+  height: 19rem;
+
+  @include sm {
+    width: 40rem;
+    height: 40rem;
+  }
+}
+
+.price {
+  @include small-body-m;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include sm {
+    font-size: 20rem;
+  }
+
+  @include landscape {
+    @include h3-d;
+    margin-bottom: 6rem;
+  }
+}
+
+.priceInfo {
+  display: none;
+
+  @include landscape {
+    @include small-body-d;
+    display: block;
+    text-align: center;
+  }
+}
+
+.blank {
+  text-align: center;
+}
+
+.buyLink {
+  background: $color-black;
+  color: $color-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50rem;
+  max-width: 50%;
+  padding: 8rem 20rem 10rem;
+
+  @include landscape {
+    @include body-d;
+    padding: 8rem 20rem 10rem;
+  }
+}
+
+.buyLinkMobile {
+  @include landscape {
+    display: none;
+  }
+}

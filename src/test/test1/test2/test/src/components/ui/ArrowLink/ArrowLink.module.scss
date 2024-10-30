@@ -1,0 +1,106 @@
+@import '~/styles/utils';
+
+.link {
+  display: inline-flex;
+  gap: 8rem;
+  justify-content: center;
+  align-items: center;
+  color: $color-foreground;
+  transition: color $quick $ease-out;
+  &:hover {
+    color: $accent-color;
+
+    span {
+      color: $accent-color;
+    }
+  }
+}
+
+.copy {
+  @include body-d;
+  letter-spacing: -0.02em;
+  .isResponsive & {
+    @include body;
+  }
+}
+
+.circle {
+  width: 23rem;
+  height: 23rem;
+  min-width: 23rem;
+  min-height: 23rem;
+  border: 1.5rem currentColor solid;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 2rem;
+  .direction_right & {
+    transform: rotate(0deg);
+  }
+  .direction_down & {
+    transform: rotate(90deg);
+  }
+  .direction_left & {
+    transform: rotate(180deg);
+  }
+  .direction_up & {
+    transform: rotate(370deg);
+  }
+}
+
+.arrow {
+  position: relative;
+  width: 5rem;
+  top: 0.125rem;
+  right: -0.125rem;
+}
+
+.big {
+  @include landscape {
+    gap: 12rem;
+    .copy {
+      @include h3-d;
+      letter-spacing: -0.02em;
+    }
+    .circle {
+      width: 38rem;
+      height: 38rem;
+      min-width: 38rem;
+      min-height: 38rem;
+      top: 4rem;
+    }
+
+    .arrow {
+      width: 8rem;
+      right: -0.3rem;
+      top: 0.25rem;
+      path {
+        stroke-width: 1;
+      }
+    }
+  }
+}
+
+.small {
+  gap: 11rem;
+
+  .copy {
+    font-family: $font-sans-display;
+    font-weight: 800;
+    font-size: 14rem;
+    letter-spacing: 0.18em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .circle {
+    top: 0;
+    width: 24rem;
+    height: 24rem;
+    min-width: 24rem;
+    min-height: 24rem;
+    border-width: 1px;
+  }
+}

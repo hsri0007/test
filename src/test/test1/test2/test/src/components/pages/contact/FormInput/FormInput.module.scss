@@ -1,0 +1,11 @@
+@import '~/styles/utils';
+
+.formLabel {
+  @include form-label;
+}
+
+.inputEl {
+  @include form-focus-effect;
+  @include form-input-text;
+  @include form-input;
+}

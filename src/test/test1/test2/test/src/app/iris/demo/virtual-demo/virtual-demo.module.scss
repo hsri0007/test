@@ -1,0 +1,68 @@
+@import '~/styles/utils';
+
+.container {
+  min-height: 100dvh;
+  background: linear-gradient(100deg, #dadeef 12.67%, #f6eaef 90.95%);
+  padding: calc($side-padding * 2 + 160rem) $side-padding 100rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  @include md {
+    padding-bottom: 200rem;
+  }
+}
+
+.heading {
+  @include h1;
+  text-align: center;
+  margin-bottom: 76rem;
+
+  @include md {
+    margin-bottom: 94rem;
+  }
+}
+
+.video {
+  aspect-ratio: 16 / 9;
+  border-radius: 20rem;
+  overflow: hidden;
+  height: auto !important;
+  margin-bottom: 57rem;
+
+  @include md {
+    margin-bottom: 98rem;
+  }
+
+  @include landscape {
+    width: 100%;
+  }
+}
+
+.subheading {
+  @include h2;
+  text-align: center;
+  margin-bottom: 42rem;
+
+  @include md {
+    margin-bottom: 56rem;
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 20rem;
+}
+
+.closeLink {
+  position: absolute;
+  top: calc($side-padding + $header-height * 2);
+  right: $side-padding;
+  width: 30rem;
+  height: 30rem;
+  display: block;
+  @include landscape {
+    width: 50rem;
+    height: 50rem;
+  }
+}

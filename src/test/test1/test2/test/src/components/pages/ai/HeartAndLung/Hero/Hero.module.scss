@@ -1,0 +1,139 @@
+@import '~/styles/utils';
+
+.Hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.inner {
+  position: relative;
+  height: 95vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+
+  @include landscape {
+    min-height: 650rem;
+    max-height: 1000rem;
+  }
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.gradientTop,
+.gradientBottom {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.gradientTop {
+  height: 20vh;
+  top: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.76) 0%,
+    rgba(0, 0, 0, 0.66) 24.5%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  opacity: 0.3;
+  transform: rotate(180deg);
+}
+
+.gradientBottom {
+  bottom: 0;
+  height: 40vh;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.76) 0%,
+    rgba(0, 0, 0, 0.66) 24.5%,
+    rgba(0, 0, 0, 0) 100%
+  );
+
+  @include landscape {
+    height: 20vh;
+  }
+}
+
+.textContent {
+  position: relative;
+  z-index: 3;
+  padding: 50rem var(--side-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30rem;
+
+  @include lg {
+    padding: 80rem var(--side-padding);
+  }
+}
+
+.title {
+  @include title;
+  text-align: center;
+  color: $color-white;
+  max-width: 280rem;
+
+  @include sm {
+    max-width: none;
+    @include h1-d;
+  }
+}
+
+.subtitle {
+  @include h3-m;
+  color: $color-white;
+  text-align: center;
+
+  @include sm {
+    @include h3-d;
+  }
+}
+
+.eyebrow,
+.mobileEyebrow {
+  @include small-text-bold-caps;
+  position: absolute;
+  z-index: 5;
+  color: $color-white;
+
+  sup {
+    font-size: 0.5em;
+  }
+}
+
+.eyebrow {
+  left: var(--side-padding);
+  display: none;
+  top: 190rem;
+
+  @include landscape {
+    display: block;
+  }
+}
+
+.mobileEyebrow {
+  right: var(--side-padding);
+  display: block;
+  top: 150rem;
+  white-space: pre-line;
+  text-align: right;
+
+  @include landscape {
+    display: none;
+  }
+}

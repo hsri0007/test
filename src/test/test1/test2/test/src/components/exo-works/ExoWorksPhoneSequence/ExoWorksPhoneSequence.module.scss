@@ -1,0 +1,11 @@
+@import '~/styles/utils';
+
+.container {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 600vh;
+  background: $color-white;
+  color: $color-dark-gray;
+  z-index: 1;
+}

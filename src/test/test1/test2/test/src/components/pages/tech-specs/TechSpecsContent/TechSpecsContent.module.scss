@@ -1,0 +1,46 @@
+@import '~/styles/utils';
+
+.hero {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 45rem;
+  padding: calc(120rem + calc(#{$header-height} * 2)) $side-padding 120rem;
+
+  @include landscape {
+    // min-height: calc(100svh - 100rem);
+  }
+}
+
+.require {
+  padding: 0 $side-padding;
+
+  p {
+    @include small-text-caps-m;
+    text-align: center;
+
+    @include md {
+      text-align: left;
+    }
+  }
+}
+
+.heroHeading {
+  @include h1;
+}
+
+.heroCopy {
+  @include body-m;
+  max-width: 19em;
+
+  @include sm {
+    max-width: 20em;
+  }
+
+  @include landscape {
+    max-width: 34em;
+    @include large-body;
+  }
+}

@@ -1,0 +1,19 @@
+@import '~/styles/utils';
+
+.preloader {
+  width: 70rem;
+  height: 70rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  svg {
+    width: 100%;
+  }
+
+  .loadProgress {
+    color: $color-gray;
+    padding-top: 10rem;
+    font-size: 11rem;
+  }
+}

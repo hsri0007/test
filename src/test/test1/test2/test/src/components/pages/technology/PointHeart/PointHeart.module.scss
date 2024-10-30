@@ -1,0 +1,11 @@
+@import '~/styles/utils';
+
+.canvas {
+  background: radial-gradient(#2c3c69 0%, transparent 60%, transparent),
+    radial-gradient(#4e2071 15%, #342561 30%, #0d0d0d 92%, #000000);
+  background-repeat: no-repeat, no-repeat;
+  background-position: -40% 220%, 0% 0%;
+  background-size: 85% 95%, 100% 100%;
+  background-blend-mode: lighten;
+  transform: translate3d(0, 0, 0);
+}

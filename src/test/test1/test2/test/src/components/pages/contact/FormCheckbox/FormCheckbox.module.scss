@@ -1,0 +1,40 @@
+@import '~/styles/utils';
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  padding: 15rem 0;
+
+  .CheckboxRoot {
+    width: 16rem;
+    height: 16rem;
+    border-radius: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      margin-top: -2rem;
+    }
+  }
+
+  .CheckboxIndicator {
+    color: $color-white;
+    background-color: $color-black;
+    border-radius: 4rem;
+    width: 16rem;
+    height: 16rem;
+  }
+
+  label.checkboxLabel {
+    padding-left: 10rem;
+    line-height: 1;
+    @include form-label;
+  }
+
+  p.labelText {
+    // @include small-text-bold-caps;
+    font-size: 8rem;
+    letter-spacing: 0.05em;
+  }
+}

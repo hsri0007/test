@@ -1,0 +1,255 @@
+@import '~/styles/utils';
+
+.container {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: $color-white;
+  color: $color-dark-gray;
+  z-index: 1;
+  box-sizing: border-box;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.grid {
+  position: sticky;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+}
+
+.leftColumn {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 50%;
+  z-index: 1;
+  background: $color-white;
+
+  @include landscape {
+    left: calc(35vw);
+    width: 30vw;
+    height: 100%;
+    transform: translate3d(-23vw, 0, 0);
+    border-left: 1px solid $color-lavender;
+    border-right: 1px solid $color-lavender;
+  }
+}
+
+.numberWrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 40%;
+  border-top: 1px solid $color-lavender;
+  background: $color-white;
+
+  @include landscape {
+    height: 32%;
+    border-top: 0;
+  }
+}
+
+.numberArea {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 25%;
+  height: 100%;
+  border-right: 1px solid $color-lavender;
+
+  @include landscape {
+    border-right: 0;
+  }
+}
+
+.numberContainer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  transform: translate3d(0, 100%, 0);
+  background: $color-white;
+}
+
+.number {
+  @include title;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(100% - $header-height);
+  background: $color-white;
+
+  @include landscape {
+    width: 100%;
+    height: 100%;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 13rem 32rem;
+  }
+}
+
+.bottomSection {
+  position: relative;
+  width: 100%;
+  height: 60%;
+  border-bottom: 1px solid $color-lavender;
+  border-top: 1px solid $color-lavender;
+
+  @include landscape {
+    width: 100%;
+    height: 68%;
+  }
+}
+
+.corner {
+  position: absolute;
+  width: 15rem;
+  height: 15rem;
+  top: 30rem;
+  left: 30rem;
+  color: $color-dark-gray;
+  display: none;
+
+  @include landscape {
+    display: block;
+  }
+}
+
+.headingContainer {
+  position: relative;
+}
+
+.copyWrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: $color-white;
+}
+
+.copyContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20rem;
+  transform: translate3d(0, 100%, 0);
+  background: $color-white;
+  overflow: hidden;
+
+  @include landscape {
+    padding: 50rem 64rem;
+    justify-content: flex-end;
+  }
+}
+
+.heading {
+  @include h3;
+  margin-bottom: 28rem;
+}
+
+.copy {
+  @include body;
+}
+
+.subCopy {
+  margin-top: 30rem;
+  color: rgba(34, 34, 34, 1);
+  font-family: $font-sans-text;
+  font-size: 10rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.rightColumn {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+
+  * {
+    pointer-events: none;
+  }
+
+  @include landscape {
+    display: block;
+    left: 42%;
+    width: 58%;
+    height: 100%;
+  }
+
+  .imageContainer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transform: translate3d(0, 200vh, 0);
+
+    @include landscape {
+      justify-content: center;
+    }
+
+    &[data-step-type='Phone'] {
+      img {
+        visibility: hidden;
+      }
+    }
+
+    &[data-step-type='Laptop'] {
+      img {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        height: auto;
+        max-width: none;
+        margin-top: 40vh;
+
+        @include landscape {
+          width: 90%;
+          height: auto;
+          margin-top: $header-height;
+        }
+      }
+    }
+  }
+}
+
+.phoneCanvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}

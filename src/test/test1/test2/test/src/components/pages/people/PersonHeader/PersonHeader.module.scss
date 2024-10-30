@@ -1,0 +1,105 @@
+@import '~/styles/utils';
+
+.card {
+  margin: 100rem 0;
+  background: rgba(255, 255, 255, 0.01);
+  box-shadow: 3.3964498043060303rem 6.7928996086120605rem 50.946746826171875rem 0 rgba(0, 0, 0, 0.1);
+
+  @include landscape {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    max-width: 1760rem;
+    margin: 80rem auto 165rem;
+    border-radius: 20rem;
+    background: rgba(255, 255, 255, 0.01);
+    box-shadow: 3.3964498043060303rem 6.7928996086120605rem 50.946746826171875rem 0
+      rgba(0, 0, 0, 0.05);
+  }
+}
+
+.copy {
+  text-align: center;
+  padding: 60rem 20rem 80rem;
+
+  @include landscape {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8% 20rem 0 60rem;
+  }
+}
+
+.name {
+  @include h1-m;
+  margin-bottom: 5rem;
+
+  @include landscape {
+    @include h1-d;
+    margin-bottom: 0;
+  }
+}
+
+.title {
+  @include large-body-m;
+
+  @include landscape {
+    @include large-body-d;
+  }
+}
+
+.profile {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+
+  @include landscape {
+    text-align: unset;
+    width: 100%;
+    max-width: 720rem;
+  }
+}
+
+.accent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: $color-exo-fluro;
+  width: 100%;
+  max-width: 50%;
+  height: 100%;
+  z-index: 0;
+  border-radius: 0 16.6rem 16.6rem 16.6rem;
+  background: var($rgb-exo-fluro, #10f8e4);
+  box-shadow: 3.3964498043060303rem 6.7928996086120605rem 50.946746826171875rem 0
+    rgba(0, 0, 0, 0.05);
+
+  @include landscape {
+    max-width: 720rem;
+    border-radius: 20rem;
+    background: var($color-exo-fluro, #10f8e4);
+  }
+}
+
+.photo {
+  border-radius: 16.612rem 0 16.612rem 16.612rem;
+  background: #d5dae0;
+  box-shadow: 2.8210511207580566rem 5.642102241516113rem 42.31576919555664rem 0 rgba(0, 0, 0, 0.05);
+  position: relative;
+  top: 0;
+  //left: 39rem;
+  right: 0;
+  bottom: 0;
+  //width: 100%;
+
+  @include landscape {
+    //left: 220rem;
+    //border-radius: 20rem;
+    height: auto;
+    background: unset;
+    box-shadow: unset;
+    float: inline-end;
+  }
+}

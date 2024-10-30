@@ -1,0 +1,144 @@
+@import '~/styles/utils';
+
+$outro-padding: 300rem;
+
+.section {
+  padding: #{$outro-padding} 0;
+  width: 100%;
+  overflow: hidden;
+  &.noHeight {
+    margin-top: -#{$outro-padding};
+    pointer-events: none;
+    z-index: 0;
+  }
+  &.animatedHeading {
+    height: 100lvh;
+    padding: 0;
+
+    @include landscape {
+      height: 200lvh;
+    }
+  }
+}
+
+.background {
+  position: absolute;
+  background: $color-white;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.gradientBackground {
+  display: block;
+  opacity: 0.4;
+
+  canvas {
+    display: block !important;
+  }
+}
+
+.backgroundContent {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - #{$outro-padding});
+  bottom: #{$outro-padding};
+  left: 0;
+  overflow: hidden;
+}
+
+.primary,
+.secondary {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0%;
+  bottom: -100%;
+}
+
+.primary {
+  opacity: 0.4;
+}
+
+.secondary {
+  opacity: 0.2;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .animatedHeading & {
+    height: 35%;
+
+    @include landscape {
+      height: 50%;
+    }
+  }
+}
+
+.headingContainer {
+  max-width: $breakpoint-lg;
+  margin: auto;
+  margin-bottom: 70rem;
+  padding: 0 $side-padding;
+  position: relative;
+  .noHeading & {
+    display: none;
+  }
+  .hasCopy & {
+    margin-bottom: 30rem;
+  }
+  .animatedHeading & {
+    margin-top: 0;
+    margin-bottom: 90rem;
+    padding: 0;
+    width: 100vw;
+    max-width: none;
+    overflow: hidden;
+    text-align: left;
+    mask-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0) 2.5%,
+      rgba(0, 0, 0, 1) 33.333%,
+      rgba(0, 0, 0, 1) 66.666%,
+      rgba(0, 0, 0, 0) 97.5%
+    );
+  }
+}
+
+.heading {
+  @include h2;
+  .hasCopy & {
+    @include h1;
+  }
+  .animatedHeading & {
+    @include title;
+    line-height: 1.2 !important;
+    white-space: nowrap;
+    position: relative;
+    left: 33.333vw;
+    top: 0;
+  }
+}
+
+.copy {
+  @include large-body;
+  max-width: $breakpoint-lg;
+  margin: auto;
+  margin-bottom: 50rem;
+  padding: 0 $side-padding;
+}
+
+.ctas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20rem;
+  padding: 0 $side-padding;
+}

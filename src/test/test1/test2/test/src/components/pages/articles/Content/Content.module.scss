@@ -1,0 +1,27 @@
+@import '~/styles/utils';
+
+.container {
+  padding-bottom: 160rem;
+
+  @include sm {
+    padding-bottom: 210rem;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45vh;
+
+  @include landscape {
+    height: auto;
+    margin-top: 100rem;
+    margin-bottom: 100rem;
+  }
+}
+
+.heading {
+  @include title;
+  text-align: center;
+}

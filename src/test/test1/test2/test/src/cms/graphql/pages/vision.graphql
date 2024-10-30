@@ -1,0 +1,98 @@
+fragment visionContent on Vision {
+  meta {
+    ...pageMeta
+  }
+  heroCopy
+  heroAnimatedCopy
+  splashHeading
+  splashCopy
+  splashFloatingImagesCollection {
+    items {
+      ...asset
+    }
+  }
+  splashImageLarge {
+    ...asset
+  }
+  splashImageSmall {
+    ...asset
+  }
+  visionImagesCollection {
+    items {
+      ...asset
+    }
+  }
+  visionAHeading
+  visionACopy
+  visionBHeading
+  visionBCopy
+  visionCHeading
+  visionCCopy
+  visionDHeading
+  visionDCopy
+  modularSectionsMiddleCollection {
+    items {
+      ... on ArticleCarousel {
+        ...articleCarouselSection
+      }
+      ... on EmailSignUp {
+        ...emailSignUpSection
+      }
+      ... on ResponsiveVideo {
+        ...responsiveVideoSection
+      }
+      ... on QuoteCarousel {
+        ...quoteCarouselSection
+      }
+    }
+  }
+  aboutHeading
+  aboutCopyA
+  aboutCtaA {
+    ...link
+  }
+  aboutCopyB
+  aboutCtaB {
+    ...link
+  }
+  aboutPeopleCollection {
+    items {
+      sys {
+        id
+      }
+      title
+      name
+      gridPhoto {
+        ...asset
+      }
+    }
+  }
+  modularSectionsBottomCollection {
+    items {
+      ... on ArticleCarousel {
+        ...articleCarouselSection
+      }
+      ... on EmailSignUp {
+        ...emailSignUpSection
+      }
+      ... on ResponsiveVideo {
+        ...responsiveVideoSection
+      }
+      ... on QuoteCarousel {
+        ...quoteCarouselSection
+      }
+    }
+  }
+  outro {
+    ...outro
+  }
+}
+
+query vision($preview: Boolean!) {
+  ...pageWithModularSection
+  visionCollection(limit: 1, preview: $preview) {
+    items {
+      ...visionContent
+    }
+  }
+}

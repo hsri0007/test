@@ -1,0 +1,139 @@
+@import '~/styles/utils';
+
+.logo {
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.icon {
+  width: 33.472%;
+}
+
+.wordmark {
+  width: 56.612%;
+}
+
+.spacer {
+  width: 9.916%;
+}
+
+@mixin logo-all-visible {
+  .icon {
+    width: 33.472%;
+    display: block;
+  }
+
+  .wordmark {
+    width: 56.612%;
+    display: block;
+  }
+
+  .spacer {
+    width: 9.916%;
+    display: block;
+  }
+}
+
+.hideIcon {
+  .icon,
+  .spacer {
+    display: none;
+  }
+  .wordmark {
+    width: 100%;
+  }
+}
+
+.hideIconUntil_ {
+  &xs {
+    @extend .hideIcon;
+    @include xs {
+      @include logo-all-visible;
+    }
+  }
+  &sm {
+    @extend .hideIcon;
+    @include sm {
+      @include logo-all-visible;
+    }
+  }
+  &md {
+    @extend .hideIcon;
+    @include md {
+      @include logo-all-visible;
+    }
+  }
+  &lg {
+    @extend .hideIcon;
+    @include landscape {
+      @include logo-all-visible;
+    }
+  }
+  &xl {
+    @extend .hideIcon;
+    @include xl {
+      @include logo-all-visible;
+    }
+  }
+  &xxl {
+    @extend .hideIcon;
+    @include xxl {
+      @include logo-all-visible;
+    }
+  }
+}
+
+.hideWordmark {
+  .wordmark,
+  .spacer {
+    display: none;
+  }
+
+  .icon {
+    width: 100%;
+  }
+}
+
+.hideWordmarkUntil_ {
+  &xs {
+    @extend .hideWordmark;
+    @include xs {
+      @include logo-all-visible;
+    }
+  }
+  &sm {
+    @extend .hideWordmark;
+    @include sm {
+      @include logo-all-visible;
+    }
+  }
+  &md {
+    @extend .hideWordmark;
+    @include md {
+      @include logo-all-visible;
+    }
+  }
+  &lg {
+    @extend .hideWordmark;
+    @include landscape {
+      @include logo-all-visible;
+    }
+  }
+  &xl {
+    @extend .hideWordmark;
+    @include xl {
+      @include logo-all-visible;
+    }
+  }
+  &xxl {
+    @extend .hideWordmark;
+    @include xxl {
+      @include logo-all-visible;
+    }
+  }
+}

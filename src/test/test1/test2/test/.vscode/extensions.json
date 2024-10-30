@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "yoavbls.pretty-ts-errors",
+    "mikestead.dotenv",
+    "sainoba.px-to-rem",
+    "christian-kohler.npm-intellisense",
+    "ivoilic.nextjs-special-files-snippets",
+    "Huuums.vscode-fast-folder-structure"
+  ]
+}

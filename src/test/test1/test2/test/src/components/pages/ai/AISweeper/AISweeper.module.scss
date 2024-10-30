@@ -1,0 +1,80 @@
+@import '~/styles/utils';
+
+.calloutContainer {
+  @include landscape {
+    background-color: $color-dark-dark-blue;
+    padding: 120rem 200rem;
+  }
+}
+
+.inner {
+  width: 100%;
+  max-width: 1760rem;
+  margin: 0 auto;
+  padding: 90rem 40rem 55rem;
+  border-top: 1px solid rgb(var(--ai-green));
+  border-bottom: 1px solid rgb(var(--ai-green));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40rem;
+  background-color: #ebeef2;
+  // background: linear-gradient(180deg, #eaedf1 71.88%, rgba(234, 237, 241, 0) 100%);
+  box-shadow: 3.39645px 6.7929px 50.9467px rgba(0, 0, 0, 0.02);
+  backdrop-filter: blur(7px);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+
+  @include xs {
+    border: 2px solid rgb(var(--ai-green));
+    border-radius: 20rem;
+  }
+
+  @include lg {
+    text-align: left;
+    flex-direction: row;
+    display: grid;
+    grid-template-columns: 0.4fr 0.6fr;
+    gap: 132rem;
+    padding: 140rem 65rem;
+    border: 2px solid rgb(var(--ai-green));
+    border-radius: 20rem;
+  }
+
+  @include lg {
+    gap: 132rem;
+  }
+}
+
+.bgGradient {
+  pointer-events: none;
+  position: absolute;
+  width: 500rem;
+  height: 500rem;
+  left: 30%;
+  top: 0;
+  transform: translate(-50%, -70%);
+  background: radial-gradient(#66ffda 12.67%, transparent 70.95%);
+  opacity: 0.4;
+  z-index: -1;
+
+  @include landscape {
+    width: 1400rem;
+    height: 1400rem;
+  }
+}
+
+.title {
+  @include h2;
+}
+
+.subtitle {
+  @include large-body;
+  margin-bottom: 10rem;
+}
+
+.description {
+  @include large-body;
+}

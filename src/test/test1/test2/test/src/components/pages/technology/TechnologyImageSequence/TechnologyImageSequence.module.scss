@@ -1,0 +1,213 @@
+@import '~/styles/utils';
+
+.container {
+  height: 1200vh;
+  width: 100%;
+  position: relative;
+  z-index: 3;
+  background: $color-white;
+
+  @include landscape {
+    height: 1350vh;
+  }
+}
+
+.sequenceContainer {
+  height: 100vh;
+  width: 100%;
+  position: sticky;
+  top: 0;
+}
+
+.canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.outerStatsContainer {
+  z-index: 5;
+  width: 100%;
+  position: absolute;
+  top: 528vh;
+
+  @include landscape {
+    height: 200vh;
+  }
+}
+
+.statsContainer {
+  padding: 0 $side-padding;
+  @include sm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40rem;
+    height: 86vh;
+    align-content: center;
+  }
+
+  @include landscape {
+    @include standard-grid;
+    z-index: 2;
+    position: sticky;
+    top: 0;
+    padding-top: 99rem;
+    height: 70vh;
+    align-content: center;
+  }
+}
+
+.copyContainer {
+  margin-bottom: 36rem;
+  grid-column: 1 / 7;
+  @include landscape {
+    grid-column: 2 / 6;
+  }
+}
+
+.statsHeading {
+  @include h1-m;
+  margin-bottom: 36rem;
+}
+
+.statsCopy {
+  @include body-d;
+  max-width: 575rem;
+  margin-bottom: 10rem;
+}
+
+.statsGrid {
+  display: grid;
+  gap: 45rem;
+  padding-bottom: 20vh;
+
+  @include landscape {
+    grid-column: 8 / 13;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: $grid-gap;
+    row-gap: 45rem;
+  }
+
+  @include xxl {
+    grid-column: 8 /12;
+  }
+}
+
+.statContainer {
+  @include landscape {
+    grid-column: span 2;
+    display: grid;
+    grid-template-rows: 120rem auto;
+  }
+}
+
+.statIcon {
+  max-width: 70px;
+  width: 100%;
+  height: auto;
+  padding-bottom: 20px;
+}
+
+.statValue {
+  @include h1-m;
+  margin-bottom: 10rem;
+}
+
+.statLabel {
+  @include small-text-bold-caps-m;
+
+  @include landscape {
+    max-width: 211rem;
+  }
+}
+
+.bottomIrisContainer {
+}
+
+.stickyContainer {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+
+  @include landscape {
+    padding-top: 12vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+    justify-items: center;
+  }
+}
+
+.header {
+  @include title;
+  text-align: center;
+  top: 45rem;
+  position: absolute;
+  padding: 0 $side-padding;
+  visibility: hidden;
+  filter: blur(15rem);
+
+  @include sm {
+    top: 150rem;
+    @include h1-d;
+  }
+
+  @include landscape {
+    top: unset;
+    position: relative;
+    padding-bottom: 59rem;
+  }
+
+  @media all and (min-height: 900px) {
+    max-width: 960rem;
+  }
+}
+
+.subcopy {
+  @include small-body-m;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 50vh;
+  padding: 0 $side-padding;
+  visibility: hidden;
+  filter: blur(15rem);
+
+  @include sm {
+    @include large-body-d;
+  }
+
+  @include landscape {
+    top: unset;
+    height: unset;
+    position: relative;
+    max-width: 794rem;
+  }
+}
+
+.subcopy2 {
+  // visibility: hidden;
+  @include landscape {
+    align-self: flex-end;
+    padding-bottom: 8vh;
+  }
+
+  @media all and (min-height: 950px) {
+    padding-bottom: 12vh;
+  }
+}

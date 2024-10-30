@@ -1,0 +1,65 @@
+@import '~/styles/utils';
+
+.gradientContainer {
+  width: 100vw;
+  height: 120vh;
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.graidentBackgroundCanvas {
+  opacity: $gradient-bg-opacity;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+
+  .content {
+    z-index: 2;
+    text-align: center;
+
+    h1 {
+      @include title;
+
+      @include landscape {
+        font-size: 170rem;
+      }
+    }
+
+    .subTitle {
+      @include h3;
+      margin-top: 1em;
+      font-weight: 100;
+
+      @include sm {
+        font-weight: 100;
+      }
+    }
+
+    @include lg {
+      width: 60%;
+    }
+  }
+}
+
+.linearGradient {
+  background: linear-gradient(
+    180deg,
+    #f7f9fc00,
+    $color-exo-fluro 36%,
+    $color-exo-blue 60%,
+    $color-dark-dark-blue 100%
+  );
+  height: 70vh;
+  backdrop-filter: blur(7px);
+}

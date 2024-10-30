@@ -1,0 +1,199 @@
+@import '~/styles/utils';
+
+.section {
+  padding: 40rem 0 25rem;
+  background: $color-background;
+  color: $color-foreground;
+  overflow: hidden;
+  @include landscape {
+    padding-top: 60rem;
+    padding-bottom: 90rem;
+  }
+}
+
+.header {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  padding: 0 $side-padding 55rem;
+  @include landscape {
+    padding-bottom: 25rem;
+  }
+}
+
+.heading {
+  @include h3-m;
+  @include landscape {
+    @include h4-d;
+  }
+}
+
+.controls {
+  position: absolute;
+  bottom: 18rem;
+  right: $side-padding;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+  @include landscape {
+    bottom: 25rem;
+  }
+}
+
+.counter {
+  @include small-body-m;
+  font-variant-numeric: tabular-nums;
+  display: flex;
+  gap: 0.25em;
+}
+
+.previous,
+.next {
+  border: none;
+  cursor: pointer;
+  width: 20rem;
+  height: 20rem;
+  transition: opacity $speed $evil-ease, color $speed $evil-ease;
+  position: relative;
+  svg {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  &:hover {
+    color: $accent-color;
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.2;
+  &:hover {
+    color: inherit;
+  }
+}
+
+.previous {
+  transform: rotateY(180deg);
+}
+
+.articlesWrapper {
+  width: 100%;
+  padding: 0 $side-padding;
+}
+
+.articles {
+  display: flex;
+  gap: 0;
+}
+
+.articleWrapper {
+  padding-right: $grid-gap;
+}
+
+.article {
+  position: relative;
+  height: 100%;
+  background: $color-highlight;
+  display: inline-flex;
+  border-radius: 14rem;
+  flex: 0;
+  width: 100vw;
+  min-width: 100vw;
+  padding-bottom: 18rem;
+  gap: 100rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 26rem 26rem 23rem;
+  @include sm {
+    width: n-grid-col-width(2);
+    min-width: n-grid-col-width(2);
+  }
+  @include landscape {
+    border-radius: 20rem;
+    width: n-grid-col-width(4);
+    min-width: n-grid-col-width(4);
+    gap: 12rem;
+    padding-bottom: 25rem;
+    gap: 150rem;
+    padding: 40rem 40rem 33rem;
+  }
+
+  &:hover {
+    .hoverOutline {
+      opacity: 1;
+    }
+  }
+}
+
+.articleContent {
+  display: flex;
+  gap: 9rem;
+  flex-direction: column;
+  // justify-content: space-between;
+  justify-content: center;
+  height: 100%;
+  align-items: flex-start;
+}
+
+.spacer {
+  flex: 2;
+  min-height: 100rem;
+  @include landscape {
+    min-height: 150rem;
+  }
+}
+
+.articleHeading {
+  @include h3;
+  @include landscape {
+    font-size: 2vw;
+  }
+  transition: color $quick $ease-out;
+  &:hover {
+    color: $accent-color;
+  }
+}
+
+.date {
+  @include small-text-bold-m;
+}
+
+.excerpt {
+  @include small-body;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.arrowLink {
+  display: flex;
+}
+
+.hoverOutline {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2rem solid currentColor;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  transition: opacity $speed $ease-out;
+  border-radius: 14rem;
+  @include landscape {
+    border-radius: 20rem;
+  }
+}
+
+.articleHeadingAnchor:hover ~ .hoverOutline,
+.arrowLink:hover ~ .hoverOutline {
+  opacity: 1;
+}

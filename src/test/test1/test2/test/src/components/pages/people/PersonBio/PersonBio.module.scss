@@ -1,0 +1,42 @@
+@import '~/styles/utils';
+
+.bio {
+  padding: 0 20rem 240rem;
+
+  @include landscape {
+    padding-bottom: 385rem;
+    max-width: 1167rem;
+    margin: 0 auto;
+  }
+}
+
+.copy {
+  @include body-m;
+
+  @include landscape {
+    @include large-body-d;
+  }
+}
+
+.quote {
+  padding: 70rem 0;
+  @include quote-m;
+
+  @include md {
+    padding: 140rem 0;
+    max-width: 982rem;
+  }
+}
+
+.quoteContent {
+  @include quote-m;
+
+  @include landscape {
+    @include quote-d;
+  }
+}
+
+.quoteIcon {
+  width: 36rem;
+  margin: 0 0 10rem 8rem;
+}

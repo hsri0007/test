@@ -1,0 +1,125 @@
+@import '~/styles/utils';
+
+.overlay {
+  background: rgba(0, 0, 0, 1);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 204;
+}
+
+.content {
+  position: fixed;
+  z-index: 205;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.close {
+  display: inline-block;
+  border: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  background: transparent;
+  -webkit-appearance: none;
+  position: fixed;
+  top: 20rem;
+  right: 20rem;
+  cursor: pointer;
+  z-index: 206;
+
+  @include landscape {
+    top: 20rem;
+    right: 30rem;
+  }
+
+  @include xxl {
+    top: 40rem;
+    right: 40rem;
+  }
+}
+
+.closeSvg {
+  width: 28rem;
+  height: 28rem;
+  color: $color-white;
+
+  @include landscape {
+    color: $color-white;
+  }
+
+  @include xl {
+    width: 36rem;
+    height: 36rem;
+  }
+
+  @include xxl {
+    width: 48rem;
+    height: 48rem;
+  }
+}
+
+.imageContainer {
+  width: 65%;
+  height: 80%;
+
+  @include landscape {
+    width: 80%;
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.carouselNavBtn {
+  cursor: pointer;
+}
+
+.carouselNavIconBack {
+  transform: rotate(180deg);
+  left: 10rem;
+
+  @include landscape {
+    left: 20rem;
+  }
+}
+
+.carouselNavIcon {
+  position: absolute;
+  top: 50%;
+  right: 10rem;
+  max-width: 35rem;
+  color: white;
+  z-index: 1;
+
+  @include landscape {
+    max-width: 50rem;
+    right: 20rem;
+  }
+}
+
+.caption {
+  display: block;
+  color: $color-light-light-gray;
+  padding: 20rem 0;
+  width: 100%;
+  text-align: center;
+}
+
+.video {
+  display: block;
+  margin: 0 auto;
+  max-width: 390px;
+}

@@ -1,0 +1,180 @@
+// Colors
+
+// RGB Values from CSS Vars
+$rgb-pink: var(--pink, 235 212 214);
+$rgb-gold: var(--gold, 236 194 111);
+$rgb-lavender: var(--lavender, 216 218 236);
+$rgb-light-gray: var(--light-gray, 234 237 241);
+$rgb-light-light-gray: var(--light-light-gray, 247 249 252);
+$rgb-gray: var(--gray, 56 64 73);
+$rgb-dark-gray: var(--dark-gray, 91 92 93);
+$rgb-dark-blue: var(--dark-blue, 14 23 70);
+$rgb-works-purple: var(--works-purple, 104 100 221);
+$rgb-iris-blue: var(--iris-blue, 110 153 234);
+$rgb-ai-green: var(--ai-green);
+$rgb-exo-blue: var(--exo-blue, 36 176 255);
+$rgb-exo-fluro: var(--exo-fluro, 16 248 228);
+$rgb-dark-dark-blue: var(--dark-dark-blue, 8 11 27);
+$rgb-black: var(--black, 0 0 0);
+$rgb-white: var(--white, 255 255 255);
+$rgb-gray-black: var(--bg-type-gray-black, 34 34 34);
+// Reponsive
+$rgb-background: var(--background, var(--white));
+$rgb-foreground: var(--foreground, var(--dark-gray));
+$rgb-foreground-alt: var(--foreground-alt, var(--dark-dark-blue));
+$rgb-highlight: var(--highlight, var(--light-gray));
+$opacity-highlight: var(--highlight-opacity, 1);
+$opacity-header-background: var(--header-background-opacity, 0.2);
+
+// Map of all RGB Color Values by Name
+$rgb-colors: (
+  'pink': $rgb-pink,
+  'gold': $rgb-gold,
+  'lavender': $rgb-lavender,
+  'light-gray': $rgb-light-gray,
+  'light-light-gray': $rgb-light-light-gray,
+  'gray': $rgb-gray,
+  'dark-gray': $rgb-dark-gray,
+  'dark-blue': $rgb-dark-blue,
+  'works-purple': $rgb-works-purple,
+  'iris-blue': $rgb-iris-blue,
+  'ai-green': $rgb-ai-green,
+  'exo-blue': $rgb-exo-blue,
+  'exo-fluro': $rgb-exo-fluro,
+  'dark-dark-blue': $rgb-dark-dark-blue,
+  'black': $rgb-black,
+  'white': $rgb-white,
+  'gray-black': $rgb-gray-black,
+  // Responsive
+  'background': $rgb-background,
+  'foreground': $rgb-foreground,
+  'foreground-alt': $rgb-foreground-alt,
+  'highlight': $rgb-highlight,
+);
+
+$color-pink: rgb(#{$rgb-pink});
+$color-gold: rgb(#{$rgb-gold});
+$color-lavender: rgb(#{$rgb-lavender});
+$color-light-gray: rgb(#{$rgb-light-gray});
+$color-light-light-gray: rgb(#{$rgb-light-light-gray});
+$color-gray: rgb(#{$rgb-gray});
+$color-dark-gray: rgb(#{$rgb-dark-gray});
+$color-dark-blue: rgb(#{$rgb-dark-blue});
+$color-works-purple: rgb(#{$rgb-works-purple});
+$color-ai-green: rgb(#{$rgb-ai-green});
+$color-iris-blue: rgb(#{$rgb-iris-blue});
+$color-exo-blue: rgb(#{$rgb-exo-blue});
+$color-exo-fluro: rgb(#{$rgb-exo-fluro});
+$color-dark-dark-blue: rgb(#{$rgb-dark-dark-blue});
+$color-black: rgb(#{$rgb-black});
+$color-white: rgb(#{$rgb-white});
+$color-gray-black: rgb(#{$rgb-gray-black});
+// Responsive
+$color-background: rgb(#{$rgb-background});
+$color-foreground: rgb(#{$rgb-foreground});
+$color-foreground-alt: rgb(#{$rgb-foreground-alt});
+$color-highlight: rgb(#{$rgb-highlight} / #{$opacity-highlight});
+$color-header-background: rgb(#{$rgb-white}/#{$opacity-header-background});
+// Unique
+$color-photo-background: #d4dbe1;
+
+// Gradients
+$gradient1: linear-gradient(180deg, #8d91ff 0%, #ecc26f 100%);
+$gradient2: linear-gradient(180deg, #e3aaad 0%, #eacfad 100%);
+$gradient3: linear-gradient(107deg, #dadeef 0%, #f6eaef 100%);
+
+// Media queries
+// 2 Col
+$breakpoint-xxs: 375px;
+$breakpoint-xs: 500px;
+// 4 col
+$breakpoint-sm: 700px;
+$breakpoint-md: 900px;
+// 12 col
+$breakpoint-lg: 1200px;
+$breakpoint-xl: 1400px;
+$breakpoint-xxl: 1800px;
+
+$breakpoints: (
+  xxs: $breakpoint-xxs,
+  xs: $breakpoint-xs,
+  sm: $breakpoint-sm,
+  md: $breakpoint-md,
+  lg: $breakpoint-lg,
+  xl: $breakpoint-xl,
+  xxl: $breakpoint-xxl,
+);
+
+// Typography
+$font-sans-fallback: system-ui, /* macOS 10.11-10.12 */ -apple-system, /* Windows 6+ */ 'Segoe UI',
+  /* Android 4+ */ 'Roboto', /* Ubuntu 10.10+ */ 'Ubuntu', /* Gnome 3+ */ 'Cantarell',
+  /* KDE Plasma 5+ */ 'Noto Sans', /* fallback */ sans-serif, /* macOS emoji */ 'Apple Color Emoji',
+  /* Windows emoji */ 'Segoe UI Emoji', /* Windows emoji */ 'Segoe UI Symbol',
+  /* Linux emoji */ 'Noto Color Emoji';
+$font-sans-text: var(--HNText), $font-sans-fallback;
+$font-sans-display: var(--HNDisplay), $font-sans-fallback;
+
+// Timing
+$quick: 100ms;
+$speed: 333ms;
+$speed-metal: 666ms;
+
+// Easing
+$ease-in: cubic-bezier(0.55, 0.055, 0.666, 0.19);
+$ease-out: cubic-bezier(0.237, 0.666, 0.333, 1);
+
+// This ease is used in memory of Drew Dahlman 🤘🏻
+// It was his favorite. Please don't remove or modify it.
+$evil-ease: cubic-bezier(0.666, 0, 0.237, 1);
+
+$elegant-ease: cubic-bezier(0.18, 0.58, 0.19, 1);
+
+// Grids
+$grid-gap-mobile: 12rem;
+$grid-gap-tablet: 12rem;
+$grid-gap-desktop: 20rem;
+
+$grid-gap: var(--grid-gap); // Responsive value
+
+$grid-col-count-mobile: 2;
+$grid-col-count-tablet: 4;
+$grid-col-count-desktop: 12;
+$grid-col-count: var(--grid-col-count);
+//(windowWidth - sidePadding * 2 - gridGap * (colCount - 1)) / colCount;
+
+$side-padding-mobile: 20rem;
+$side-padding-tablet: 40rem;
+$side-padding-desktop: 80rem;
+
+$side-padding: var(--side-padding); // Responsive value
+
+$grid-col-width: calc(
+  calc(calc(100vw - calc(#{$side-padding} * 2)) - calc(#{$grid-gap} * calc(#{$grid-col-count} - 1))) /
+    #{$grid-col-count}
+); // Responsive value
+
+$header-height-mobile: 60rem;
+$header-height-desktop: 60rem;
+$header-height-oversized: 60rem;
+
+$header-height: var(--header-height); // Responsive value
+
+$mouse-x: var(--mouse-x, 0px);
+$mouse-y: var(--mouse-y, 0px);
+// $scroll-x: var(--scroll-x, 0px);
+// $scroll-y: var(--scroll-y, 0px);
+
+$cursor-size-mobile: 74rem;
+$cursor-size-desktop: 74rem;
+
+$accent-color: var(--accent-color, $color-exo-blue);
+
+//GRADIENT BACKGROUND - Default opacity
+$gradient-bg-opacity: 0.45;
+
+$P393: 100vw / 393;
+
+$L1200: 100vh / 1200;
+$L1080: 100vh / 1200;
+
+$cursor-names: 'pause', 'chevron-right', 'chevron-left', 'tap', 'drag', 'play';

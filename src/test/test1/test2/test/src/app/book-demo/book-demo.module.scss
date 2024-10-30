@@ -1,0 +1,111 @@
+@import '~/styles/utils';
+
+.bookDemo {
+  @include standard-grid;
+  padding: 80rem $side-padding;
+  row-gap: 72rem;
+  background: linear-gradient(100deg, $color-lavender 12.67%, $color-pink 90.95%);
+  @include landscape {
+    padding: 250rem $side-padding;
+  }
+}
+
+.closeLink {
+  position: absolute;
+  top: calc($side-padding + $header-height);
+  right: $side-padding;
+  width: 30rem;
+  height: 30rem;
+  display: block;
+  @include landscape {
+    width: 50rem;
+    height: 50rem;
+  }
+}
+
+.closeIcon {
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  color: $color-dark-gray;
+  gap: 40px;
+  grid-column: 1 / span 2;
+  @include sm {
+    grid-column: 1 / span 3;
+  }
+  @include landscape {
+    gap: 80px;
+    grid-column: 2 / span 5;
+  }
+}
+
+.form {
+  grid-column: 1 / span 2;
+  @include sm {
+    grid-column: 1 / span 3;
+  }
+  @include landscape {
+    grid-column: 8 / span 4;
+  }
+}
+
+.heading {
+  @include h1;
+  text-align: center;
+  @include sm {
+    text-align: left;
+  }
+  @include landscape {
+    text-align: left;
+  }
+}
+
+.subheading {
+  @include h2;
+  text-align: center;
+  @include sm {
+    text-align: left;
+  }
+  @include landscape {
+    text-align: left;
+  }
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 9rem;
+}
+
+.detail {
+  @include small-text-bold-m;
+  &:before {
+    content: '';
+    width: 6rem;
+    height: 6rem;
+    display: inline-block;
+    border-radius: 3rem;
+    background: $accent-color;
+    vertical-align: middle;
+    margin-right: 10rem;
+  }
+  @include landscape {
+    @include body-d;
+    margin-right: 15rem;
+  }
+}
+
+.video {
+  aspect-ratio: 16 / 9;
+  border-radius: 20rem;
+  overflow: hidden;
+  height: auto;
+  @include sm {
+    width: n-grid-col-width(4);
+  }
+  @include landscape {
+    width: 100%;
+  }
+}

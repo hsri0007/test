@@ -1,0 +1,45 @@
+@import '~/styles/utils';
+
+.orb {
+  width: 150%;
+  height: 150%;
+  position: absolute;
+  top: -25%;
+  left: -25%;
+  transform: translate3d(0, 0, 0);
+}
+
+.cores {
+  filter: blur(50rem);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transform: translate3d(0, 0, 0);
+}
+
+.glows {
+  filter: blur(20rem);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  pointer-events: none;
+  transform: translate3d(0, 0, 0);
+}
+
+.outlines {
+  filter: blur(0.5rem);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transform: translate3d(0, 0, 0);
+}

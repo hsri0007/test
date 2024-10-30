@@ -1,0 +1,19 @@
+@import '~/styles/utils';
+
+.container {
+  opacity: 1;
+  transition: 0.5s opacity $evil-ease;
+
+  & > section {
+    filter: blur(0rem);
+    transition: 0.5s filter $evil-ease;
+  }
+}
+
+.blur {
+  opacity: 0;
+
+  & > section {
+    filter: blur(6rem);
+  }
+}

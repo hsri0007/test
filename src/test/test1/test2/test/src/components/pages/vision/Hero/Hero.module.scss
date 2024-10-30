@@ -1,0 +1,181 @@
+@import '~/styles/utils';
+
+.container {
+  height: 500vh;
+}
+
+.content {
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  display: grid;
+  align-content: center;
+  height: 100vh;
+}
+
+.panel {
+  opacity: 0;
+  visibility: hidden;
+  filter: blur(15rem);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+  padding-right: $side-padding;
+  padding-left: $side-padding;
+  text-align: center;
+}
+
+.bgContainer {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 100dvh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.gradientBackground {
+  opacity: 0.4;
+}
+
+.heading {
+  @include title;
+
+  @include landscape {
+    @include h1-d;
+  }
+}
+
+.subhead {
+  @include title;
+}
+
+.subheadLetter {
+  display: inline-block;
+}
+
+.splashBackground {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.splashFloat {
+  overflow: hidden;
+  position: absolute;
+  aspect-ratio: 1;
+  border-radius: 8rem;
+}
+
+.splashFloat-1 {
+  top: 86rem;
+  left: -20rem;
+  width: 142rem;
+
+  @include landscape {
+    top: -1vh;
+    left: 15.5vw;
+    width: 12.5vw;
+  }
+}
+
+.splashFloat-2 {
+  top: 39rem;
+  right: -39rem;
+  width: 150rem;
+
+  @include landscape {
+    top: 11.5vh;
+    right: -1.8vw;
+    width: 13.1vw;
+  }
+}
+
+.splashFloat-3 {
+  bottom: -68rem;
+  left: -75rem;
+  width: 185rem;
+
+  @include landscape {
+    bottom: -10.5vh;
+    left: -5vw;
+    width: 20vw;
+  }
+}
+
+.splashFloat-4 {
+  bottom: -74rem;
+  right: -80rem;
+  width: 226rem;
+
+  @include landscape {
+    bottom: -1.5vh;
+    right: 10vw;
+    width: 16.15vw;
+  }
+}
+
+.splashFloatImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.splashClip {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.splashScale {
+  width: 100%;
+  height: 100%;
+}
+
+.splashFocus {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.splashBlend {
+  opacity: 0.4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $color-dark-gray;
+  mix-blend-mode: multiply;
+}
+
+.splashContent {
+  position: relative;
+  padding-right: $side-padding;
+  padding-left: $side-padding;
+  color: $color-white;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.splashHeading {
+  margin-bottom: 15rem;
+  @include body;
+}
+
+.splashCopy {
+  @include h3;
+  max-width: 935rem;
+}

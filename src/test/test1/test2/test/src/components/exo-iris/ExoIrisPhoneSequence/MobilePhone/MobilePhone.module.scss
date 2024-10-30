@@ -1,0 +1,47 @@
+@import '~/styles/utils';
+
+.container {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.innerContainer {
+  position: absolute;
+  width: 35vw;
+  height: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.phoneFrame {
+  width: 100%;
+  overflow: hidden;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.videoContainer {
+  overflow: hidden;
+  width: 100%;
+  border-radius: 6vw;
+  display: flex;
+  z-index: 1;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.video {
+  z-index: -1;
+  pointer-events: auto;
+  width: calc(100% - 2.5vw);
+  object-fit: contain;
+  height: auto;
+}

@@ -1,0 +1,118 @@
+@import '~/styles/utils';
+
+.Banner {
+  position: fixed;
+  bottom: 20rem;
+  z-index: 101;
+  left: 20rem;
+  transform: translateX(0);
+  opacity: 0;
+  pointer-events: none;
+  width: 100%;
+  max-width: calc(100% - 40rem);
+
+  @include md {
+    max-width: 800rem;
+    padding: 0 px(20rem);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.mobileNavExpanded {
+    opacity: 0 !important;
+  }
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  border-radius: 65rem;
+  box-shadow: 3px 0 50px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s;
+
+  .Banner[data-theme='light'] & {
+    background-color: rgba(white, 0.25);
+  }
+
+  .Banner[data-theme='dark'] & {
+    background-color: rgba(white, 0.15);
+  }
+}
+
+.textContainer {
+  padding: 15rem 50rem 15rem 30rem;
+  border: 1px solid transparent;
+  border-radius: 65rem;
+  backdrop-filter: blur(7rem);
+  display: block;
+
+  .hasLink & {
+    cursor: pointer;
+
+    &:hover {
+      border-color: $color-exo-blue;
+    }
+  }
+
+  @include md {
+    padding: 15rem 50rem 15rem 40rem;
+  }
+}
+
+.text {
+  @include small-body;
+  transition: color 0.1s;
+  text-align: center;
+
+  .Banner[data-theme='light'] & {
+    color: $color-black;
+  }
+
+  .Banner[data-theme='dark'] & {
+    color: $color-white;
+  }
+
+  @include lg {
+    p {
+      font-size: 27rem;
+    }
+  }
+}
+
+.closeButton {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  perspective: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 30rem;
+  transform: translate(50%, -50%);
+  width: 30rem;
+  height: 30rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  z-index: 3;
+
+  svg {
+    width: 100%;
+  }
+
+  .Banner[data-theme='light'] & {
+    color: $color-black;
+
+    &:hover {
+      color: $color-exo-blue;
+    }
+  }
+
+  .Banner[data-theme='dark'] & {
+    color: $color-white;
+
+    &:hover {
+      color: $color-exo-blue;
+    }
+  }
+}

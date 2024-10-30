@@ -1,0 +1,36 @@
+xxs:
+  scale: 1
+  depth: -15
+  a:
+    ratio: 1
+    scale: 0.836
+    start:
+      shift: [0, 0.115, 0]
+      position: [-3.589, 0, 0]
+    end:
+      shift: [0, 0.105, 0]
+      position: [-4.160, 0, 0]
+  i:
+    ratio: 1
+    scale: 0.836
+    start:
+      shift: [0, 0.115, 0]
+      position: [-0.521, 0, 0]
+    end:
+      shift: [0, 0.105, 0]
+      position: [-0.450, 0, 0]
+  artificial:
+    ratio: 3.054
+    position: [-2.411, 0, 0]
+  intelligence:
+    ratio: 4.411
+    position: [1.660, 0, 0]
+  answer:
+    ratio: 3.732
+    position: [-2.623, 0, 0]
+  immediately:
+    ratio: 4.973
+    position: [2.018, 0, 0]
+  powered:
+    ratio: 8.5
+    position: [0, -1, 0]

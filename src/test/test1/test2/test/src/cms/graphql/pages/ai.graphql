@@ -1,0 +1,106 @@
+fragment aiContent on AiPage {
+  meta {
+    ...pageMeta
+  }
+  heroHeading
+  manifestoSectionHeading
+  manifestoItemsNumbered
+  manifestoHeading1
+  manifestoHeading2
+  manifestoHeading3
+  manifestoHeading4
+  manifestoHeading5
+  manifestoHeading6
+  manifestoIcon1 {
+    ...asset
+  }
+  manifestoIcon2 {
+    ...asset
+  }
+  manifestoIcon3 {
+    ...asset
+  }
+  manifestoIcon4 {
+    ...asset
+  }
+  manifestoIcon5 {
+    ...asset
+  }
+  manifestoIcon6 {
+    ...asset
+  }
+  manifestoCopy1
+  manifestoCopy2
+  manifestoCopy3
+  manifestoCopy4
+  manifestoCopy5
+  manifestoCopy6
+  aiPhoneImagesCollection {
+    items {
+      ...asset
+    }
+  }
+  aiHeading1
+  aiHeading2
+  aiHeading3
+  aiHeading4
+  aiHeading5
+  aiClearance1
+  aiClearance2
+  aiClearance3
+  aiClearance4
+  aiClearance5
+  aiCopy1
+  aiCopy2
+  aiCopy3
+  aiCopy4
+  aiCopy5
+  aiImage1 {
+    ...asset
+  }
+  aiImage2 {
+    ...asset
+  }
+  aiImage3 {
+    ...asset
+  }
+  aiImage4 {
+    ...asset
+  }
+  aiImage5 {
+    ...asset
+  }
+  partnershipsHeading
+  partnershipsCopy
+  partnershipsCta {
+    ...link
+  }
+  modularSectionsCollection {
+    items {
+      ... on ArticleCarousel {
+        ...articleCarouselSection
+      }
+      ... on QuoteCarousel {
+        ...quoteCarouselSection
+      }
+      ... on ResponsiveVideo {
+        ...responsiveVideoSection
+      }
+      ... on EmailSignUp {
+        ...emailSignUpSection
+      }
+    }
+  }
+  outro {
+    ...outro
+  }
+}
+
+query ai($preview: Boolean!) {
+  ...pageWithModularSection
+  aiPageCollection(limit: 1, preview: $preview) {
+    items {
+      ...aiContent
+    }
+  }
+}

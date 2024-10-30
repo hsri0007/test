@@ -1,0 +1,52 @@
+@import '~/styles/utils';
+.cursor {
+  width: $cursor-size-mobile;
+  height: $cursor-size-mobile;
+  background: transparent-color('background', 0.2);
+  border-radius: 41rem;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $accent-color;
+  backdrop-filter: blur(10rem);
+  box-shadow: 5rem 10rem 75rem transparent-color('black', 0.1);
+  color: $color-foreground;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  will-change: opacity, color, border-width;
+  transition: background-color $quick $evil-ease, color $quick $evil-ease,
+    border-color $quick $evil-ease, opacity $speed $evil-ease, transform $speed $evil-ease;
+  position: relative;
+  transform: scale(1);
+  opacity: 1;
+  display: flex;
+  &.global {
+    top: calc(#{$cursor-size-mobile} * -0.5);
+    left: calc(#{$cursor-size-mobile} * -0.5);
+  }
+  @include landscape {
+    width: $cursor-size-desktop;
+    height: $cursor-size-desktop;
+    &.global {
+      top: calc(#{$cursor-size-desktop} * -0.5);
+      left: calc(#{$cursor-size-desktop} * -0.5);
+    }
+  }
+  &.mobile.global,
+  &.hidden,
+  &.hidden.global {
+    transform: scale(0);
+    opacity: 0;
+    pointer-events: none;
+    @include landscape {
+      transform: scale(0);
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+}
+
+.copy {
+  @include small-text-caps-d;
+}

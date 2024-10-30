@@ -1,0 +1,20 @@
+@import '~/styles/utils';
+
+.icon {
+  width: 20rem;
+  height: 20rem;
+  color: currentColor;
+  display: block;
+  position: relative;
+  transform: scale(1);
+  transition: transform $speed $evil-ease;
+  @include landscape {
+    transform: scale(1.5);
+  }
+  &_chevron-left {
+    transform: scale(1) rotateY(180deg);
+    @include landscape {
+      transform: scale(1.5) rotateY(180deg);
+    }
+  }
+}

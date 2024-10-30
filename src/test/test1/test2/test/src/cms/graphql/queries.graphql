@@ -1,0 +1,58 @@
+query getArticleBySlug($preview: Boolean!, $slug: String) {
+  ...articleBySlug
+}
+
+query getFooter {
+  ...footer
+}
+
+query getNavigation {
+  ...navigation
+}
+
+query getTrustCenter($preview: Boolean!) {
+  securityAndTrustCenterCollection(preview: $preview) {
+    items {
+      ...securityAndTrustCenter
+    }
+  }
+}
+query getSecurityData($preview: Boolean!) {
+  securityAndTrustCenterCollection(preview: $preview) {
+    items {
+      ...securityTrustCenterData
+    }
+  }
+}
+query getPrivacyData($preview: Boolean!) {
+  securityAndTrustCenterCollection(preview: $preview) {
+    items {
+      ...privacyTrustCenterData
+    }
+  }
+}
+query getResourceData($preview: Boolean!) {
+  securityAndTrustCenterCollection(preview: $preview) {
+    items {
+      ...resourcesTrustCenterData
+    }
+  }
+}
+query getEventBasedModal($id: String!) {
+  crmEventBasedModal(id: $id) {
+    heroText
+    supportingText
+    isModalEnabledOnSite
+    link
+    heroImage {
+      title
+      description
+      contentType
+      fileName
+      size
+      url
+      width
+      height
+    }
+  }
+}

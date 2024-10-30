@@ -1,0 +1,34 @@
+fragment newsroomMediaCoverage on Query {
+  mediaCollection: articleCollection(
+    order: date_DESC
+    where: { category_in: "Media Coverage" }
+    preview: $preview
+  ) {
+    items {
+      ...articleWithoutContent
+    }
+  }
+}
+
+fragment newsroomArticles on Query {
+  articleCollection(
+    preview: $preview
+    order: date_DESC
+    where: {
+      OR: [
+        # "catch all" for non-Resources categories
+        { category_not_in: ["Blog", "Event", "Guides", "Media Coverage", "Podcast", "Case Study"] }
+        { tags_contains_some: ["Press Release"] }
+      ]
+    }
+  ) {
+    items {
+      ...articleWithoutContent
+    }
+  }
+}
+
+query newsroom($preview: Boolean!) {
+  ...newsroomArticles
+  ...newsroomMediaCoverage
+}

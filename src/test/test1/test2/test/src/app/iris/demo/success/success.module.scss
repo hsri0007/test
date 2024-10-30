@@ -1,0 +1,61 @@
+@import '~/styles/utils';
+
+.container {
+  min-height: 100dvh;
+  background: linear-gradient(100deg, #dadeef 12.67%, #f6eaef 90.95%);
+  padding: calc($side-padding * 2 + 160rem) $side-padding 100rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.heading {
+  @include h1;
+  text-align: center;
+  padding: 0 $side-padding;
+  margin-bottom: 10rem;
+
+  @include md {
+    margin-bottom: 35rem;
+  }
+}
+
+.subheading {
+  @include body-m;
+  text-align: center;
+  padding: 0 $side-padding;
+
+  @include md {
+    @include h2;
+    margin-bottom: 42rem;
+  }
+}
+
+.body {
+  @include body-m;
+  text-align: center;
+  padding: 0 $side-padding;
+  margin-bottom: 40rem;
+
+  @include md {
+    @include large-body;
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 20rem;
+}
+
+.closeLink {
+  position: absolute;
+  top: calc($side-padding + $header-height * 2);
+  right: $side-padding;
+  width: 30rem;
+  height: 30rem;
+  display: block;
+  @include landscape {
+    width: 50rem;
+    height: 50rem;
+  }
+}

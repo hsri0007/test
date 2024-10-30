@@ -1,0 +1,139 @@
+@import '~/styles/utils';
+
+$outro-padding: 300rem;
+
+.newsletter {
+  padding: $side-padding;
+  @include landscape {
+    padding-top: 30rem;
+    padding-bottom: 80rem;
+  }
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20rem;
+  padding: $side-padding-mobile;
+  margin: 0 auto;
+  background: linear-gradient(60deg, $color-lavender, $color-pink);
+  box-shadow: 3.3964498043060303rem 6.7928996086120605rem 50.946746826171875rem 0
+    rgba(0, 0, 0, 0.02);
+  backdrop-filter: blur(7rem);
+  position: relative;
+
+  // border: 2px solid ,$color-lavendar;
+
+  @include landscape {
+    padding: 138rem 150rem;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1760rem;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    border-radius: calc(20rem - 2px);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: 2px;
+    background: var(--bg-type-light-light-gray, #f7f9fc);
+  }
+}
+
+.inputWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 423rem;
+}
+
+.submitBtn {
+  position: absolute;
+  right: 10rem;
+  top: 55rem;
+}
+
+.heading {
+  text-align: center;
+  max-width: 300rem;
+  @include h2-m;
+
+  @include landscape {
+    max-width: 390rem;
+    text-align: left;
+    @include h2-d;
+  }
+}
+
+.copy {
+  text-align: center;
+  max-width: 249rem;
+  padding: 38rem 0 13rem;
+  @include large-body-m;
+
+  @include landscape {
+    max-width: 423rem;
+    text-align: left;
+    padding: unset;
+    @include large-body-d;
+  }
+}
+
+.emailField {
+  width: 100%;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  filter: blur(75rem);
+  pointer-events: none;
+}
+
+.primary,
+.secondary {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0%;
+  bottom: -100%;
+}
+
+.backgroundWrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  border-radius: 20rem;
+  z-index: -1;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  filter: blur(75rem);
+  pointer-events: none;
+}
+
+.backgroundContent {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - #{$outro-padding});
+  bottom: #{$outro-padding};
+  left: 0;
+  overflow: hidden;
+}

@@ -1,0 +1,114 @@
+@import '~/styles/utils';
+
+.container {
+  padding-top: 20rem;
+  padding-right: $side-padding;
+  padding-left: $side-padding;
+  background: $color-background;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include landscape {
+    padding-top: 0;
+    // padding-bottom: 20vh;
+    @include standard-grid;
+    order: -1;
+    border-bottom: transparent-color('lavender', 0.3) 1px solid;
+    height: 70vh;
+    overflow: hidden;
+
+    &:first-child {
+      border-top: transparent-color('lavender', 0.3) 1px solid;
+    }
+  }
+}
+
+.heading {
+  margin-bottom: 30rem;
+  @include h1;
+  color: $color-light-light-gray;
+}
+
+.copy {
+  @include large-body;
+  color: $color-white;
+}
+
+.cta {
+  @include small-text-bold-caps;
+  margin-top: 30rem;
+}
+
+.content {
+  @include landscape {
+    padding-top: 75rem;
+    position: relative;
+    grid-column: 2 / span 5;
+    grid-row: 1;
+
+    .alignRight & {
+      grid-column: 7 / span 5;
+    }
+  }
+}
+
+.imageWrap {
+  margin-top: 45rem;
+  margin-right: calc(-1 * $side-padding);
+  margin-left: calc(-1 * $side-padding);
+
+  @include landscape {
+    position: relative;
+    margin: 0;
+    grid-column: 8 / span 4;
+    height: 100%;
+    grid-row: 1;
+
+    .alignRight & {
+      grid-column: 2 / span 4;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      width: 1px;
+      height: calc(100% + 40vh);
+      background: $color-lavender;
+      opacity: 0.3;
+      position: absolute;
+      top: -20vh;
+    }
+
+    &:before {
+      left: 0;
+    }
+
+    &:after {
+      right: 0;
+    }
+  }
+}
+
+.image {
+  display: block;
+  width: 100%;
+  z-index: 2;
+
+  @include landscape {
+    position: absolute;
+    height: 70vh;
+    object-fit: cover;
+    top: -1px;
+
+    .alignLeft & {
+      //top: -20vh;
+      object-position: top;
+    }
+
+    .alignRight & {
+      //bottom: -20vh;
+    }
+  }
+}

@@ -1,0 +1,239 @@
+@import '~/styles/utils';
+
+.bookDemo {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: calc($header-height * 2 + 80rem) 0 80rem;
+  row-gap: 36rem;
+  background: linear-gradient(42deg, #dadeef -1.64%, #f6eaef 83.5%);
+  @include landscape {
+    padding: 250rem 0 135rem;
+    // row-gap: 113rem;
+  }
+}
+
+.closeLink {
+  position: absolute;
+  top: calc($side-padding + ($header-height * 2));
+  right: $side-padding;
+  width: 30rem;
+  height: 30rem;
+  display: block;
+  @include landscape {
+    width: 50rem;
+    height: 50rem;
+  }
+}
+
+.closeIcon {
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  color: $color-dark-gray;
+  gap: 80rem;
+  grid-column: 1 / span 2;
+  @include sm {
+    grid-column: 1 / span 3;
+  }
+  @include landscape {
+    gap: 153rem;
+    grid-column: 2 / span 5;
+  }
+}
+
+.form {
+  grid-column: 1 / span 2;
+  @include sm {
+    grid-column: 1 / span 3;
+  }
+  @include landscape {
+    grid-column: 8 / span 4;
+  }
+}
+
+.heading {
+  @include h1;
+  text-align: center;
+}
+
+.video {
+  aspect-ratio: 16 / 9;
+  border-radius: 20rem;
+  overflow: hidden;
+  height: auto;
+  @include sm {
+    width: n-grid-col-width(4);
+  }
+  @include landscape {
+    width: 100%;
+  }
+}
+
+.imageContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  aspect-ratio: 393 / 554;
+
+  @include landscape {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+.subheadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  position: relative;
+}
+
+.subheading {
+  @include h2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $color-white;
+
+  padding: 0 $side-padding;
+  @include landscape {
+    max-width: n-grid-col-width(8);
+  }
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.ctaContainer {
+  padding: 0 var(--side-padding);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.ctaHeading {
+  @include h2;
+  text-align: center;
+  margin-bottom: 20rem;
+}
+
+.ctaSubheading {
+  @include large-body;
+  text-align: center;
+  margin-bottom: 40rem;
+}
+
+.ctaButtonContainer {
+  display: flex;
+  gap: 8rem;
+}
+
+.ctaButton {
+  @include small-text-bold-m;
+  color: $color-background;
+  background: $color-foreground-alt;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 32rem;
+  padding: 8rem 22rem 8rem;
+  transition: color $speed $ease-out, background-color $speed $ease-out,
+    border-color $speed $ease-out;
+
+  @include sm {
+    @include body-m;
+    text-transform: none;
+    padding: 8rem 20rem 10rem;
+  }
+
+  transition: transform $quick $ease-out;
+
+  &:hover {
+    color: $color-white;
+    background: $accent-color;
+    border-color: $accent-color;
+  }
+
+  &.alt {
+    color: $color-foreground-alt;
+    background: transparent;
+    border-color: currentColor;
+    &:hover {
+      color: $accent-color;
+      background: transparent;
+      border-color: currentColor;
+    }
+  }
+}
+.btnWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 $side-padding;
+}
+.productBtn {
+  @include h3;
+  border: none;
+  font-size: 28px !important;
+  //letter-spacing: 3px;
+  @include landscape {
+    @include h3;
+    border: none;
+    font-size: 45rem !important;
+    letter-spacing: 3px;
+  }
+}
+.circle {
+  width: 34rem;
+  height: 34rem;
+  min-width: 23rem;
+  min-height: 23rem;
+  //border: 1.5rem currentColor solid;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-left: 10rem;
+  bottom: 7rem;
+  .direction_right & {
+    transform: rotate(0deg);
+  }
+  .direction_down & {
+    transform: rotate(90deg);
+  }
+  .direction_left & {
+    transform: rotate(180deg);
+  }
+  .direction_up & {
+    transform: rotate(370deg);
+  }
+}
+.btnContainer {
+  align-items: center;
+  cursor: pointer;
+  //position: absolute;
+  bottom: 25rem;
+  right: 15rem;
+  @include landscape {
+  }
+  &:hover {
+    color: $accent-color !important;
+  }
+}

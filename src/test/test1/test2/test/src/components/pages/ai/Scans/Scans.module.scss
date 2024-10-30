@@ -1,0 +1,112 @@
+@import '~/styles/utils';
+
+.container {
+  background-color: $color-dark-dark-blue;
+  display: grid;
+  padding: 0;
+  position: relative;
+
+  &--clipped {
+    overflow: clip;
+  }
+}
+
+.slidesContainer {
+  position: relative;
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.canvasWrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: calc(100% + 100vh);
+  pointer-events: none;
+  * {
+    pointer-events: none;
+  }
+}
+
+.canvasSticky {
+  position: sticky;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.phoneCanvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.stepImages {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  .imageContainer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: translate3d(0, 100vh, 0);
+
+    @include landscape {
+      transform: translate3d(0, 100vh, 0);
+    }
+
+    picture {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      @include landscape {
+        align-items: flex-end;
+      }
+    }
+
+    &[data-step-type='Phone'] {
+      img {
+        visibility: hidden;
+      }
+    }
+
+    &[data-step-type='Laptop'] {
+      img {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        height: auto;
+        max-width: none;
+
+        @include landscape {
+          width: 70%;
+          height: auto;
+          margin-top: $header-height;
+        }
+      }
+    }
+  }
+}
+
+.videoElement {
+  width: 1px;
+  height: 1px;
+  opacity: 0.001;
+  position: absolute;
+}

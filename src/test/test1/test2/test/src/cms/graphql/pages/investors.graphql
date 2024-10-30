@@ -1,0 +1,34 @@
+fragment investorsContent on InvestorsPage {
+  meta {
+    ...pageMeta
+  }
+  heroHeading
+  heroCopy
+  heroSubheading
+  investorCardsCollection {
+    items {
+      name
+      logo {
+        ...asset
+      }
+      description
+      link {
+        ...link
+      }
+      sys {
+        id
+      }
+    }
+  }
+  outro {
+    ...outro
+  }
+}
+
+query investors($preview: Boolean!) {
+  investorsPageCollection(limit: 1, preview: $preview) {
+    items {
+      ...investorsContent
+    }
+  }
+}

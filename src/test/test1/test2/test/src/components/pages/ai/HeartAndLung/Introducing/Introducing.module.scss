@@ -1,0 +1,242 @@
+@import '~/styles/utils';
+
+.Introducing {
+  position: relative;
+  overflow: hidden;
+}
+
+.inner {
+}
+
+.gradientTop {
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  background: radial-gradient(#66ffda 12.67%, transparent 70.95%);
+  opacity: 0.2;
+  z-index: 0;
+  transform: translate(-50%, 0%);
+  top: 0;
+  width: 150vw;
+  height: 150vw;
+
+  @include landscape {
+    width: 50vw;
+    height: 50vw;
+    transform: translate(-50%, 0%);
+  }
+}
+
+.topTextContainer {
+  padding: 0 var(--side-padding);
+}
+
+.topTextContainer,
+.blocksContainer {
+  position: relative;
+  z-index: 1;
+}
+
+.subtitle {
+  @include h2;
+  text-align: center;
+  margin-bottom: 90rem;
+  border-bottom: 1px solid rgb(var(--lavender));
+  margin-left: calc(var(--side-padding) * -1);
+  width: 100vw;
+  padding: 0 var(--side-padding) 50rem;
+
+  @include landscape {
+    padding-bottom: 150rem;
+    margin-bottom: 165rem;
+  }
+}
+
+.title {
+  @include h1;
+  text-align: center;
+  margin-bottom: 50rem;
+
+  @include landscape {
+    margin-bottom: 60rem;
+  }
+}
+
+.descriptionsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 35rem;
+
+  @include landscape {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 50rem;
+  }
+}
+
+.description1,
+.description2 {
+  @include large-body;
+
+  @include landscape {
+    max-width: 600rem;
+    min-width: 600rem;
+  }
+}
+
+.description1 {
+}
+
+.description2 {
+}
+
+.blocksContainer {
+  margin-top: 50rem;
+  border-top: 1px solid rgb(var(--lavender));
+
+  @include landscape {
+    margin-top: 270rem;
+  }
+}
+
+.block {
+  border-bottom: 1px solid rgb(var(--lavender));
+
+  --height: 49vw;
+
+  @include landscape {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+
+  &:nth-child(even) {
+    @include landscape {
+      justify-content: flex-start;
+    }
+
+    @include lg {
+      padding-left: 11.8vw;
+    }
+  }
+
+  &:nth-child(odd) {
+    @include lg {
+      padding-right: 11.8vw;
+    }
+  }
+}
+
+.block__textSide {
+  display: flex;
+  flex-direction: column;
+
+  @include landscape {
+    min-width: 50vw;
+    max-width: 5vw;
+    border-left: 1px solid rgb(var(--lavender));
+    height: var(--height);
+  }
+
+  @include lg {
+    min-width: 29vw;
+    max-width: 29vw;
+  }
+
+  .block:nth-child(even) & {
+    @include landscape {
+      order: 2;
+      border-right: 1px solid rgb(var(--lavender));
+    }
+  }
+}
+
+.block__titleContainer {
+  padding: var(--side-padding);
+  border-bottom: 1px solid rgb(var(--lavender));
+  height: 107rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  position: relative;
+
+  @include landscape {
+    padding: 13rem 32rem;
+    height: 260rem;
+  }
+}
+
+.block__title {
+  @include h2;
+}
+
+.block__descriptionContainer {
+  margin-top: auto;
+  padding: var(--side-padding);
+  position: relative;
+
+  @include landscape {
+    padding: 114rem 74rem;
+  }
+}
+
+.block__markerContainer {
+  position: absolute;
+  width: 15rem;
+  top: calc(100% + 30rem);
+  left: 30rem;
+  display: none;
+
+  @include landscape {
+    display: block;
+  }
+}
+
+.block__description {
+  @include body;
+}
+
+.block__imageSide {
+  padding: 50rem var(--side-padding);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid rgb(var(--lavender));
+
+  @include landscape {
+    border-top: none;
+    padding: 0;
+    border-left: 1px solid rgb(var(--lavender));
+    min-width: var(--height);
+    max-width: var(--height);
+    height: var(--height);
+  }
+
+  .block:nth-child(even) & {
+    @include landscape {
+      order: 1;
+      border-left: none;
+    }
+  }
+}
+
+div.block__phone {
+  width: 65vw;
+  margin-left: 0;
+
+  @include md {
+    margin-right: -9.7vw;
+  }
+
+  @include landscape {
+    width: 20vw;
+  }
+
+  .block:nth-child(even) & {
+    @include md {
+      margin-left: -24vw;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@import '~/styles/utils';
+
+.articleContent {
+  color: $color-dark-gray;
+
+  > *:not(:last-child) {
+    margin-bottom: 70rem;
+  }
+
+  @include landscape {
+    grid-column: 4 / -1;
+  }
+}

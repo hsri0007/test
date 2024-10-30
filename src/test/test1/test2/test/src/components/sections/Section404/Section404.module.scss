@@ -1,0 +1,45 @@
+@import '~/styles/utils';
+
+.gradientContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  top: 1;
+}
+
+.copy {
+  padding: 40rem 0;
+
+  p {
+    padding: 0;
+  }
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .content404 {
+    z-index: 2;
+    text-align: center;
+    @include small-body;
+    h1 {
+      @include title;
+    }
+  }
+
+  .btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 76rem;
+    text-transform: capitalize;
+    letter-spacing: 0rem;
+    font-size: 14.8rem;
+  }
+}

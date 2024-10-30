@@ -1,0 +1,4 @@
+// Get a color by name with a given opacity
+@function transparent-color($color, $opacity) {
+  @return rgb(#{map-get($rgb-colors, $color)} / #{$opacity});
+}

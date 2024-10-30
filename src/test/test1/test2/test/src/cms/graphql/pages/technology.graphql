@@ -1,0 +1,75 @@
+fragment technologyContent on TechnologyPage {
+  meta {
+    ...pageMeta
+  }
+  meetsWordLeft
+  meetsWordCenter
+  meetsWordRight
+  meetsHeading
+  meetsCopy
+  modularSectionsCollection {
+    items {
+      ... on ArticleCarousel {
+        ...articleCarouselSection
+      }
+      ... on QuoteCarousel {
+        ...quoteCarouselSection
+      }
+      ... on ResponsiveVideo {
+        ...responsiveVideoSection
+      }
+    }
+  }
+  powerHeading
+  powerCopy
+  pmutCta {
+    ...link
+  }
+  physicalSpecsStatsCollection {
+    items {
+      ...techSpec
+    }
+  }
+  celloHeading
+  celloCopy1
+  celloCopy2
+  featuresHeading
+  featuresSubheading
+  feature1Image {
+    ...asset
+  }
+  feature1Heading
+  feature1Copy
+  feature1Cta {
+    ...link
+  }
+  feature2Image {
+    ...asset
+  }
+  feature2Heading
+  feature2Copy
+  feature2Cta {
+    ...link
+  }
+  partnershipsHeading
+  partnershipsSubheading
+  partnershipsContactHeading
+  partnershipsContactCopy
+  partnershipsContactCta {
+    ...link
+  }
+  partnershipsApplicationsListHeading
+  partnershipsApplicationsListItems
+  outro {
+    ...outro
+  }
+}
+
+query technology($preview: Boolean!, $product: String!) {
+  ...pageWithModularSection
+  technologyPageCollection(where: { product: $product }, limit: 1, preview: $preview) {
+    items {
+      ...technologyContent
+    }
+  }
+}

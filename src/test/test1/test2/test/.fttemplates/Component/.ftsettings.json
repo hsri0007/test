@@ -1,0 +1,4 @@
+{
+  "openFilesWhenDone": ["index.tsx"],
+  "customVariables": ["element=>div"]
+}

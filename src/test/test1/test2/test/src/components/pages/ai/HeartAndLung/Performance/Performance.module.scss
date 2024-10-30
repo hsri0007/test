@@ -1,0 +1,194 @@
+@import '~/styles/utils';
+
+.Performance {
+  position: relative;
+  overflow: hidden;
+  padding: 55rem 0 0;
+
+  @include landscape {
+    padding: 125rem 0 0;
+  }
+}
+
+.inner {
+  margin: 0 auto;
+  max-width: 1600rem;
+  --padding: 0;
+
+  @include md {
+    --padding: 140rem;
+  }
+}
+
+.heroContent {
+  padding: 0 var(--side-padding) 80rem;
+  position: relative;
+
+  @include landscape {
+    border-bottom: 1px solid rgb(var(--lavender));
+    padding: 0 var(--padding) 110rem;
+  }
+}
+
+.bgGradient {
+  pointer-events: none;
+  position: absolute;
+  width: 500rem;
+  height: 500rem;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background: radial-gradient(#66ffda 12.67%, transparent 70.95%);
+  opacity: 0.2;
+  z-index: 0;
+
+  @include landscape {
+    transform: translate(-50%, 50%);
+    width: 600rem;
+    height: 600rem;
+  }
+}
+
+.title {
+  @include h1;
+  text-align: left;
+  margin-bottom: 30rem;
+  position: relative;
+  z-index: 1;
+
+  @include landscape {
+    text-align: center;
+    margin-bottom: 60rem;
+  }
+}
+
+.heroContent__paragraphs {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  z-index: 1;
+
+  @include landscape {
+    gap: 50rem;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+  }
+}
+
+.heroContent__paragraphs__p {
+  @include large-body;
+
+  &:first-child {
+    margin-bottom: 35rem;
+
+    @include landscape {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.amenitiesContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  position: relative;
+  padding: 0;
+  z-index: 2;
+
+  @include landscape {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 60rem var(--padding) 0;
+  }
+
+  &:after {
+    @include landscape {
+      position: absolute;
+      bottom: 0;
+      content: '';
+      display: block;
+      width: 1px;
+      height: calc(100% - 60rem);
+      left: 50%;
+      transform: translate(-50%);
+      background-color: rgb(var(--lavender));
+    }
+  }
+}
+
+.amenitiesList {
+  display: flex;
+  flex-direction: column;
+  gap: 35rem;
+  padding: var(--side-padding) 0;
+  border-top: 1px solid rgb(var(--lavender));
+
+  @include landscape {
+    border-top: none;
+    padding: 0;
+    gap: 50rem;
+  }
+}
+
+.amenityItem {
+  width: 100%;
+  max-width: 100%;
+  border-top: 1px solid rgb(var(--lavender));
+  padding-top: 45rem;
+
+  @include landscape {
+    max-width: 440rem;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  &:nth-child(1) {
+    @include landscape {
+      padding-right: 20rem;
+    }
+  }
+
+  &:nth-child(2) {
+    border-bottom: 1px solid rgb(var(--lavender));
+
+    @include landscape {
+      padding-left: 20rem;
+      border-bottom: none;
+    }
+  }
+}
+
+.amenityItem__title {
+  @include h2;
+  margin-bottom: 25rem;
+  padding: 0 var(--side-padding) 0 var(--side-padding);
+
+  @include landscape {
+    margin-bottom: 40rem;
+    padding: 0;
+  }
+}
+
+.amenity {
+  padding: 0 var(--side-padding);
+
+  @include landscape {
+    padding: 0;
+  }
+}
+
+.amenity__title {
+  @include small-text-caps;
+  margin-bottom: 10rem;
+  color: rgb(var(--gray));
+  font-weight: 500 !important;
+}
+
+.amenity__description {
+  @include small-body;
+  color: rgb(var(--gray));
+}
